@@ -34,11 +34,15 @@ body{
 }
 
 .name{
+    width: 100%;
+    display: flex;
     font-weight: bold !important;
         animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
 }
 
 .subtitle{
+    width: 100%;
+    display: flex;
         animation: tracking-in-expand 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) 0.5s both;
     }
 
