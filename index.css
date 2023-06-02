@@ -54,6 +54,7 @@ body{
 }
 
 .call_to_action{
+        animation: tracking-in-expand 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) 1s both;
     margin-top: 10px !important;
     border: black solid 1pt;
     border-radius: 5px;
