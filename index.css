@@ -18,6 +18,7 @@ body{
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    width: 100%;
 }
 
 .landing_image{
@@ -31,20 +32,24 @@ body{
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    text-align: center;
 }
 
 .name{
     width: 100%;
     display: flex;
     font-weight: bold !important;
-        animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+    animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+    text-align: center;
+        justify-content: center;
 }
 
 .subtitle{
     width: 100%;
     display: flex;
-        animation: tracking-in-expand 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) 0.5s both;
-    }
+    animation: tracking-in-expand 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) 0.5s both;
+    justify-content: center;
+}
 
 .tracking-in-expand {
     animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
