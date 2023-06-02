@@ -35,7 +35,28 @@ body{
 
 .name{
     font-weight: bold !important;
+        animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
 }
 
 .subtitle{
+        animation: tracking-in-expand 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) 0.5s both;
+    }
+
+.tracking-in-expand {
+    animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+}
+
+@keyframes tracking-in-expand {
+    0% {
+        letter-spacing: -0.5em;
+        opacity: 0;
+    }
+
+    40% {
+        opacity: 0.6;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
