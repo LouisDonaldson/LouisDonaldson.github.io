@@ -21,7 +21,9 @@ function LazyLoadingAboutMe(parent) {
     setTimeout(() => {
       const about_me_section = element.querySelector(".about_me_text");
       about_me_section.innerHTML = `
-      <span>${about_me_description}</span>`;
+      <span>${about_me_description}<br>
+      <button class="btn btn-outline-primary mt-3">More</button>
+      </span>`;
       element.scrollIntoView();
     }, 1000);
   };
