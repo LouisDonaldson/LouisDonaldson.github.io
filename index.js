@@ -9,6 +9,21 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 
 function LazyLoadingAboutMe(parent) {
+  const LoadAboutMeUI = (element) => {
+    const about_me_description =
+      "My name is Louis Donaldson and I'm a Computer Science student studying a Masters Degree at the University of Hull. I'm an aspiring Web Developer and have relevant experience in the field, including extensive knowledge in JS, CSS and HTML. As well as this I am proficient in back-end technologies such as Node.JS and ASP.NET.";
+    element.innerHTML = `
+            <div class="title h1">
+                About me.
+            </div>
+            <div class="about_me_text p">
+            </div>`;
+    setTimeout(() => {
+      const about_me_section = element.querySelector(".about_me_text");
+      about_me_section.innerHTML = `
+      <span>${about_me_description}</span>`;
+    }, 1000);
+  };
   let within_viewport = false;
   let loaded = false;
   window.addEventListener("scroll", () => {
@@ -22,10 +37,11 @@ function LazyLoadingAboutMe(parent) {
       if (within_viewport) {
         if (!loaded) {
           loaded = true;
-          parent.innerHTML = `
-            <div class="title">
-                About me.
-            </div>`;
+          LoadAboutMeUI(parent);
+          // parent.innerHTML = `
+          //   <div class="title">
+          //       About me.
+          //   </div>`;
         }
       }
     } else {

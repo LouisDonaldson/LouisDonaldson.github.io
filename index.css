@@ -111,15 +111,25 @@ body{
 
 #about_me{
     background: rgb(255, 255, 255);
-        /* background: linear-gradient(45deg, rgba(84, 80, 152, 1) 0%, rgba(0, 255, 222, 1) 100%); */
-        position: relative;
-        height: 100vh;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0px 5vw;
 }
 
 #about_me>.title{
         animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+}
+
+#about_me>.about_me_text{
+    color: gray !important;
+    text-align: justify;
+}
+
+#about_me>.about_me_text>span{
+    animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
 }
