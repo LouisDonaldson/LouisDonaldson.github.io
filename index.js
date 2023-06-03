@@ -10,14 +10,14 @@ window.addEventListener("DOMContentLoaded", () => {
 
 function LazyLoadingAboutMe(parent) {
   const LoadAboutMeUI = (element) => {
-    const about_me_description =
-      "My name is Louis Donaldson and I'm a Computer Science student studying a Masters Degree at the University of Hull. I'm an aspiring Web Developer and have relevant experience in the field, including extensive knowledge in JS, CSS and HTML. As well as this I am proficient in back-end technologies such as Node.JS and ASP.NET.";
+    const about_me_description = `My name is Louis Donaldson and I'm a Computer Science student studying a Masters Degree at the University of Hull. I'm an aspiring Web Developer and have relevant experience in the field, including extensive knowledge in JS, CSS and HTML. As well as this I am proficient in back-end technologies such as Node.JS and ASP.NET.
+      <br><br> I'm laid-back in nature. However, I am an extremely hard-working individual who is very driven and dedicated. Alongside my University Studies I was working 3 jobs concurrently. I also have great time management skills as well as good interpersonal skills. I work very well in a team environment as well as having a high motivation to learn new skills.`;
     element.innerHTML = `
-            <div class="title h1">
-                About me.
-            </div>
-            <div class="about_me_text p">
-            </div>`;
+    <div class="title h1">
+        About me.
+    </div>
+    <div class="about_me_text p">
+    </div>`;
     setTimeout(() => {
       const about_me_section = element.querySelector(".about_me_text");
       about_me_section.innerHTML = `
