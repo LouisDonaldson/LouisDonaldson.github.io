@@ -22,7 +22,7 @@ function LazyLoadingAboutMe(parent) {
       const about_me_section = element.querySelector(".about_me_text");
       about_me_section.innerHTML = `
       <span>${about_me_description}<br>
-      <button class="btn btn-outline-primary mt-3">More</button>
+      <button class="btn btn-outline-primary mt-3 d-sm-none">More</button>
       </span>`;
       element.scrollIntoView();
     }, 1000);
