@@ -24,11 +24,15 @@ function LazyLoadingAboutMe(parent) {
     Press Association developing countless web-tools to pull data from their 
     extensive Sports Data API which has given me great insight into how data 
     is handled withing a multi-national company.<br><br>
-    In my spare time I enjoy programming, playing video-games, playing guitar, riding motorbikes 
-    and being with friends and family.<br>
+    In my spare time I enjoy programming, playing video-games, playing guitar, 
+    riding motorbikes and being with friends and family.<br><br>
+    As an individual I value other people's opinions and can work well as part of a team.
+    I also have the ability to work independently if neccessary with the flexibility
+    to adapt to requirements. 
+    <br>
     ${see_my_work_btn}`;
     element.innerHTML = `
-    <div class="title h1">
+    <div class="_title h1">
         About me.
     </div>
     <div class="about_me_text h6">
@@ -38,7 +42,7 @@ function LazyLoadingAboutMe(parent) {
       about_me_section.innerHTML = `
       <span class="about_me_description">${about_me_description}<br>
       <button class="btn btn-outline-primary mt-3 d-sm-none more_btn">More</button>
-      <span class="d-none d-sm-block"><br>${additional_about_me_description}</span>
+      <span class="d-none d-sm-inline-flex flex-column"><br>${additional_about_me_description}</span>
       </span>`;
 
       const about_me_span = about_me_section.querySelector(
