@@ -1,4 +1,5 @@
 window.addEventListener("DOMContentLoaded", () => {
+  LoadPortfolioCarousel();
   const landing_call_to_action = document.querySelector(".call_to_action");
   landing_call_to_action.addEventListener("click", () => {
     const about_me = document.querySelector("#about_me");
@@ -87,24 +88,6 @@ function LazyLoadingAboutMe(parent) {
       parent.innerHTML = ``;
     }
   });
-  //   setInterval(() => {
-  //     if (isInViewport(parent)) {
-  //       within_viewport = true;
-  //       if (within_viewport) {
-  //         if (!loaded) {
-  //           loaded = true;
-  //           parent.innerHTML = `
-  //             <div class="title">
-  //                 About me.
-  //             </div>`;
-  //         }
-  //       }
-  //     } else {
-  //       within_viewport = false;
-  //       loaded = false;
-  //       parent.innerHTML = ``;
-  //     }
-  //   }, 500);
 }
 
 function isInViewport(element) {
@@ -122,4 +105,107 @@ function isInViewport(element) {
   //       (window.innerHeight || document.documentElement.clientHeight) &&
   //     rect.right <= (window.innerWidth || document.documentElement.clientWidth)
   //   );
+}
+
+async function LoadPortfolioCarousel() {
+  function AddItem(array_of_image_names, title, description) {
+    const item = document.createElement("div");
+    item.innerHTML = `
+    <div class="portfolio_item h-100">
+      <div class="portfolio_images mb-4">
+      </div>
+      <div class="portfolio_text px-3">
+        <div class="item_title h1">
+          ${title}
+        </div>
+        <div class="item_description">
+          ${description}
+        </div>
+      </div>
+      
+    </div>`;
+
+    const images_section = item.querySelector(".portfolio_images");
+
+    for (const url of array_of_image_names) {
+      images_section.innerHTML += `
+      <div class="portfolio_image">
+          <img src="${url}" class="img">
+        </div>`;
+    }
+
+    return item.innerHTML;
+  }
+
+  const portfolio_carousel_inner = document.querySelector(
+    ".portfolio_carousel"
+  );
+  // ensure first one is active
+  {
+    // temp carousel item
+    const item = document.createElement("div");
+    item.classList.add("carousel-item");
+
+    item.classList.add("active");
+
+    const item_description = `
+    For my third year Honours Stage Project I designed and developed a 
+    lightweight cloud storage solution aimed at businesses for the secure storage
+    of company documentation.<br><br>
+    The solution utilises complex encryption which makes use of both AES and RSA 
+    encryption, allowing the storage of the symmetric and asymmetric keys within the 
+    database attached alongside each user's data.<br><br>
+    The solution was developed using the Node.JS framework and consists of 3 a minimum of
+    3 servers, 2 of which are used for repeat dynamic deployment configured from a JSON file.
+    One of these servers also uses an SQLite database which holds all of the data related to
+    the deployment of a single company.<br><br>
+    Integration support has been put in to integrate blockchain technology to track the
+    transactions over each company deployment. The idea was to ensure maximum transparency
+    of a company's documentation, which would be achieved with blockchains.`;
+
+    item.innerHTML = AddItem(
+      [
+        "./images/portfolio_images/honours_project_img.png",
+        "./images/portfolio_images/honours_project_img(1).png",
+      ],
+      "Flexible and Lightweight Cloud Storage Solution",
+      item_description
+    );
+
+    portfolio_carousel_inner.appendChild(item);
+  }
+
+  // {
+  //   // temp carousel item
+  //   const item = document.createElement("div");
+  //   item.classList.add("carousel-item");
+
+  //   item.classList.add("active");
+
+  //   const item_description = `
+  //   For my third year Honours Stage Project I designed and developed a
+  //   lightweight cloud storage solution aimed at businesses for the secure storage
+  //   of company documentation.<br><br>
+  //   The solution utilises complex encryption which makes use of both AES and RSA
+  //   encryption, allowing the storage of the symmetric and asymmetric keys within the
+  //   database attached alongside each user's data.<br><br>
+  //   The solution was developed using the Node.JS framework and consists of 3 a minimum of
+  //   3 servers, 2 of which are used for repeat dynamic deployment configured from a JSON file.
+  //   One of these servers also uses an SQLite database which holds all of the data related to
+  //   the deployment of a single company.<br><br>
+  //   Integration support has been put in to integrate blockchain technology to track the
+  //   transactions over each company deployment. The idea was to ensure maximum transparency
+  //   of a company's documentation, which would be achieved with blockchains.`;
+
+  //   item.innerHTML = AddItem(
+  //     [
+  //       "./images/portfolio_images/honours_project_img.png",
+  //       "./images/portfolio_images/honours_project_img(1).png",
+  //     ],
+  //     "Flexible and Lightweight Cloud Storage Solution",
+  //     item_description
+  //   );
+
+  //   portfolio_carousel_inner.appendChild(item);
+  // }
 }
