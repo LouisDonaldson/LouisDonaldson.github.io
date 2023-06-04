@@ -24,8 +24,8 @@ function LazyLoadingAboutMe(parent) {
     Press Association developing countless web-tools to pull data from their 
     extensive Sports Data API which has given me great insight into how data 
     is handled withing a multi-national company.<br><br>
-    In my spare time I enjoy programming, playing guitar, riding motorbikes 
-    and being with friends.<br>
+    In my spare time I enjoy programming, playing video-games, playing guitar, riding motorbikes 
+    and being with friends and family.<br>
     ${see_my_work_btn}`;
     element.innerHTML = `
     <div class="title h1">
