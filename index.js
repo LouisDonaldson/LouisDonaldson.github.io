@@ -155,13 +155,13 @@ async function LoadPortfolioCarousel() {
     The solution utilises complex encryption which makes use of both AES and RSA 
     encryption, allowing the safe storage of the symmetric and asymmetric keys within the 
     database attached alongside each user's data.<br><br>
-    The solution was developed using the Node.JS framework and consists of 3 a minimum of
-    3 servers, 2 of which are used for repeat dynamic deployment configured from a JSON file.
-    One of these servers also uses an SQLite database which holds all of the data related to
+    The solution was developed using the Node.JS framework and consists of 3, a minimum of
+    3 servers, 2 of which are used for repeat dynamic deployments, each configured from a JSON file.
+    One of the servers also uses an SQLite database which holds all of the data related to
     the deployment of a single company.<br><br>
     Integration support has been put in to integrate blockchain technology to track the
     transactions over each company deployment. The idea was to ensure maximum transparency
-    of a company's documentation, which would be achieved with blockchains.`;
+    of a company's documentation, which would be achieved with the blockchains.`;
 
     item.innerHTML = AddItem(
       [
