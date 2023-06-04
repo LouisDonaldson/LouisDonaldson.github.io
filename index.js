@@ -11,7 +11,7 @@ window.addEventListener("DOMContentLoaded", () => {
 function LazyLoadingAboutMe(parent) {
   const LoadAboutMeUI = (element) => {
     const see_my_work_btn = `
-    <button class="btn btn-outline-primary mt-3">See my work.</button>`;
+    <a href="#portfolio"><button class="btn btn-outline-primary mt-3 work_btn">See my work.</button></a>`;
 
     const about_me_description = `My name is Louis Donaldson and I'm a Computer Science student studying a Masters Degree at the University of Hull. I'm an aspiring Web Developer and have relevant experience in the field, including extensive knowledge in JS, CSS and HTML. I am proficient in back-end technologies such as Node.JS and ASP.NET.
       <br><br> I'm laid-back in nature. However, I am an extremely hard-working individual who is very driven and dedicated. Alongside my University Studies I was working 3 jobs concurrently. I also have great time management skills as well as good interpersonal skills. I work very well in a team environment as well as having a high motivation to learn new skills.`;
@@ -54,6 +54,7 @@ function LazyLoadingAboutMe(parent) {
         setTimeout(() => {
           element.scrollIntoView();
         }, 700);
+
         // element.scrollIntoView();
       });
 
