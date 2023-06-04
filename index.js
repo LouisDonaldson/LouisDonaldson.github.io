@@ -153,7 +153,7 @@ async function LoadPortfolioCarousel() {
     lightweight cloud storage solution aimed at businesses for the secure storage
     of company documentation.<br><br>
     The solution utilises complex encryption which makes use of both AES and RSA 
-    encryption, allowing the storage of the symmetric and asymmetric keys within the 
+    encryption, allowing the safe storage of the symmetric and asymmetric keys within the 
     database attached alongside each user's data.<br><br>
     The solution was developed using the Node.JS framework and consists of 3 a minimum of
     3 servers, 2 of which are used for repeat dynamic deployment configured from a JSON file.
