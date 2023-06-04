@@ -180,10 +180,12 @@ body{
 
 .portfolio_item>.portfolio_images{
     overflow-y: auto;
-    max-height: 300px;
+    max-height: 40vh;
+    width: 100%;
+    max-width: 600px;
 }
 
 .portfolio_image>.img{
-    max-width: 50vw;
+    /* max-width: 50vw; */
     width: 100%;
 }
