@@ -24,11 +24,11 @@ function LazyLoadingAboutMe(parent) {
     Press Association developing countless web-tools to pull data from their 
     extensive Sports Data API which has given me great insight into how data 
     is handled withing a multi-national company.<br><br>
-    In my spare time I enjoy programming, playing video-games, playing guitar, 
-    riding motorbikes and being with friends and family.<br><br>
     As an individual I value other people's opinions and can work well as part of a team.
     I also have the ability to work independently if neccessary with the flexibility
-    to adapt to requirements. 
+    to adapt to requirements.
+    In my spare time I enjoy programming, playing video-games, playing guitar, 
+    riding motorbikes and being with friends and family.<br><br>
     <br>
     ${see_my_work_btn}`;
     element.innerHTML = `
