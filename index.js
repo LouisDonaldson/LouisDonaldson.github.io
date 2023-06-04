@@ -44,6 +44,7 @@ function LazyLoadingAboutMe(parent) {
       const more_btn = about_me_section.querySelector(".more_btn");
       more_btn.addEventListener("click", () => {
         about_me_span.innerHTML = `<span class="tracking-in-expand">${additional_about_me_description}</span>`;
+        element.scrollIntoView();
       });
 
       element.scrollIntoView();
