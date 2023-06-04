@@ -26,9 +26,9 @@ function LazyLoadingAboutMe(parent) {
     is handled withing a multi-national company.<br><br>
     As an individual I value other people's opinions and can work well as part of a team.
     I also have the ability to work independently if neccessary with the flexibility
-    to adapt to requirements.
+    to adapt to requirements.<br><br>
     In my spare time I enjoy programming, playing video-games, playing guitar, 
-    riding motorbikes and being with friends and family.<br><br>
+    riding motorbikes and being with friends and family.
     <br>
     ${see_my_work_btn}`;
     element.innerHTML = `
