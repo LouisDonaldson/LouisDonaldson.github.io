@@ -23,7 +23,7 @@ function LazyLoadingAboutMe(parent) {
     unique communication abilities. As well as this I currently work at the 
     Press Association developing countless web-tools to pull data from their 
     extensive Sports Data API which has given me great insight into how data 
-    is handled withing a multi-national company.<br><br>
+    is handled within a multi-national company.<br><br>
     As an individual I value other people's opinions and can work well as part of a team.
     I also have the ability to work independently if neccessary with the flexibility
     to adapt to requirements.<br><br>
