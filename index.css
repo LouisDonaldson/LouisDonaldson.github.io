@@ -133,3 +133,7 @@ body{
 #about_me>.about_me_text>span{
     animation: tracking-in-expand 0.25s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
 }
+
+.about_me_description{
+        animation: tracking-in-expand 0.25s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+}

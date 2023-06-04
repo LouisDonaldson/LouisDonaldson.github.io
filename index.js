@@ -12,6 +12,18 @@ function LazyLoadingAboutMe(parent) {
   const LoadAboutMeUI = (element) => {
     const about_me_description = `My name is Louis Donaldson and I'm a Computer Science student studying a Masters Degree at the University of Hull. I'm an aspiring Web Developer and have relevant experience in the field, including extensive knowledge in JS, CSS and HTML. I am proficient in back-end technologies such as Node.JS and ASP.NET.
       <br><br> I'm laid-back in nature. However, I am an extremely hard-working individual who is very driven and dedicated. Alongside my University Studies I was working 3 jobs concurrently. I also have great time management skills as well as good interpersonal skills. I work very well in a team environment as well as having a high motivation to learn new skills.`;
+
+    const additional_about_me_description = `
+    At the moment I tutor Computer Science to an individual with SEN 
+    which has given me an insight into diversity of individuals. 
+    This has allowed me to develop skills such as adaptability and 
+    unique communication abilities. As well as this I currently work at the 
+    Press Association developing countless web-tools to pull data from their 
+    extensive Sports Data API which has given me great insight into how data 
+    is handled withing a multi-national company.<br><br>
+    In my spare time I enjoy programming, playing guitar, riding motorbikes 
+    and being with friends.
+    `;
     element.innerHTML = `
     <div class="title h1">
         About me.
@@ -21,9 +33,19 @@ function LazyLoadingAboutMe(parent) {
     setTimeout(() => {
       const about_me_section = element.querySelector(".about_me_text");
       about_me_section.innerHTML = `
-      <span>${about_me_description}<br>
-      <button class="btn btn-outline-primary mt-3 d-sm-none">More</button>
+      <span class="about_me_description">${about_me_description}<br>
+      <button class="btn btn-outline-primary mt-3 d-sm-none more_btn">More</button>
+      <span class="d-none d-sm-block"><br>${additional_about_me_description}</span>
       </span>`;
+
+      const about_me_span = about_me_section.querySelector(
+        ".about_me_description"
+      );
+      const more_btn = about_me_section.querySelector(".more_btn");
+      more_btn.addEventListener("click", () => {
+        about_me_span.innerHTML = `<span class="tracking-in-expand">${additional_about_me_description}</span>`;
+      });
+
       element.scrollIntoView();
     }, 1000);
   };
