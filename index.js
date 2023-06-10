@@ -115,7 +115,7 @@ async function LoadPortfolioCarousel() {
       <div class="portfolio_images mb-4">
       </div>
       <div class="portfolio_text px-3">
-        <div class="item_title h1">
+        <div class="item_title h2">
           ${title}
         </div>
         <div class="item_description">
