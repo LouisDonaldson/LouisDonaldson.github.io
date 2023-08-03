@@ -176,6 +176,7 @@ try {
             <div class="meals_header">Meals</div>
             <div class="meals_list">
                 <div class="meal_placeholder">To get started click the + button at the bottom of the screen.</div>
+                <div class="meal_placeholder">If you have any allergies on specific days, flag them with the ! button on the bottom of the screen.</div>
             </div>
         </div>`;
 
