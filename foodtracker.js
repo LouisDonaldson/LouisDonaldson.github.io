@@ -133,6 +133,10 @@ class UiHandler {
   DisplayDay(day) {
     // markup for header bar
     // dynamic date selection
+    const RefreshDay = () => {
+      this.DisplayDay(day);
+    };
+
     const header_markup = async (parent) => {
       // formatting date for display
       const split_date = day.date.split("/");
@@ -165,7 +169,15 @@ class UiHandler {
       });
     };
 
-    const main_markup = async (parent) => {};
+    const main_markup = async (parent) => {
+      parent.innerHTML = `
+        <div class="meals_section">
+            <div class="meals_header">Meals</div>
+            <div class="meals_list">
+                <div class="meal_placeholder">To get started click the + button at the bottom of the screen.</div>
+            </div>
+        </div>`;
+    };
 
     this.startingMarkup = document.createElement("div");
     this.startingMarkup.innerHTML = `
