@@ -38,111 +38,112 @@ const testEndpointTwo = async (value) => {
     console.error(error);
   }
 };
-let storageHandler;
-let ui_handler;
-window.addEventListener("DOMContentLoaded", () => {
-  storageHandler = new StorageHandler();
-  if (!storageHandler.DataStored()) {
-    storageHandler.CreateNewInstance(
-      //   window.prompt("Enter desired daily calorie intake.")
-      0
-    );
-  }
-  ui_handler = new UiHandler();
-});
-
-//#region Storage Handler
-class StorageHandler {
-  constructor() {
-    this.stored_data_json = localStorage.getItem("data");
-    this.stored_data = JSON.parse(this.stored_data_json);
-  }
-  Save() {
-    const data_to_save = JSON.stringify(this.stored_data);
-    localStorage.setItem("data", data_to_save);
-  }
-  DataStored() {
-    if (!this.stored_data_json) {
-      return false;
-    } else {
-      return true;
+try {
+  let storageHandler;
+  let ui_handler;
+  window.addEventListener("DOMContentLoaded", () => {
+    storageHandler = new StorageHandler();
+    if (!storageHandler.DataStored()) {
+      storageHandler.CreateNewInstance(
+        //   window.prompt("Enter desired daily calorie intake.")
+        0
+      );
     }
-  }
-  CreateNewInstance(calorie_intake) {
-    localStorage.setItem(
-      "data",
-      JSON.stringify({
-        desired_calorie_intake: calorie_intake,
-        days: [
-          {
-            date: new Date().toLocaleDateString(),
-            macros: {
-              calories: 0,
-              fats: 0,
-              carbs: 0,
-              protein: 0,
-            },
-            meals: [],
-            allergy_attack: false,
-          },
-        ],
-      })
-    );
-    this.stored_data_json = localStorage.getItem("data");
-    this.stored_data = JSON.parse(this.stored_data_json);
-  }
-  AddNewDay(day) {
-    this.stored_data.days.push(day);
-    this.Save();
-    return day;
-  }
-  GetDayData(date_wanted) {
-    // const today = new Date().toLocaleDateString();
-    for (const day of this.stored_data.days) {
-      if (day.date == date_wanted.toLocaleDateString()) {
-        return day;
+    ui_handler = new UiHandler();
+  });
+
+  //#region Storage Handler
+  class StorageHandler {
+    constructor() {
+      this.stored_data_json = localStorage.getItem("data");
+      this.stored_data = JSON.parse(this.stored_data_json);
+    }
+    Save() {
+      const data_to_save = JSON.stringify(this.stored_data);
+      localStorage.setItem("data", data_to_save);
+    }
+    DataStored() {
+      if (!this.stored_data_json) {
+        return false;
+      } else {
+        return true;
       }
     }
-    return this.AddNewDay(new Day(date_wanted.toLocaleDateString()));
-    // this.stored_data.days.push(new Day());
+    CreateNewInstance(calorie_intake) {
+      localStorage.setItem(
+        "data",
+        JSON.stringify({
+          desired_calorie_intake: calorie_intake,
+          days: [
+            {
+              date: new Date().toLocaleDateString(),
+              macros: {
+                calories: 0,
+                fats: 0,
+                carbs: 0,
+                protein: 0,
+              },
+              meals: [],
+              allergy_attack: false,
+            },
+          ],
+        })
+      );
+      this.stored_data_json = localStorage.getItem("data");
+      this.stored_data = JSON.parse(this.stored_data_json);
+    }
+    AddNewDay(day) {
+      this.stored_data.days.push(day);
+      this.Save();
+      return day;
+    }
+    GetDayData(date_wanted) {
+      // const today = new Date().toLocaleDateString();
+      for (const day of this.stored_data.days) {
+        if (day.date == date_wanted.toLocaleDateString()) {
+          return day;
+        }
+      }
+      return this.AddNewDay(new Day(date_wanted.toLocaleDateString()));
+      // this.stored_data.days.push(new Day());
+    }
   }
-}
 
-class Day {
-  constructor(date = new Date().toLocaleDateString()) {
-    this.date = date;
-    this.macros = {
-      calories: 0,
-      fats: 0,
-      carbs: 0,
-      protein: 0,
-    };
-    this.meals = [];
-    this.allergy_attack = false;
+  class Day {
+    constructor(date = new Date().toLocaleDateString()) {
+      this.date = date;
+      this.macros = {
+        calories: 0,
+        fats: 0,
+        carbs: 0,
+        protein: 0,
+      };
+      this.meals = [];
+      this.allergy_attack = false;
+    }
   }
-}
-//#endregion
+  //#endregion
 
-//#region ui_handler
-class UiHandler {
-  constructor() {
-    const today = storageHandler.GetDayData(new Date());
-    this.DisplayDay(today);
-  }
+  //#region ui_handler
+  class UiHandler {
+    constructor() {
+      const today = storageHandler.GetDayData(new Date());
+      this.DisplayDay(today);
+    }
 
-  DisplayDay(day) {
-    // markup for header bar
-    // dynamic date selection
-    const RefreshDay = () => {
-      this.DisplayDay(day);
-    };
+    DisplayDay(day) {
+      // markup for header bar
+      // dynamic date selection
+      const RefreshDay = () => {
+        this.DisplayDay(day);
+      };
 
-    const header_markup = async (parent) => {
-      // formatting date for display
-      const split_date = day.date.split("/");
-      const display_date = `${split_date[1]}/${split_date[0]}/${split_date[2]}`;
+      const header_markup = async (parent) => {
+        // formatting date for display
+        const split_date = day.date.split("/");
+        const display_date = `${split_date[1]}/${split_date[0]}/${split_date[2]}`;
 
-      parent.innerHTML = `
+        parent.innerHTML = `
         <div class="arrow_left">
             <svg xmlns="http://www.w3.org/2000/svg" fill="white" class="bi bi-chevron-left" viewBox="0 0 16 16">
                 <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
@@ -155,32 +156,34 @@ class UiHandler {
             </svg>
         </div>`;
 
-      const left_arrow = parent.querySelector(".arrow_left");
-      left_arrow.addEventListener("click", () => {
-        let selected_date = new Date(day.date);
-        selected_date.setDate(selected_date.getDate() - 1);
-        this.DisplayDay(storageHandler.GetDayData(selected_date));
-      });
-      const right_arrow = parent.querySelector(".arrow_right");
-      right_arrow.addEventListener("click", () => {
-        let selected_date = new Date(day.date);
-        selected_date.setDate(selected_date.getDate() + 1);
-        this.DisplayDay(storageHandler.GetDayData(selected_date));
-      });
-    };
+        const left_arrow = parent.querySelector(".arrow_left");
+        left_arrow.addEventListener("click", () => {
+          let selected_date = new Date(day.date);
+          selected_date.setDate(selected_date.getDate() - 1);
+          this.DisplayDay(storageHandler.GetDayData(selected_date));
+        });
+        const right_arrow = parent.querySelector(".arrow_right");
+        right_arrow.addEventListener("click", () => {
+          let selected_date = new Date(day.date);
+          selected_date.setDate(selected_date.getDate() + 1);
+          this.DisplayDay(storageHandler.GetDayData(selected_date));
+        });
+      };
 
-    const main_markup = async (parent) => {
-      parent.innerHTML = `
+      const main_markup = async (parent) => {
+        parent.innerHTML = `
         <div class="meals_section">
             <div class="meals_header">Meals</div>
             <div class="meals_list">
                 <div class="meal_placeholder">To get started click the + button at the bottom of the screen.</div>
             </div>
         </div>`;
-    };
 
-    this.startingMarkup = document.createElement("div");
-    this.startingMarkup.innerHTML = `
+        const meal_list = parent.querySelector(".meals_list");
+      };
+
+      this.startingMarkup = document.createElement("div");
+      this.startingMarkup.innerHTML = `
         <div class="header">
         </div>
         <div class="main">
@@ -201,12 +204,17 @@ class UiHandler {
         </div>
         `;
 
-    // edit markup in here from this point
-    this.body_tag = document.querySelector("#body");
-    this.body_tag.innerHTML = this.startingMarkup.innerHTML;
+      // edit markup in here from this point
+      this.body_tag = document.querySelector("#body");
+      this.body_tag.innerHTML = this.startingMarkup.innerHTML;
 
-    header_markup(this.body_tag.querySelector(".header"));
-    main_markup(this.body_tag.querySelector(".main"));
+      header_markup(this.body_tag.querySelector(".header"));
+      main_markup(this.body_tag.querySelector(".main"));
+    }
   }
+  //#endregion
+} catch (e) {
+  document.body.inner = `
+    ${e}`;
+  throw e;
 }
-//#endregion
