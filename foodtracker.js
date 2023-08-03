@@ -88,20 +88,23 @@ class StorageHandler {
         ],
       })
     );
-  }
-  GetTodaysData() {
-    const today = new Date().toLocaleDateString();
-    for (const day of this.stored_data.days) {
-      if (day.date == today) {
-        return day;
-      }
-    }
-    AddNewDay(new Day());
-    // this.stored_data.days.push(new Day());
+    this.stored_data_json = localStorage.getItem("data");
+    this.stored_data = JSON.parse(this.stored_data_json);
   }
   AddNewDay(day) {
     this.stored_data.days.push(day);
-    Save();
+    this.Save();
+    return day;
+  }
+  GetDayData(date_wanted) {
+    // const today = new Date().toLocaleDateString();
+    for (const day of this.stored_data.days) {
+      if (day.date == date_wanted.toLocaleDateString()) {
+        return day;
+      }
+    }
+    return this.AddNewDay(new Day(date_wanted.toLocaleDateString()));
+    // this.stored_data.days.push(new Day());
   }
 }
 
@@ -123,15 +126,19 @@ class Day {
 //#region ui_handler
 class UiHandler {
   constructor() {
-    const initial_ui_display = async () => {
-      const header_markup = async (parent) => {
-        const today = storageHandler.GetTodaysData();
+    const today = storageHandler.GetDayData(new Date());
+    this.DisplayDay(today);
+  }
 
-        // formatting date for display
-        const split_date = today.date.split("/");
-        const display_date = `${split_date[1]}/${split_date[0]}/${split_date[2]}`;
+  DisplayDay(day) {
+    // markup for header bar
+    // dynamic date selection
+    const header_markup = async (parent) => {
+      // formatting date for display
+      const split_date = day.date.split("/");
+      const display_date = `${split_date[1]}/${split_date[0]}/${split_date[2]}`;
 
-        parent.innerHTML = `
+      parent.innerHTML = `
         <div class="arrow_left">
             <svg xmlns="http://www.w3.org/2000/svg" fill="white" class="bi bi-chevron-left" viewBox="0 0 16 16">
                 <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
@@ -143,10 +150,25 @@ class UiHandler {
                 <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
             </svg>
         </div>`;
-      };
 
-      this.startingMarkup = document.createElement("div");
-      this.startingMarkup.innerHTML = `
+      const left_arrow = parent.querySelector(".arrow_left");
+      left_arrow.addEventListener("click", () => {
+        let selected_date = new Date(day.date);
+        selected_date.setDate(selected_date.getDate() - 1);
+        this.DisplayDay(storageHandler.GetDayData(selected_date));
+      });
+      const right_arrow = parent.querySelector(".arrow_right");
+      right_arrow.addEventListener("click", () => {
+        let selected_date = new Date(day.date);
+        selected_date.setDate(selected_date.getDate() + 1);
+        this.DisplayDay(storageHandler.GetDayData(selected_date));
+      });
+    };
+
+    const main_markup = async (parent) => {};
+
+    this.startingMarkup = document.createElement("div");
+    this.startingMarkup.innerHTML = `
         <div class="header">
         </div>
         <div class="main">
@@ -167,13 +189,12 @@ class UiHandler {
         </div>
         `;
 
-      this.body_tag = document.querySelector("#body");
-      this.body_tag.innerHTML = this.startingMarkup.innerHTML;
+    // edit markup in here from this point
+    this.body_tag = document.querySelector("#body");
+    this.body_tag.innerHTML = this.startingMarkup.innerHTML;
 
-      header_markup(this.body_tag.querySelector(".header"));
-    };
-
-    initial_ui_display();
+    header_markup(this.body_tag.querySelector(".header"));
+    main_markup(this.body_tag.querySelector(".main"));
   }
 }
 //#endregion
