@@ -1,9 +1,16 @@
 html{
     font-family: "Poppins";
+    --background-colour: #F4F1DE;
+    --red :#e07a5f;
+    --purple: #3d405b;
+    --green: #81b29a;
+    --yellow: #f2cc8f;
 }
 
 body{
+    background-color: var(--background-colour) !important;
     /* background: rgb(84, 80, 152);
+    
     background: linear-gradient(45deg, rgba(84, 80, 152, 1) 0%, rgba(0, 255, 222, 1) 100%); */
     position: relative;
     height: 100vh;
@@ -15,54 +22,83 @@ body{
 }
 
 .header{
-    background-color: black;
+    background-color: var(--green);    
     display: flex;
-    height: 10vh;
+    height: 7.5vh;
     width: 100vw;
+    justify-content: center;
+    align-items: center;
+    border-bottom: solid 1pt lightgrey;
+    
+}
+
+.header>div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50%;
+}
+
+.header>div>svg {
+   height: 100%;
+}
+
+.header>.date {
+    color: white;
+    font-size: 20pt;
+    margin: 0px 10px;
+    margin-bottom: 5px;
 }
 
 .main{
     display: flex;
-    height: 90vh;
+    height: 85vh;
     width: 100vw;
 }
 
 .footer{
-    background-color: white;
+    background-color: var(--green);
     display: flex;
-    height: 10vh;
+    height: 7.5vh;
     width: 100vw;
     border-top: solid 1pt lightgrey;
-}
-
-.footer>.tab{
-    display: flex;
-    height: 100%;
-    width: 100%;
     justify-content: center;
     align-items: center;
 }
 
-.tab{
-    /* mask-image: url(./images/book.svg);
-    mask-repeat: no-repeat;
-    -webkit-mask-image: url(./images/book.svg);
-    -webkit-mask-repeat: no-repeat;
-    height: 50%;
-    width: 50%;
-    background: linear-gradient(45deg, rgba(84, 80, 152, 1) 0%, rgba(0, 255, 222, 1) 100%); */
-    /* -webkit-mask-image: url(w3logo.png);
-        mask-image: url(w3logo.png);
-        -webkit-mask-size: 70%;
-        mask-size: 70%;
-        -webkit-mask-repeat: no-repeat;
-        mask-repeat: no-repeat; */
-        /* display: flex;
-        justify-content: center;
-        align-items: center; */
-        /* padding: 50%; */
+.tabs{
+    margin-top: -7.5vh;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
 }
 
-.tab>img{
-    height: 50%;
+.tabs>div{
+    width: 50px;
+    height: 50px;
+    background-color: #3d405b;
+    border-radius: 100%;
+    margin: 0px 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }
+
+.tabs>div>svg {
+    fill: #ffffff;
+    height: 100%;
+}
+
+.tabs>.plus{
+    background-color: var(--red);
+    
+}
+
+.flag>svg {
+    /* background-color: var(--red); */
+    height: 90% !important;
+}
+
