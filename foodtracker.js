@@ -134,6 +134,33 @@ try {
     DisplayDay(day) {
       // markup for header bar
       // dynamic date selection
+
+      this.startingMarkup = document.createElement("div");
+      this.startingMarkup.innerHTML = `
+        <div class="header">
+        </div>
+        <div class="main">
+        </div>
+        <div class="footer">
+            <div class="tabs">
+                <div class="plus">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="white" class="" viewBox="0 0 16 16">
+                        <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                    </svg>
+                </div>
+                <div class="flag">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="white" class="" viewBox="0 0 16 16">
+                        <path d="M7.005 3.1a1 1 0 1 1 1.99 0l-.388 6.35a.61.61 0 0 1-1.214 0L7.005 3.1ZM7 12a1 1 0 1 1 2 0 1 1 0 0 1-2 0Z"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+        `;
+
+      // edit markup in here from this point
+      this.body_tag = document.querySelector("#body");
+      this.body_tag.innerHTML = this.startingMarkup.innerHTML;
+
       const RefreshDay = () => {
         this.DisplayDay(day);
       };
@@ -183,34 +210,51 @@ try {
         const meal_list = parent.querySelector(".meals_list");
       };
 
-      this.startingMarkup = document.createElement("div");
-      this.startingMarkup.innerHTML = `
-        <div class="header">
-        </div>
-        <div class="main">
-        </div>
-        <div class="footer">
+      const footerButtonEventListeners = (add_btn, flag_btn) => {
+        add_btn.addEventListener("click", () => {
+          ui_handler.DisplayMealSelection(day, this.body_tag);
+        });
+      };
+
+      header_markup(this.body_tag.querySelector(".header"));
+      main_markup(this.body_tag.querySelector(".main"));
+      footerButtonEventListeners(
+        this.body_tag.querySelector(".plus"),
+        this.body_tag.querySelector(".flag")
+      );
+    }
+    DisplayMealSelection(day, body) {
+      const NewMealIntialView = () => {
+        const initial_markup = `
+      <div class="new_meal_section"></div>
+      <div class="footer">
             <div class="tabs">
                 <div class="plus">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="white" class="bi bi-plus plus" viewBox="0 0 16 16">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="white" class="" viewBox="0 0 16 16">
                         <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
                     </svg>
                 </div>
                 <div class="flag">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="white" class="bi bi-exclamation-lg flag" viewBox="0 0 16 16">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="white" class="" viewBox="0 0 16 16">
                         <path d="M7.005 3.1a1 1 0 1 1 1.99 0l-.388 6.35a.61.61 0 0 1-1.214 0L7.005 3.1ZM7 12a1 1 0 1 1 2 0 1 1 0 0 1-2 0Z"/>
                     </svg>
                 </div>
             </div>
+        </div>`;
+        body.innerHTML = initial_markup;
+
+        body.querySelector(".new_meal_section").innerHTML = `
+      <div class="search_box">
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" placeholder="Enter a food name." aria-label="Recipient's username" aria-describedby="search_btn">
+          <button class="btn btn-outline-secondary" type="button" id="search_btn">Search</button>
+          <div class="search_help">Enter a name of a food that you've eaten today and pick from a template of recipes for customisation, or start a new meal from scratch.</div>
         </div>
-        `;
+      </div>
+      `;
+      };
 
-      // edit markup in here from this point
-      this.body_tag = document.querySelector("#body");
-      this.body_tag.innerHTML = this.startingMarkup.innerHTML;
-
-      header_markup(this.body_tag.querySelector(".header"));
-      main_markup(this.body_tag.querySelector(".main"));
+      NewMealIntialView();
     }
   }
   //#endregion

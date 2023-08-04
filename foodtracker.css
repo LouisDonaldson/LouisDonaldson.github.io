@@ -140,3 +140,27 @@ body{
     height: 90% !important;
 }
 
+.new_meal_section{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    /* justify-content: center; */
+    align-items: flex-start;
+    padding: 10px;
+}
+
+.new_meal_section>.search_box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#search_btn{
+     background-color: var(--yellow);
+    border-radius: 0px 5px 5px 0px;
+}
+
+.search_help{
+    color: var(--grey);
+}
+
