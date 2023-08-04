@@ -96,7 +96,6 @@ body{
     position: fixed;
     bottom: 0;
     margin-bottom: -2px;
-    /* box-shadow: 0px -6px 18px 7px var(--grey); */
 }
 
 .tabs{
@@ -261,5 +260,128 @@ body{
 
 .accent_help{
     color: var(--grey);
+}
+
+.edit_btn{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    background-color: var(--yellow);
+    border-radius: 5px;
+    /* margin-bottom: 2.5px; */
+    color: white;
+    transition: 0.25s;
+    margin-bottom: 5px;
+}
+
+.edit_btn:hover{
+    background-color: var(--grey);
+    margin-top: 10px;
+    color: white;
+    transition: 0.5s;
+}
+
+.edit_meal_section{
+    display: flex;
+    height: calc(100% - 7.5vh);
+    width: 100%;
+    /* justify-content: center; */
+    align-items: flex-start;
+    padding: 10px;
+    flex-direction: column;
+}
+
+.tick>svg {
+    fill: #ffffff;
+    height: 80% !important;
+}
+
+.edit_meal_title{
+    font-size: 20pt;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+    border-bottom: solid 1pt var(--green);
+    width: 100%;
+    display: flex;
+}
+
+#title_input{
+    width: 100%;
+}
+
+.title_input_div{
+    padding-bottom: 5px;
+        margin-bottom: 5px;
+        border-bottom: solid 1pt var(--green);
+}
+
+.edit_ingredients_div{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.edit_ingredients_title{
+    margin-bottom: 10px;
+}
+
+.editable_ingredients{
+    /* max-height: calc(100% - 15vh); */
+    overflow-y: auto;
+    width: 100%;
+    height: 50vh;
+    overflow-x: hidden;
+}
+
+.add_new_ingredient_button{
+    background-color: var(--purple);
+    border-radius: 5px;
+    border: solid 1pt var(--grey);
+    height: 25px;
+    display: inline-flex;
+}
+
+.add_new_ingredient_button>svg{
+    height: 100%;
+    
+}
+
+.ingredient_input_div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.remove_ingredient_div{
+    height: 100%;
+    width: 30px;
+    margin-right: 5px;
+}
+
+
+.remove_ingredient_div>svg{
+    fill: var(--purple);
+}
+
+.delete_meal_btn {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    background-color: var(--red);
+    border-radius: 5px;
+    /* margin-bottom: 2.5px; */
+    color: white;
+    transition: 0.25s;
+}
+
+.delete_meal_btn:hover {
+    background-color: var(--grey);
+    margin-top: 10px;
+    color: white;
+    transition: 0.5s;
 }
 

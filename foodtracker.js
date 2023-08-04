@@ -1,48 +1,13 @@
 // https://rapidapi.com/apidojo/api/tasty
 
-const testEndpoint = async () => {
-  const url = `https://tasty.p.rapidapi.com/recipes/auto-complete?prefix=${"carbonara"}`;
-  const options = {
-    method: "GET",
-    headers: {
-      "X-RapidAPI-Key": "53ce3638a9mshb0c4fe33d0cfca9p1100ffjsnf7abe9c081b3",
-      "X-RapidAPI-Host": "tasty.p.rapidapi.com",
-    },
-  };
-
-  try {
-    const response = await fetch(url, options);
-    const result = await response.json();
-    return result;
-  } catch (error) {
-    console.error(error);
-  }
-};
-
-const testEndpointTwo = async (value) => {
-  const url = `https://tasty.p.rapidapi.com/recipes/list?from=0&size=20&q=${value}`;
-  const options = {
-    method: "GET",
-    headers: {
-      "X-RapidAPI-Key": "53ce3638a9mshb0c4fe33d0cfca9p1100ffjsnf7abe9c081b3",
-      "X-RapidAPI-Host": "tasty.p.rapidapi.com",
-    },
-  };
-
-  try {
-    const response = await fetch(url, options);
-    const result = await response.json();
-    console.log(result);
-  } catch (error) {
-    console.error(error);
-  }
-};
 try {
   let storageHandler;
   let ui_handler;
   let api_handler;
+
+  const dev_mode = false;
   window.addEventListener("DOMContentLoaded", () => {
-    api_handler = new ApiHandler(true);
+    api_handler = new ApiHandler(dev_mode);
     storageHandler = new StorageHandler();
     if (!storageHandler.DataStored()) {
       storageHandler.CreateNewInstance(
@@ -198,6 +163,7 @@ try {
         this.DisplayDay(day);
       };
 
+      // date and navigation arrows
       const header_markup = async (parent) => {
         // formatting date for display
         const split_date = day.date.split("/");
@@ -230,6 +196,7 @@ try {
         });
       };
 
+      // meals are displayed here
       const main_markup = async (parent) => {
         parent.innerHTML = `
         <div class="meals_section">
@@ -244,10 +211,10 @@ try {
         if (day.meals.length > 0) {
           meal_list.innerHTML = ``;
         }
-        for (const meal of day.meals) {
+        day.meals.forEach((meal) => {
           const GetIngredientsHTML = () => {
             const div = document.createElement("ul");
-            for (const component of meal?.ingredients) {
+            for (let component of meal?.ingredients) {
               div.innerHTML += `
                 <li class="additional_info_li">${component}</li>`;
             }
@@ -271,12 +238,20 @@ try {
             </div>
           </div>
           <div class="recipe_additional_info d-none mt-2">
-            <div data-bs-toggle="collapse" data-bs-target="#ingredients_list" class="collapsible_recipe_info">Ingredients</div>
-            <ul id="ingredients_list" class="collapse">
+            ${
+              meal?.ingredients.length > 0
+                ? `
+                <div data-bs-toggle="collapse" data-bs-target="#ingredients_list" class="collapsible_recipe_info">Ingredients</div>
+                <ul id="ingredients_list" class="collapse">
               ${GetIngredientsHTML()}
-            </ul>
-            <div class="add_to_your_day_btn">
+            </ul>`
+                : ""
+            }
+            <div class="edit_btn">
               Edit
+            </div>
+            <div class="delete_meal_btn">
+              Delete
             </div>
           </div>
           `;
@@ -306,21 +281,29 @@ try {
             }
           });
 
-          const add_to_your_day_btn = meal_div.querySelector(
-            ".add_to_your_day_btn"
-          );
+          const edit = meal_div.querySelector(".edit_btn");
 
-          add_to_your_day_btn.addEventListener("click", () => {
-            // const new_meal = new Meal();
-            // new_meal.ConfigureMealFromTemplate(result);
-            // storageHandler.AddNewMeal(day, new_meal);
-            // ui_handler.DisplayDay(day);
+          const delete_btn = meal_div.querySelector(".delete_meal_btn");
+          delete_btn.addEventListener("click", () => {
+            day.meals = day.meals.filter((comp_meal) => {
+              if (comp_meal.title == meal.title) {
+                return false;
+              }
+              return true;
+            });
+            storageHandler.Save();
+            this.DisplayDay(day);
+          });
+
+          edit.addEventListener("click", () => {
+            ui_handler.EditMeal(day, meal);
           });
 
           meal_list.appendChild(meal_div);
-        }
+        });
       };
 
+      // footer buttons
       const footerButtonEventListeners = (add_btn, flag_btn) => {
         add_btn.addEventListener("click", () => {
           ui_handler.DisplayMealSelection(day, this.body_tag);
@@ -541,6 +524,114 @@ try {
                 search_input.value
               );
             });
+        });
+      };
+
+      NewMealIntialView();
+    }
+    EditMeal(day, meal) {
+      const SaveState = () => {
+        storageHandler.Save();
+      };
+
+      const NewMealIntialView = () => {
+        const initial_markup = `
+        <div class="edit_meal_section"></div>
+        <div class="footer">
+          <div class="tabs">
+            <div class="plus">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="white" style="transform: rotate(45deg);" viewBox="0 0 16 16">
+                    <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                </svg>
+            </div>
+            <div class="tick">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="white" class="" viewBox="0 0 16 16">
+                    <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/>
+                </svg>
+            </div>
+          </div>
+        </div>`;
+        body.innerHTML = initial_markup;
+        const cancel_btn = body.querySelector(".plus");
+        cancel_btn.addEventListener("click", () => {
+          this.DisplayDay(day);
+        });
+
+        const tick_save_btn = body.querySelector(".tick");
+        tick_save_btn.addEventListener("click", () => {
+          SaveState();
+          ui_handler.DisplayDay(day);
+        });
+
+        const help_text =
+          "Search for food then select a recipe template or create a new one.";
+
+        body.querySelector(".edit_meal_section").innerHTML = `
+          <div class="edit_meal_title">
+            Edit Meal
+          </div>
+          <div class="mb-3 w-100 title_input_div">
+            <label for="title_input" class="form-label">Meal title</label>
+            <input type="text" class="form-control" id="title_input" placeholder="Enter a title for your meal" value="${meal.title}">
+          </div>
+          <div class="edit_ingredients_div">
+            <div class="edit_ingredients_title">Ingredients</div>
+            <div class="editable_ingredients"></div>
+          </div>
+        `;
+
+        const edit_ingredients_div = body.querySelector(
+          ".editable_ingredients"
+        );
+
+        const add_btn = document.createElement("div");
+        add_btn.classList.add("add_new_ingredient_button");
+        add_btn.innerHTML = `
+        <svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 16 16">
+            <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+        </svg>`;
+        edit_ingredients_div.appendChild(add_btn);
+
+        add_btn.addEventListener("click", () => {
+          meal.ingredients.push("");
+          SaveState();
+          ui_handler.EditMeal(day, meal);
+        });
+
+        meal.ingredients.forEach((ingredient, index) => {
+          const ingredient_input_div = document.createElement("div");
+          ingredient_input_div.classList.add("ingredient_input_div");
+          ingredient_input_div.innerHTML = `
+          <input type="text" class="form-control ingredient_input" placeholder="Enter ingredient" value="${ingredient}">
+          <div class="remove_ingredient_div">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="white" style="transform: rotate(45deg);" viewBox="0 0 16 16">
+                <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+            </svg>
+          </div>`;
+
+          const remove_ingredient_div = ingredient_input_div.querySelector(
+            ".remove_ingredient_div"
+          );
+
+          remove_ingredient_div.addEventListener("click", () => {
+            meal.ingredients = meal.ingredients.filter((comp_ingredient) => {
+              if (comp_ingredient == ingredient) {
+                return false;
+              }
+              return true;
+            });
+            SaveState();
+            ui_handler.EditMeal(day, meal);
+          });
+
+          const ingredient_input =
+            ingredient_input_div.querySelector(".ingredient_input");
+          ingredient_input.addEventListener("change", () => {
+            meal.ingredients[index] = ingredient_input.value;
+            SaveState();
+          });
+
+          edit_ingredients_div.appendChild(ingredient_input_div);
         });
       };
 
