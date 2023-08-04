@@ -108,6 +108,10 @@ try {
       return this.AddNewDay(new Day(date_wanted.toLocaleDateString()));
       // this.stored_data.days.push(new Day());
     }
+    AddNewMeal(day, meal) {
+      day.meals.push(meal);
+      this.Save();
+    }
   }
 
   class Day {
@@ -121,6 +125,34 @@ try {
       };
       this.meals = [];
       this.allergy_attack = false;
+    }
+  }
+
+  class Meal {
+    constructor(title, ingredients = []) {
+      this.title = title;
+      this.ingredients = ingredients;
+      this.custom = true;
+    }
+
+    ConfigureMealFromTemplate(existing_recipe) {
+      const AddIngredients = () => {
+        let ingredients = [];
+        for (const section of existing_recipe?.sections) {
+          for (const component of section?.components) {
+            ingredients.push(component?.ingredient?.display_singular);
+          }
+        }
+        this.ingredients = ingredients;
+      };
+      this.title = existing_recipe?.name ?? title;
+
+      AddIngredients();
+
+      // add picture if there is one
+      this.thumbnail = existing_recipe.thumbnail_url;
+
+      this.custom = false;
     }
   }
   //#endregion
@@ -209,6 +241,84 @@ try {
         </div>`;
 
         const meal_list = parent.querySelector(".meals_list");
+        if (day.meals.length > 0) {
+          meal_list.innerHTML = ``;
+        }
+        for (const meal of day.meals) {
+          const GetIngredientsHTML = () => {
+            const div = document.createElement("ul");
+            for (const component of meal?.ingredients) {
+              div.innerHTML += `
+                <li class="additional_info_li">${component}</li>`;
+            }
+
+            return div.innerHTML;
+          };
+          const meal_div = document.createElement("div");
+
+          meal_div.innerHTML = `
+          <div class="intial_recipe_view_divs">
+            <div class="recipe_img">
+              <img src="${meal?.thumbnail ?? "./images/food-placeholder.jpg"}">
+            </div>
+            <div class="recipe_name">
+              ${meal.title}
+              ${
+                meal.custom
+                  ? `<br><span class="accent_help">Custom Meal</span>`
+                  : ""
+              }
+            </div>
+          </div>
+          <div class="recipe_additional_info d-none mt-2">
+            <div data-bs-toggle="collapse" data-bs-target="#ingredients_list" class="collapsible_recipe_info">Ingredients</div>
+            <ul id="ingredients_list" class="collapse">
+              ${GetIngredientsHTML()}
+            </ul>
+            <div class="add_to_your_day_btn">
+              Edit
+            </div>
+          </div>
+          `;
+
+          const clickable_div = meal_div.querySelector(
+            ".intial_recipe_view_divs"
+          );
+
+          const recipe_additional_info = meal_div.querySelector(
+            ".recipe_additional_info"
+          );
+
+          let active = false;
+          clickable_div.addEventListener("click", () => {
+            switch (active) {
+              case true:
+                // additional info displayed
+
+                recipe_additional_info.classList.add("d-none");
+                active = !active;
+                break;
+              case false:
+                // additional info not displayed
+                recipe_additional_info.classList.remove("d-none");
+                active = !active;
+                break;
+            }
+          });
+
+          const add_to_your_day_btn = meal_div.querySelector(
+            ".add_to_your_day_btn"
+          );
+
+          add_to_your_day_btn.addEventListener("click", () => {
+            // const new_meal = new Meal();
+            // new_meal.ConfigureMealFromTemplate(result);
+            // storageHandler.AddNewMeal(day, new_meal);
+            // ui_handler.DisplayDay(day);
+          });
+
+          meal_list.appendChild(meal_div);
+        }
       };
 
       const footerButtonEventListeners = (add_btn, flag_btn) => {
@@ -225,13 +335,74 @@ try {
       );
     }
     DisplayMealSelection(day, body) {
-      const PopulateResultsSection = (results, parent) => {
+      const PopulateResultsSection = (results, parent, intial_search) => {
         parent.innerHTML = `<div class="recipe_template">Results</div>`;
         const results_section_list = document.createElement("div");
         results_section_list.classList.add("results_section_list");
 
         parent.appendChild(results_section_list);
-        // return;
+
+        const AddCustomRecipeDiv = () => {
+          const result_div = document.createElement("div");
+          result_div.classList.add("recipe_template");
+          result_div.innerHTML = `
+          <div class="intial_recipe_view_divs">
+          <div class="recipe_img">
+              <img src="./images/food-placeholder.jpg">
+            </div>
+            <div class="recipe_name">
+              <div class="d-flex flex-column">
+                <div>${intial_search}</div>
+                <div class="accent_help">Custom meal template.</div>
+              </div>
+            </div>
+          </div>
+          <div class="recipe_additional_info d-none mt-2">
+            <div class="add_to_your_day_btn">
+              Add to your day
+            </div>
+          </div>
+          `;
+
+          const clickable_div = result_div.querySelector(
+            ".intial_recipe_view_divs"
+          );
+
+          const recipe_additional_info = result_div.querySelector(
+            ".recipe_additional_info"
+          );
+
+          let active = false;
+          clickable_div.addEventListener("click", () => {
+            switch (active) {
+              case true:
+                // additional info displayed
+
+                recipe_additional_info.classList.add("d-none");
+                active = !active;
+                break;
+              case false:
+                // additional info not displayed
+                recipe_additional_info.classList.remove("d-none");
+                active = !active;
+                break;
+            }
+          });
+
+          const add_to_your_day_btn = result_div.querySelector(
+            ".add_to_your_day_btn"
+          );
+
+          add_to_your_day_btn.addEventListener("click", () => {
+            const new_meal = new Meal(intial_search);
+            // new_meal.ConfigureMealFromTemplate(result);
+            storageHandler.AddNewMeal(day, new_meal);
+            ui_handler.DisplayDay(day);
+          });
+
+          results_section_list.appendChild(result_div);
+        };
+        AddCustomRecipeDiv();
         for (const result of results?.results) {
           const GetIngredientsHTML = () => {
             const div = document.createElement("ul");
@@ -274,6 +445,9 @@ try {
             <ul id="recipe_list" class="collapse">
               ${GetRecipeHTML()}
             </ul>
+            <div class="add_to_your_day_btn">
+              Add to your day
+            </div>
           </div>
           `;
 
@@ -302,6 +476,17 @@ try {
             }
           });
 
+          const add_to_your_day_btn = result_div.querySelector(
+            ".add_to_your_day_btn"
+          );
+
+          add_to_your_day_btn.addEventListener("click", () => {
+            const new_meal = new Meal();
+            new_meal.ConfigureMealFromTemplate(result);
+            storageHandler.AddNewMeal(day, new_meal);
+            ui_handler.DisplayDay(day);
+          });
+
           results_section_list.appendChild(result_div);
         }
       };
@@ -312,18 +497,17 @@ try {
         <div class="footer">
           <div class="tabs">
             <div class="plus">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="white" class="" viewBox="0 0 16 16">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="white" style="transform: rotate(45deg);" viewBox="0 0 16 16">
                     <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
-                </svg>
-            </div>
-            <div class="flag">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="white" class="" viewBox="0 0 16 16">
-                    <path d="M7.005 3.1a1 1 0 1 1 1.99 0l-.388 6.35a.61.61 0 0 1-1.214 0L7.005 3.1ZM7 12a1 1 0 1 1 2 0 1 1 0 0 1-2 0Z"/>
                 </svg>
             </div>
           </div>
         </div>`;
         body.innerHTML = initial_markup;
+        const cancel_btn = body.querySelector(".plus");
+        cancel_btn.addEventListener("click", () => {
+          this.DisplayDay(day);
+        });
 
         const help_text =
           "Search for food then select a recipe template or create a new one.";
@@ -351,7 +535,11 @@ try {
             .AutoCompleteRequest(search_input.value)
             .then((results) => {
               console.log(results);
-              PopulateResultsSection(results, search_results_section);
+              PopulateResultsSection(
+                results,
+                search_results_section,
+                search_input.value
+              );
             });
         });
       };
