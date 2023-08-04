@@ -152,7 +152,7 @@ body{
     align-items: flex-start;
     padding: 10px;
     flex-direction: column;
-    /* overflow-y: auto; */
+    overflow-y: hidden;
 }
 
 .new_meal_section>.search_box{
