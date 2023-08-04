@@ -1,5 +1,5 @@
 html{
-    font-family: "Poppins";
+    
     --background-colour: #F4F1DE;
     --red :#e07a5f;
     --purple: #3d405b;
@@ -9,6 +9,7 @@ html{
 }
 
 body{
+    font-family: "Poppins" !important;
     background-color: var(--background-colour) !important;
     /* background: rgb(84, 80, 152);
     
@@ -48,7 +49,7 @@ body{
     color: white;
     font-size: 20pt;
     margin: 0px 10px;
-    margin-bottom: 5px;
+    /* margin-bottom: 5px; */
 }
 
 .main{
@@ -87,11 +88,14 @@ body{
 .footer{
     background-color: var(--green);
     display: flex;
-    height: 7.5vh;
+    min-height: 7.5vh;
     width: 100vw;
     border-top: solid 1pt lightgrey;
     justify-content: center;
     align-items: center;
+    position: fixed;
+    bottom: 0;
+    margin-bottom: -2px;
 }
 
 .tabs{
@@ -147,6 +151,8 @@ body{
     /* justify-content: center; */
     align-items: flex-start;
     padding: 10px;
+    flex-direction: column;
+    /* overflow-y: auto; */
 }
 
 .new_meal_section>.search_box{
@@ -162,5 +168,72 @@ body{
 
 .search_help{
     color: var(--grey);
+}
+
+.search_results{
+    display: flex;
+    /* overflow-y: auto; */
+    /* padding-bottom: 10vh; */
+    width: 100%;
+    height: 100%;
+    align-items: flex-start;
+    /* overflow-y: auto; */
+    flex-direction: column;
+    padding-bottom: 7.5vh;
+}
+
+.results_section_list{
+    overflow-y: auto;
+    width: 100%;
+    height: 100%;
+}
+
+.recipe_template{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+    border-bottom: solid 1pt var(--green);
+    flex-direction: column;
+}
+
+.intial_recipe_view_divs{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.recipe_img>img{
+    height: 10vh;
+    width: 10vh;
+    object-fit: cover;
+    border-radius: 5px;  
+    margin-right: 5px;
+}
+
+.recipe_img {
+    
+    margin-right: 5px;
+}
+
+.recipe_additional_info{
+    border-top: solid 1pt lightgray;
+    padding-top: 5px;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+
+.collapsible_recipe_info{
+    border-bottom: solid 1pt lightgray;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+}
+
+.additional_info_li{
+    list-style:circle;
+    margin-bottom: 5px;
 }
 

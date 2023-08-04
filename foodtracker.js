@@ -13,8 +13,7 @@ const testEndpoint = async () => {
   try {
     const response = await fetch(url, options);
     const result = await response.json();
-    console.log(result);
-    testEndpointTwo(result.results[0].search_value);
+    return result;
   } catch (error) {
     console.error(error);
   }
@@ -41,7 +40,9 @@ const testEndpointTwo = async (value) => {
 try {
   let storageHandler;
   let ui_handler;
+  let api_handler;
   window.addEventListener("DOMContentLoaded", () => {
+    api_handler = new ApiHandler(true);
     storageHandler = new StorageHandler();
     if (!storageHandler.DataStored()) {
       storageHandler.CreateNewInstance(
@@ -224,42 +225,184 @@ try {
       );
     }
     DisplayMealSelection(day, body) {
+      const PopulateResultsSection = (results, parent) => {
+        parent.innerHTML = `<div class="recipe_template">Results</div>`;
+        const results_section_list = document.createElement("div");
+        results_section_list.classList.add("results_section_list");
+
+        parent.appendChild(results_section_list);
+        // return;
+        for (const result of results?.results) {
+          const GetIngredientsHTML = () => {
+            const div = document.createElement("ul");
+            for (const section of result?.sections) {
+              for (const component of section?.components) {
+                component;
+                div.innerHTML += `
+                <li class="additional_info_li">${component.raw_text}</li>`;
+              }
+            }
+            return div.innerHTML;
+          };
+
+          const GetRecipeHTML = () => {
+            const div = document.createElement("ul");
+            for (const instruction of result?.instructions) {
+              div.innerHTML += `
+              <li class="additional_info_li">${instruction.display_text}</li>`;
+            }
+            return div.innerHTML;
+          };
+
+          const result_div = document.createElement("div");
+          result_div.classList.add("recipe_template");
+          result_div.innerHTML = `
+          <div class="intial_recipe_view_divs">
+            <div class="recipe_img">
+              <img src="${result.thumbnail_url}">
+            </div>
+            <div class="recipe_name">
+              ${result.name}
+            </div>
+          </div>
+          <div class="recipe_additional_info d-none mt-2">
+            <div data-bs-toggle="collapse" data-bs-target="#ingredients_list" class="collapsible_recipe_info">Ingredients</div>
+            <ul id="ingredients_list" class="collapse">
+              ${GetIngredientsHTML()}
+            </ul>
+             <div data-bs-toggle="collapse" data-bs-target="#recipe_list" class="collapsible_recipe_info">Recipe</div>
+            <ul id="recipe_list" class="collapse">
+              ${GetRecipeHTML()}
+            </ul>
+          </div>
+          `;
+
+          const clickable_div = result_div.querySelector(
+            ".intial_recipe_view_divs"
+          );
+
+          const recipe_additional_info = result_div.querySelector(
+            ".recipe_additional_info"
+          );
+
+          let active = false;
+          clickable_div.addEventListener("click", () => {
+            switch (active) {
+              case true:
+                // additional info displayed
+
+                recipe_additional_info.classList.add("d-none");
+                active = !active;
+                break;
+              case false:
+                // additional info not displayed
+                recipe_additional_info.classList.remove("d-none");
+                active = !active;
+                break;
+            }
+          });
+
+          results_section_list.appendChild(result_div);
+        }
+      };
+
       const NewMealIntialView = () => {
         const initial_markup = `
-      <div class="new_meal_section"></div>
-      <div class="footer">
-            <div class="tabs">
-                <div class="plus">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="white" class="" viewBox="0 0 16 16">
-                        <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
-                    </svg>
-                </div>
-                <div class="flag">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="white" class="" viewBox="0 0 16 16">
-                        <path d="M7.005 3.1a1 1 0 1 1 1.99 0l-.388 6.35a.61.61 0 0 1-1.214 0L7.005 3.1ZM7 12a1 1 0 1 1 2 0 1 1 0 0 1-2 0Z"/>
-                    </svg>
-                </div>
+        <div class="new_meal_section"></div>
+        <div class="footer">
+          <div class="tabs">
+            <div class="plus">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="white" class="" viewBox="0 0 16 16">
+                    <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                </svg>
             </div>
+            <div class="flag">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="white" class="" viewBox="0 0 16 16">
+                    <path d="M7.005 3.1a1 1 0 1 1 1.99 0l-.388 6.35a.61.61 0 0 1-1.214 0L7.005 3.1ZM7 12a1 1 0 1 1 2 0 1 1 0 0 1-2 0Z"/>
+                </svg>
+            </div>
+          </div>
         </div>`;
         body.innerHTML = initial_markup;
 
+        const help_text =
+          "Search for food then select a recipe template or create a new one.";
+
         body.querySelector(".new_meal_section").innerHTML = `
-      <div class="search_box">
-        <div class="input-group mb-3">
-          <input type="text" class="form-control" placeholder="Enter a food name." aria-label="Recipient's username" aria-describedby="search_btn">
-          <button class="btn btn-outline-secondary" type="button" id="search_btn">Search</button>
-          <div class="search_help">Enter a name of a food that you've eaten today and pick from a template of recipes for customisation, or start a new meal from scratch.</div>
+        <div class="search_box">
+          <div class="input-group mb-2">
+            <input type="text" id="search_input" class="form-control" placeholder="Enter a food name." aria-label="Recipient's username" aria-describedby="search_btn">
+            <button class="btn btn-outline-secondary" type="button" id="search_btn">Search</button>
+            <div class="search_help">${help_text}</div>
+          </div>
         </div>
-      </div>
-      `;
+        <div class="search_results"></div>
+        `;
+
+        const search_results_section = body.querySelector(".search_results");
+
+        const search_btn = body.querySelector("#search_btn");
+        search_btn.addEventListener("click", () => {
+          const search_input = body.querySelector("#search_input");
+          if (search_input.value.trim() == "") {
+            return;
+          }
+          api_handler
+            .AutoCompleteRequest(search_input.value)
+            .then((results) => {
+              console.log(results);
+              PopulateResultsSection(results, search_results_section);
+            });
+        });
       };
 
       NewMealIntialView();
     }
   }
   //#endregion
+
+  //#region API Handler
+  class ApiHandler {
+    constructor(dev_mode = false) {
+      this.dev_mode = dev_mode;
+    }
+
+    async AutoCompleteRequest(text) {
+      const url = `https://tasty.p.rapidapi.com/recipes/list?from=0&size=20&q=${text}`;
+      const options = {
+        method: "GET",
+        headers: {
+          "X-RapidAPI-Key":
+            "53ce3638a9mshb0c4fe33d0cfca9p1100ffjsnf7abe9c081b3",
+          "X-RapidAPI-Host": "tasty.p.rapidapi.com",
+        },
+      };
+
+      try {
+        if (this.dev_mode) {
+          const stored_results = localStorage.getItem("dev-results");
+          if (stored_results) {
+            return JSON.parse(stored_results);
+            const reply = prompt("Do you wanna use stored data? (y/n)");
+            if (reply == "y") {
+              return JSON.parse(stored_results);
+            }
+          }
+        }
+        const response = await fetch(url, options);
+        const result = await response.json();
+        if (this.dev_mode) {
+          localStorage.setItem("dev-results", JSON.stringify(result));
+        }
+        return result;
+      } catch (error) {
+        console.error(error);
+      }
+    }
+  }
+  //#endregion
 } catch (e) {
-  document.body.inner = `
-    ${e}`;
+  document.body.innerHTML = `
+    ${JSON.stringify(e)}`;
   throw e;
 }
