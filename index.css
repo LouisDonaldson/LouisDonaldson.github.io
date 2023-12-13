@@ -12,35 +12,38 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
-.tabs{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0px;
-    margin: 0px;
-    flex-wrap: wrap;
-}
-
-.tabs>li{
-    list-style: none;
-    max-width: 300px;
-    padding: 5px;
-    margin: 0px;
-}
-
-.tabs>li>a {
-    text-decoration: none;
-    color: black;
-}
-
-.foodtracker_div{
-    background-color: white;
-    padding: 10px;
-    border: solid 1pt gray;
-    border-radius: 5px;
+.title{
+    font-size: 30pt;
+    font-weight: 600;
     text-align: center;
-    height: 100%;
+}
+
+.random_fact_btn{
+    background-color: white;
+    font-size: 20pt;
+    padding:  10px 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    transition: 0.5s;
+    border: solid 3pt white;
+        font-weight: 600;
+}
+
+.random_fact_btn:hover{
+    background-color: rgba(255, 255, 255, 0);
+    border: solid 3pt white;
+    transform: translateY(5px);
+    transition: 0.25s;
+    cursor: pointer;
+    color:white;
+}
+
+.random_fact{
+    padding: 0px 20px;
+    font-size: 15pt;
+    text-align: center;
 }
 
