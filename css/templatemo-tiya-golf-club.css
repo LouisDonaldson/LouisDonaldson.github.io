@@ -1302,3 +1302,18 @@ strong {
 .get_in_touch_link:hover {
   color: var(--custom-btn-bg-hover-color) !important;
 }
+
+ table.tableizer-table {
+  border: solid 1pt black;
+ }
+
+ .tableizer-table td {
+  border: solid 1pt black;
+ }
+
+ .tableizer-table th {}
+
+ .table_heading{
+  text-align: center;
+  font-weight: bold;
+ }
