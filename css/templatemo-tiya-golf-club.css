@@ -1317,3 +1317,7 @@ strong {
   text-align: center;
   font-weight: bold;
  }
+
+ .img-thumbnail{
+  /* height: max-content !important; */
+ }
