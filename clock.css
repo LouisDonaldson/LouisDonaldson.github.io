@@ -1,0 +1,41 @@
+html{
+    background-color: black;
+}
+
+body{
+    font-family: "Nunito";
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.clock>*{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: inherit;
+    color: white;
+    margin: -5px 0px;
+    font-weight: 400;
+}
+
+.time{
+    font-size: 20svw;
+    margin: -100px 0px;
+}
+
+.day{
+    font-size: 5svw;
+}
+
+.date{
+    font-size: 4svw;
+}
+
+.text{
+    font-size: 5svw;
+}
