@@ -3,7 +3,7 @@ html{
 }
 
 body{
-    font-family: "Nunito";
+    font-family: "Inter";
     background-color: black;
     display: flex;
     justify-content: center;
@@ -19,23 +19,30 @@ body{
     align-items: center;
     background-color: inherit;
     color: white;
-    margin: -5px 0px;
-    font-weight: 400;
+    /* margin: -5px 0px; */
+    font-weight: 300;
+    /* height: auto; */
 }
 
 .time{
     font-size: 20svw;
-    margin: -100px 0px;
+    height: 20svw;
+    /* margin: -100px 0px; */
 }
 
 .day{
     font-size: 5svw;
+    height: 5svw;
 }
 
 .date{
     font-size: 4svw;
+    height: 5svw;
 }
 
 .text{
     font-size: 5svw;
+        height: 5svw;
 }
+
+
