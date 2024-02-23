@@ -67,22 +67,33 @@ function init() {
   const date_obj = new Date();
   day.textContent = GetDayName(date_obj.getDay()).toUpperCase();
 
-  time.textContent = GetTime(date_obj);
+  time.innerHTML = GetTime(date_obj);
 
   date.textContent = date_obj.toLocaleDateString();
 
-  if (date_obj.getHours() < 7 || date_obj.getHours() > 23) {
-    text.textContent = "BEDTIME";
+  /*
+  10pm - 7am sleeptime
+  7
+  */
+
+  if (date_obj.getHours() < 7 || date_obj.getHours() > 22) {
+    text.textContent = "SLEEP TIME";
   } else {
-    text.textContent = "DAYTIME";
+    text.textContent = "SLEEP TIME";
   }
 }
 
 function GetTime(date_obj = new Date()) {
-  let hours = `${date_obj.getHours()}`;
-  hours = hours.padStart(2, "0");
+  const time_string = date_obj.toLocaleTimeString().split(" ");
+  return `${time_string[0].slice(0, -3)} <span class="am_pm">${
+    time_string[1]
+  }</span>`;
+  time_string;
+  // return `${}`;
+  // let hours = `${date_obj.getHours()}`;
+  // hours = hours.padStart(2, "0");
 
-  let mins = `${date_obj.getMinutes()}`;
-  mins = mins.padStart(2, "0");
-  return `${hours}:${mins}`;
+  // let mins = `${date_obj.getMinutes()}`;
+  // mins = mins.padStart(2, "0");
+  // return `${hours}:${mins}`;
 }
