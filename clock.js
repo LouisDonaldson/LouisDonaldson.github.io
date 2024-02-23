@@ -77,6 +77,7 @@ function init() {
   */
 
   if (date_obj.getHours() < 7 || date_obj.getHours() > 22) {
+    // night time
     text.textContent = "SLEEP TIME";
   } else {
     text.textContent = "DAY TIME";
