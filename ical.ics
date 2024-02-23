@@ -1,0 +1,1311 @@
+BEGIN:VCALENDAR
+PRODID:-//Eveoh//Eveoh iCalExporter 1.3//EN
+VERSION:2.0
+METHOD:PUBLISH
+CALSCALE:GREGORIAN
+X-WR-TIMEZONE:Europe/London
+X-WR-CALNAME:University of Hull - Personal timetable: 633103
+X-WR-CALDESC:University of Hull - Personal timetable: 633103
+BEGIN:VTIMEZONE
+TZID:Europe/London
+LAST-MODIFIED:20220816T024022Z
+TZURL:http://tzurl.org/zoneinfo-outlook/Europe/London
+X-LIC-LOCATION:Europe/London
+BEGIN:DAYLIGHT
+TZNAME:BST
+TZOFFSETFROM:+0000
+TZOFFSETTO:+0100
+DTSTART:19700329T000000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZNAME:GMT
+TZOFFSETFROM:+0100
+TZOFFSETTO:+0000
+DTSTART:19701025T010000
+RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+DTSTAMP:20240223T122644Z
+DTSTART;TZID=Europe/London:20231201T090000
+DTEND;TZID=Europe/London:20231201T110000
+SUMMARY:Component Based Architecture [Workshop] - 700112_A23_T1W2/01 <10-
+ 14>
+LOCATION:Robert Blackburn Building - Room 209A - PC Computer Science Engi
+ neering Image
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20240223T122644Z
+LAST-MODIFIED:20240223T122644Z
+UID:2023!794B4BA3E8AF038B78E01F8FCF1E8CBB-2023-W48-1@mytimetable.hull.ac.
+ uk
+DESCRIPTION:Activity name: 700112_A23_T1W2/01 <10-14>\n\nType: On Campus\
+ n\nModule code: 700112_A23_T1\n\nLocation(s):\nRobert Blackburn Building
+  - Room 209A - PC Computer Science Engineering Image (40)\n\nStaff membe
+ r(s): Dr Septavera Sharvia\, John Dixon\n\nWeekly pattern: 10 - 14\n\nTh
+ is appointment is managed by MyTimetable.\n\nLast synchronised on 2024-0
+ 2-23 at 12:26 GMT
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T122644Z
+DTSTART;TZID=Europe/London:20231201T100000
+DTEND;TZID=Europe/London:20231201T120000
+SUMMARY:[CANCELLED] Offshore Wind Energy [Lec] - 771716_A23_T1L1/01 <13-1
+ 5>
+LOCATION:
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20240223T122644Z
+LAST-MODIFIED:20240223T122644Z
+UID:2023!2573607B2BDE1FFAD15AF627350A51F9-2023-W48-1@mytimetable.hull.ac.
+ uk
+DESCRIPTION:Activity name: 771716_A23_T1L1/01 <13-15>\n\nType: CANCELLED\
+ n\nModule code: 771716_A23_T1\n\nStaff member(s): Prof James Gilbert\n\n
+ Weekly pattern: 13 - 15\n\nThis appointment is managed by MyTimetable.\n
+ \nLast synchronised on 2024-02-23 at 12:26 GMT
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T122644Z
+DTSTART;TZID=Europe/London:20231204T160000
+DTEND;TZID=Europe/London:20231204T170000
+SUMMARY:Offshore Wind Energy [Tut] - 771716_A23_T1T1/02
+LOCATION:Robert Blackburn Building - Room 270
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20240223T122644Z
+LAST-MODIFIED:20240223T122644Z
+UID:2023!2573607B2BDE1FFAD15AF627350A5203-2023-W49-1@mytimetable.hull.ac.
+ uk
+DESCRIPTION:Activity name: 771716_A23_T1T1/02\n\nType: On Campus\n\nModul
+ e code: 771716_A23_T1\n\nLocation(s):\nRobert Blackburn Building - Room 
+ 270 (60)\n\nStaff member(s): Prof James Gilbert\n\nWeekly pattern: 6 - 1
+ 5\n\nThis appointment is managed by MyTimetable.\n\nLast synchronised on
+  2024-02-23 at 12:26 GMT
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T122644Z
+DTSTART;TZID=Europe/London:20231205T090000
+DTEND;TZID=Europe/London:20231205T100000
+SUMMARY:Real-Time Dependable Systems [Lec] - 701026_A23_T1L1/01 <04-11\, 
+ 13-15>
+LOCATION:Larkin Building - Lecture Theatre A
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20240223T122644Z
+LAST-MODIFIED:20240223T122644Z
+UID:2023!66796DC174931A6CE229165032DDB026-2023-W49-1@mytimetable.hull.ac.
+ uk
+DESCRIPTION:Activity name: 701026_A23_T1L1/01 <04-11\, 13-15>\n\nType: On
+  Campus\n\nModule code: 701026_A23_T1\n\nLocation(s):\nLarkin Building -
+  Lecture Theatre A (59)\n\nStaff member(s): Koorosh Aslansefat\, Prof Yi
+ annis Papadopoulos\n\nWeekly pattern: 4 - 11\, 13 - 15\n\nThis appointme
+ nt is managed by MyTimetable.\n\nLast synchronised on 2024-02-23 at 12:2
+ 6 GMT
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T122644Z
+DTSTART;TZID=Europe/London:20231205T100000
+DTEND;TZID=Europe/London:20231205T110000
+SUMMARY:Component Based Architecture [Lec] - 700112_A23_T1L1/01 <11-14>
+LOCATION:Larkin Building - Lecture Theatre B
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20240223T122644Z
+LAST-MODIFIED:20240223T122644Z
+UID:2023!794B4BA3E8AF038B78E01F8FCF1E8CAD-2023-W49-1@mytimetable.hull.ac.
+ uk
+DESCRIPTION:Activity name: 700112_A23_T1L1/01 <11-14>\n\nType: On Campus\
+ n\nModule code: 700112_A23_T1\n\nLocation(s):\nLarkin Building - Lecture
+  Theatre B (65)\n\nStaff member(s): John Dixon\n\nWeekly pattern: 11 - 1
+ 4\n\nThis appointment is managed by MyTimetable.\n\nLast synchronised on
+  2024-02-23 at 12:26 GMT
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T122644Z
+DTSTART;TZID=Europe/London:20231206T090000
+DTEND;TZID=Europe/London:20231206T100000
+SUMMARY:Component Based Architecture [Lec] - 700112_A23_T1L2/01 <10-14>
+LOCATION:Derwent Building - Lecture Theatre 2
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20240223T122644Z
+LAST-MODIFIED:20240223T122644Z
+UID:2023!794B4BA3E8AF038B78E01F8FCF1E8CB7-2023-W49-1@mytimetable.hull.ac.
+ uk
+DESCRIPTION:Activity name: 700112_A23_T1L2/01 <10-14>\n\nType: On Campus\
+ n\nModule code: 700112_A23_T1\n\nLocation(s):\nDerwent Building - Lectur
+ e Theatre 2 (47)\n\nStaff member(s): John Dixon\n\nWeekly pattern: 10 - 
+ 14\n\nThis appointment is managed by MyTimetable.\n\nLast synchronised o
+ n 2024-02-23 at 12:26 GMT
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T122644Z
+DTSTART;TZID=Europe/London:20231206T120000
+DTEND;TZID=Europe/London:20231206T130000
+SUMMARY:Real-Time Dependable Systems [Lec-Sem] - 701026_A23_T1LS1/01
+LOCATION:Wilberforce Building - Lecture Theatre 29
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20240223T122644Z
+LAST-MODIFIED:20240223T122644Z
+UID:2023!66796DC174931A6CE229165032DDB028-2023-W49-1@mytimetable.hull.ac.
+ uk
+DESCRIPTION:Activity name: 701026_A23_T1LS1/01\n\nType: On Campus\n\nModu
+ le code: 701026_A23_T1\n\nLocation(s):\nWilberforce Building - Lecture T
+ heatre 29 (68)\n\nStaff member(s): Koorosh Aslansefat\, Prof Yiannis Pap
+ adopoulos\n\nWeekly pattern: 4 - 15\n\nThis appointment is managed by My
+ Timetable.\n\nLast synchronised on 2024-02-23 at 12:26 GMT
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T122644Z
+DTSTART;TZID=Europe/London:20231207T100000
+DTEND;TZID=Europe/London:20231207T120000
+SUMMARY:Contemporary Research Issues in Offshore Wind [Workshop] - 771712
+ _A23_T1W1/01 <14>
+LOCATION:Wilberforce Building - Lecture Room 05
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20240223T122644Z
+LAST-MODIFIED:20240223T122644Z
+UID:2023!AE9CC539425145CE470A182DBCF9188F-2023-W49-1@mytimetable.hull.ac.
+ uk
+DESCRIPTION:Activity name: 771712_A23_T1W1/01 <14>\n\nType: On Campus\n\n
+ Module code: 771712_A23_T1\n\nLocation(s):\nWilberforce Building - Lectu
+ re Room 05 (16)\n\nStaff member(s): Dr Stuart McLelland\, Xuxu Wu\n\nWee
+ kly pattern: 14\n\nThis appointment is managed by MyTimetable.\n\nLast s
+ ynchronised on 2024-02-23 at 12:26 GMT
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T122644Z
+DTSTART;TZID=Europe/London:20231208T090000
+DTEND;TZID=Europe/London:20231208T110000
+SUMMARY:Component Based Architecture [Workshop] - 700112_A23_T1W2/01 <10-
+ 14>
+LOCATION:Robert Blackburn Building - Room 209A - PC Computer Science Engi
+ neering Image
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20240223T122644Z
+LAST-MODIFIED:20240223T122644Z
+UID:2023!794B4BA3E8AF038B78E01F8FCF1E8CBB-2023-W49-1@mytimetable.hull.ac.
+ uk
+DESCRIPTION:Activity name: 700112_A23_T1W2/01 <10-14>\n\nType: On Campus\
+ n\nModule code: 700112_A23_T1\n\nLocation(s):\nRobert Blackburn Building
+  - Room 209A - PC Computer Science Engineering Image (40)\n\nStaff membe
+ r(s): Dr Septavera Sharvia\, John Dixon\n\nWeekly pattern: 10 - 14\n\nTh
+ is appointment is managed by MyTimetable.\n\nLast synchronised on 2024-0
+ 2-23 at 12:26 GMT
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T122644Z
+DTSTART;TZID=Europe/London:20231208T100000
+DTEND;TZID=Europe/London:20231208T120000
+SUMMARY:[CANCELLED] Offshore Wind Energy [Lec] - 771716_A23_T1L1/01 <13-1
+ 5>
+LOCATION:
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20240223T122644Z
+LAST-MODIFIED:20240223T122644Z
+UID:2023!2573607B2BDE1FFAD15AF627350A51F9-2023-W49-1@mytimetable.hull.ac.
+ uk
+DESCRIPTION:Activity name: 771716_A23_T1L1/01 <13-15>\n\nType: CANCELLED\
+ n\nModule code: 771716_A23_T1\n\nStaff member(s): Prof James Gilbert\n\n
+ Weekly pattern: 13 - 15\n\nThis appointment is managed by MyTimetable.\n
+ \nLast synchronised on 2024-02-23 at 12:26 GMT
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T122644Z
+DTSTART;TZID=Europe/London:20231211T160000
+DTEND;TZID=Europe/London:20231211T170000
+SUMMARY:Offshore Wind Energy [Tut] - 771716_A23_T1T1/02
+LOCATION:Robert Blackburn Building - Room 270
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20240223T122644Z
+LAST-MODIFIED:20240223T122644Z
+UID:2023!2573607B2BDE1FFAD15AF627350A5203-2023-W50-1@mytimetable.hull.ac.
+ uk
+DESCRIPTION:Activity name: 771716_A23_T1T1/02\n\nType: On Campus\n\nModul
+ e code: 771716_A23_T1\n\nLocation(s):\nRobert Blackburn Building - Room 
+ 270 (60)\n\nStaff member(s): Prof James Gilbert\n\nWeekly pattern: 6 - 1
+ 5\n\nThis appointment is managed by MyTimetable.\n\nLast synchronised on
+  2024-02-23 at 12:26 GMT
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T122644Z
+DTSTART;TZID=Europe/London:20231212T090000
+DTEND;TZID=Europe/London:20231212T100000
+SUMMARY:Real-Time Dependable Systems [Lec] - 701026_A23_T1L1/01 <04-11\, 
+ 13-15>
+LOCATION:Larkin Building - Lecture Theatre A
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20240223T122644Z
+LAST-MODIFIED:20240223T122644Z
+UID:2023!66796DC174931A6CE229165032DDB026-2023-W50-1@mytimetable.hull.ac.
+ uk
+DESCRIPTION:Activity name: 701026_A23_T1L1/01 <04-11\, 13-15>\n\nType: On
+  Campus\n\nModule code: 701026_A23_T1\n\nLocation(s):\nLarkin Building -
+  Lecture Theatre A (59)\n\nStaff member(s): Koorosh Aslansefat\, Prof Yi
+ annis Papadopoulos\n\nWeekly pattern: 4 - 11\, 13 - 15\n\nThis appointme
+ nt is managed by MyTimetable.\n\nLast synchronised on 2024-02-23 at 12:2
+ 6 GMT
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T122644Z
+DTSTART;TZID=Europe/London:20231212T100000
+DTEND;TZID=Europe/London:20231212T120000
+SUMMARY:Contemporary Research Issues in Offshore Wind [Workshop] - 771712
+ _A23_T1W1/01 <15>
+LOCATION:Brynmor Jones Library - Teaching Room 4
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20240223T122644Z
+LAST-MODIFIED:20240223T122644Z
+UID:2023!AE9CC539425145CE470A182DBCF9188F-2023-W50-1@mytimetable.hull.ac.
+ uk
+DESCRIPTION:Activity name: 771712_A23_T1W1/01 <15>\n\nType: On Campus\n\n
+ Module code: 771712_A23_T1\n\nLocation(s):\nBrynmor Jones Library - Teac
+ hing Room 4 (40)\n\nStaff member(s): Dr Stuart McLelland\, Xuxu Wu\n\nWe
+ ekly pattern: 15\n\nThis appointment is managed by MyTimetable.\n\nLast 
+ synchronised on 2024-02-23 at 12:26 GMT
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T122644Z
+DTSTART;TZID=Europe/London:20231213T090000
+DTEND;TZID=Europe/London:20231213T100000
+SUMMARY:Component Based Architecture [Lec] - 700112_A23_T1L2/01 <05-09\, 
+ 15>
+LOCATION:Derwent Building - Lecture Theatre 2
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20240223T122644Z
+LAST-MODIFIED:20240223T122644Z
+UID:2023!794B4BA3E8AF038B78E01F8FCF1E8CB7-2023-W50-1@mytimetable.hull.ac.
+ uk
+DESCRIPTION:Activity name: 700112_A23_T1L2/01 <05-09\, 15>\n\nType: On Ca
+ mpus\n\nModule code: 700112_A23_T1\n\nLocation(s):\nDerwent Building - L
+ ecture Theatre 2 (47)\n\nStaff member(s): Dr Neil Gordon\n\nWeekly patte
+ rn: 5 - 9\, 15\n\nThis appointment is managed by MyTimetable.\n\nLast sy
+ nchronised on 2024-02-23 at 12:26 GMT
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T122644Z
+DTSTART;TZID=Europe/London:20231213T120000
+DTEND;TZID=Europe/London:20231213T130000
+SUMMARY:Real-Time Dependable Systems [Lec-Sem] - 701026_A23_T1LS1/01
+LOCATION:Wilberforce Building - Lecture Theatre 29
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20240223T122644Z
+LAST-MODIFIED:20240223T122644Z
+UID:2023!66796DC174931A6CE229165032DDB028-2023-W50-1@mytimetable.hull.ac.
+ uk
+DESCRIPTION:Activity name: 701026_A23_T1LS1/01\n\nType: On Campus\n\nModu
+ le code: 701026_A23_T1\n\nLocation(s):\nWilberforce Building - Lecture T
+ heatre 29 (68)\n\nStaff member(s): Koorosh Aslansefat\, Prof Yiannis Pap
+ adopoulos\n\nWeekly pattern: 4 - 15\n\nThis appointment is managed by My
+ Timetable.\n\nLast synchronised on 2024-02-23 at 12:26 GMT
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T122644Z
+DTSTART;TZID=Europe/London:20231214T130000
+DTEND;TZID=Europe/London:20231214T140000
+SUMMARY:Component Based Architecture [Online] - 700112_A23_T1L3/01
+LOCATION:
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20240223T122644Z
+LAST-MODIFIED:20240223T122644Z
+UID:2023!794B4BA3E8AF038B78E01F8FCF1E8D0E-2023-W50-1@mytimetable.hull.ac.
+ uk
+DESCRIPTION:Activity name: 700112_A23_T1L3/01\n\nType: Online Session\n\n
+ Module code: 700112_A23_T1\n\nStaff member(s): Dr Septavera Sharvia\n\nW
+ eekly pattern: 10\, 15\n\nThis appointment is managed by MyTimetable.\n\
+ nLast synchronised on 2024-02-23 at 12:26 GMT
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T122644Z
+DTSTART;TZID=Europe/London:20231215T100000
+DTEND;TZID=Europe/London:20231215T120000
+SUMMARY:[CANCELLED] Offshore Wind Energy [Lec] - 771716_A23_T1L1/01 <13-1
+ 5>
+LOCATION:
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20240223T122644Z
+LAST-MODIFIED:20240223T122644Z
+UID:2023!2573607B2BDE1FFAD15AF627350A51F9-2023-W50-1@mytimetable.hull.ac.
+ uk
+DESCRIPTION:Activity name: 771716_A23_T1L1/01 <13-15>\n\nType: CANCELLED\
+ n\nModule code: 771716_A23_T1\n\nStaff member(s): Prof James Gilbert\n\n
+ Weekly pattern: 13 - 15\n\nThis appointment is managed by MyTimetable.\n
+ \nLast synchronised on 2024-02-23 at 12:26 GMT
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T122644Z
+DTSTART;TZID=Europe/London:20240129T100000
+DTEND;TZID=Europe/London:20240129T120000
+SUMMARY:Research Projects in Offshore Wind [Lec] - 771753_A23_T23AL1/01
+LOCATION:Wilberforce Building - Seminar Room 294
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20240223T122644Z
+LAST-MODIFIED:20240223T122644Z
+UID:2023!AE9CC539425145CE470A182DBCF91898-2024-W05-1@mytimetable.hull.ac.
+ uk
+DESCRIPTION:Activity name: 771753_A23_T23AL1/01\n\nType: On Campus\n\nMod
+ ule code: 771753_A23_T23A\n\nLocation(s):\nWilberforce Building - Semina
+ r Room 294 (20)\n\nStaff member(s): Dr Agota Mockute\n\nWeekly pattern: 
+ 22 - 24\, 32 - 35\n\nThis appointment is managed by MyTimetable.\n\nLast
+  synchronised on 2024-02-23 at 12:26 GMT
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T122644Z
+DTSTART;TZID=Europe/London:20240129T130000
+DTEND;TZID=Europe/London:20240129T150000
+SUMMARY:Human Factors [Lec] - 601451_A23_T2L1/01\, 771714_A23_T2L1/01_JT 
+ <22-25>
+LOCATION:Wilberforce Building - Lecture Theatre 29
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20240223T122644Z
+LAST-MODIFIED:20240223T122644Z
+UID:2023!1A6BBA6C8576D13A08E7E4150FAC3C7E-2024-W05-1@mytimetable.hull.ac.
+ uk
+DESCRIPTION:Activity name: 601451_A23_T2L1/01\, 771714_A23_T2L1/01_JT <22
+ -25>\n\nType: On Campus\n\nModule code: 771714_A23_T2\n\nLocation(s):\nW
+ ilberforce Building - Lecture Theatre 29 (68)\n\nStaff member(s): Dr. Pe
+ ter Clough\n\nWeekly pattern: 22 - 25\n\nThis appointment is managed by 
+ MyTimetable.\n\nLast synchronised on 2024-02-23 at 12:26 GMT
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T122644Z
+DTSTART;TZID=Europe/London:20240202T100000
+DTEND;TZID=Europe/London:20240202T130000
+SUMMARY:Materials and Manufacturing for Offshore Wind [Workshop] - 771715
+ _A23_T2W1/01
+LOCATION:Wilberforce Building - Lecture Room 23
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20240223T122644Z
+LAST-MODIFIED:20240223T122644Z
+UID:2023!AE9CC539425145CE470A182DBCF918C1-2024-W05-1@mytimetable.hull.ac.
+ uk
+DESCRIPTION:Activity name: 771715_A23_T2W1/01\n\nType: On Campus\n\nModul
+ e code: 771715_A23_T2\n\nLocation(s):\nWilberforce Building - Lecture Ro
+ om 23 (16)\n\nStaff member(s): Dr Stuart McLelland\n\nWeekly pattern: 22
+  - 29\, 32\n\nThis appointment is managed by MyTimetable.\n\nLast synchr
+ onised on 2024-02-23 at 12:26 GMT
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T122644Z
+DTSTART;TZID=Europe/London:20240205T100000
+DTEND;TZID=Europe/London:20240205T120000
+SUMMARY:Research Projects in Offshore Wind [Lec] - 771753_A23_T23AL1/01
+LOCATION:Wilberforce Building - Seminar Room 294
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20240223T122644Z
+LAST-MODIFIED:20240223T122644Z
+UID:2023!AE9CC539425145CE470A182DBCF91898-2024-W06-1@mytimetable.hull.ac.
+ uk
+DESCRIPTION:Activity name: 771753_A23_T23AL1/01\n\nType: On Campus\n\nMod
+ ule code: 771753_A23_T23A\n\nLocation(s):\nWilberforce Building - Semina
+ r Room 294 (20)\n\nStaff member(s): Dr Agota Mockute\n\nWeekly pattern: 
+ 22 - 24\, 32 - 35\n\nThis appointment is managed by MyTimetable.\n\nLast
+  synchronised on 2024-02-23 at 12:26 GMT
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T122644Z
+DTSTART;TZID=Europe/London:20240205T130000
+DTEND;TZID=Europe/London:20240205T150000
+SUMMARY:Human Factors [Lec] - 601451_A23_T2L1/01\, 771714_A23_T2L1/01_JT 
+ <22-25>
+LOCATION:Wilberforce Building - Lecture Theatre 29
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20240223T122644Z
+LAST-MODIFIED:20240223T122644Z
+UID:2023!1A6BBA6C8576D13A08E7E4150FAC3C7E-2024-W06-1@mytimetable.hull.ac.
+ uk
+DESCRIPTION:Activity name: 601451_A23_T2L1/01\, 771714_A23_T2L1/01_JT <22
+ -25>\n\nType: On Campus\n\nModule code: 771714_A23_T2\n\nLocation(s):\nW
+ ilberforce Building - Lecture Theatre 29 (68)\n\nStaff member(s): Dr. Pe
+ ter Clough\n\nWeekly pattern: 22 - 25\n\nThis appointment is managed by 
+ MyTimetable.\n\nLast synchronised on 2024-02-23 at 12:26 GMT
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T122644Z
+DTSTART;TZID=Europe/London:20240205T160000
+DTEND;TZID=Europe/London:20240205T180000
+SUMMARY:Human Factors [Workshop] - 601451_A23_T2W1/01\, 771714_A23_T2W1/0
+ 1_JT
+LOCATION:Brynmor Jones Library - Teaching Room 4
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20240223T122644Z
+LAST-MODIFIED:20240223T122644Z
+UID:2023!1A6BBA6C8576D13A08E7E4150FAC3C80-2024-W06-1@mytimetable.hull.ac.
+ uk
+DESCRIPTION:Activity name: 601451_A23_T2W1/01\, 771714_A23_T2W1/01_JT\n\n
+ Type: On Campus\n\nModule code: 771714_A23_T2\n\nLocation(s):\nBrynmor J
+ ones Library - Teaching Room 4 (40)\n\nStaff member(s): Dr. Peter Clough
+ \n\nWeekly pattern: 23\, 25\, 27\, 29\, 33\n\nThis appointment is manage
+ d by MyTimetable.\n\nLast synchronised on 2024-02-23 at 12:26 GMT
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T122644Z
+DTSTART;TZID=Europe/London:20240206T100000
+DTEND;TZID=Europe/London:20240206T180000
+SUMMARY:Research Projects in Offshore Wind [Prac] - 771753_A23_T23AP1/01
+LOCATION:Cohen Building - Room 005 - Flume Room
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20240223T122644Z
+LAST-MODIFIED:20240223T122644Z
+UID:2023!AE9CC539425145CE470A182DBCF918B4-2024-W06-1@mytimetable.hull.ac.
+ uk
+DESCRIPTION:Activity name: 771753_A23_T23AP1/01\n\nType: On Campus\n\nMod
+ ule code: 771753_A23_T23A\n\nLocation(s):\nCohen Building - Room 005 - F
+ lume Room (48)\n\nStaff member(s): Dr Agota Mockute\n\nWeekly pattern: 2
+ 3 - 24\n\nThis appointment is managed by MyTimetable.\n\nLast synchronis
+ ed on 2024-02-23 at 12:26 GMT
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T122644Z
+DTSTART;TZID=Europe/London:20240209T100000
+DTEND;TZID=Europe/London:20240209T130000
+SUMMARY:Materials and Manufacturing for Offshore Wind [Workshop] - 771715
+ _A23_T2W1/01
+LOCATION:Wilberforce Building - Lecture Room 23
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20240223T122644Z
+LAST-MODIFIED:20240223T122644Z
+UID:2023!AE9CC539425145CE470A182DBCF918C1-2024-W06-1@mytimetable.hull.ac.
+ uk
+DESCRIPTION:Activity name: 771715_A23_T2W1/01\n\nType: On Campus\n\nModul
+ e code: 771715_A23_T2\n\nLocation(s):\nWilberforce Building - Lecture Ro
+ om 23 (16)\n\nStaff member(s): Dr Stuart McLelland\n\nWeekly pattern: 22
+  - 29\, 32\n\nThis appointment is managed by MyTimetable.\n\nLast synchr
+ onised on 2024-02-23 at 12:26 GMT
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T122644Z
+DTSTART;TZID=Europe/London:20240212T100000
+DTEND;TZID=Europe/London:20240212T120000
+SUMMARY:Research Projects in Offshore Wind [Lec] - 771753_A23_T23AL1/01
+LOCATION:Wilberforce Building - Seminar Room 294
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20240223T122644Z
+LAST-MODIFIED:20240223T122644Z
+UID:2023!AE9CC539425145CE470A182DBCF91898-2024-W07-1@mytimetable.hull.ac.
+ uk
+DESCRIPTION:Activity name: 771753_A23_T23AL1/01\n\nType: On Campus\n\nMod
+ ule code: 771753_A23_T23A\n\nLocation(s):\nWilberforce Building - Semina
+ r Room 294 (20)\n\nStaff member(s): Dr Agota Mockute\n\nWeekly pattern: 
+ 22 - 24\, 32 - 35\n\nThis appointment is managed by MyTimetable.\n\nLast
+  synchronised on 2024-02-23 at 12:26 GMT
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T122644Z
+DTSTART;TZID=Europe/London:20240212T130000
+DTEND;TZID=Europe/London:20240212T150000
+SUMMARY:Human Factors [Lec] - 601451_A23_T2L1/01\, 771714_A23_T2L1/01_JT 
+ <22-25>
+LOCATION:Wilberforce Building - Lecture Theatre 29
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20240223T122644Z
+LAST-MODIFIED:20240223T122644Z
+UID:2023!1A6BBA6C8576D13A08E7E4150FAC3C7E-2024-W07-1@mytimetable.hull.ac.
+ uk
+DESCRIPTION:Activity name: 601451_A23_T2L1/01\, 771714_A23_T2L1/01_JT <22
+ -25>\n\nType: On Campus\n\nModule code: 771714_A23_T2\n\nLocation(s):\nW
+ ilberforce Building - Lecture Theatre 29 (68)\n\nStaff member(s): Dr. Pe
+ ter Clough\n\nWeekly pattern: 22 - 25\n\nThis appointment is managed by 
+ MyTimetable.\n\nLast synchronised on 2024-02-23 at 12:26 GMT
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T122644Z
+DTSTART;TZID=Europe/London:20240213T100000
+DTEND;TZID=Europe/London:20240213T180000
+SUMMARY:Research Projects in Offshore Wind [Prac] - 771753_A23_T23AP1/01
+LOCATION:Cohen Building - Room 005 - Flume Room
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20240223T122644Z
+LAST-MODIFIED:20240223T122644Z
+UID:2023!AE9CC539425145CE470A182DBCF918B4-2024-W07-1@mytimetable.hull.ac.
+ uk
+DESCRIPTION:Activity name: 771753_A23_T23AP1/01\n\nType: On Campus\n\nMod
+ ule code: 771753_A23_T23A\n\nLocation(s):\nCohen Building - Room 005 - F
+ lume Room (48)\n\nStaff member(s): Dr Agota Mockute\n\nWeekly pattern: 2
+ 3 - 24\n\nThis appointment is managed by MyTimetable.\n\nLast synchronis
+ ed on 2024-02-23 at 12:26 GMT
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T122644Z
+DTSTART;TZID=Europe/London:20240214T130000
+DTEND;TZID=Europe/London:20240214T140000
+SUMMARY:Rather Useful Seminars [Lec] - 441190_A23_T12L2/01
+LOCATION:Wilberforce Building - Lecture Theatre 1
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20240223T122644Z
+LAST-MODIFIED:20240223T122644Z
+UID:2023!0F5D142DC03D4A4D7330F208452CC9BC-2024-W07-1@mytimetable.hull.ac.
+ uk
+DESCRIPTION:Activity name: 441190_A23_T12L2/01\n\nType: On Campus\n\nModu
+ le code: 441190_A23_T12\n\nLocation(s):\nWilberforce Building - Lecture 
+ Theatre 1 (244)\n\nStaff member(s): Mr Warren Viant\, Simon Grey\n\nWeek
+ ly pattern: 24 - 29\, 32 - 33\n\nThis appointment is managed by MyTimeta
+ ble.\n\nLast synchronised on 2024-02-23 at 12:26 GMT
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T122644Z
+DTSTART;TZID=Europe/London:20240216T100000
+DTEND;TZID=Europe/London:20240216T130000
+SUMMARY:Materials and Manufacturing for Offshore Wind [Workshop] - 771715
+ _A23_T2W1/01
+LOCATION:Wilberforce Building - Lecture Room 23
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20240223T122644Z
+LAST-MODIFIED:20240223T122644Z
+UID:2023!AE9CC539425145CE470A182DBCF918C1-2024-W07-1@mytimetable.hull.ac.
+ uk
+DESCRIPTION:Activity name: 771715_A23_T2W1/01\n\nType: On Campus\n\nModul
+ e code: 771715_A23_T2\n\nLocation(s):\nWilberforce Building - Lecture Ro
+ om 23 (16)\n\nStaff member(s): Dr Stuart McLelland\n\nWeekly pattern: 22
+  - 29\, 32\n\nThis appointment is managed by MyTimetable.\n\nLast synchr
+ onised on 2024-02-23 at 12:26 GMT
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T122644Z
+DTSTART;TZID=Europe/London:20240219T130000
+DTEND;TZID=Europe/London:20240219T150000
+SUMMARY:Human Factors [Lec] - 601451_A23_T2L1/01\, 771714_A23_T2L1/01_JT 
+ <22-25>
+LOCATION:Wilberforce Building - Lecture Theatre 29
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20240223T122644Z
+LAST-MODIFIED:20240223T122644Z
+UID:2023!1A6BBA6C8576D13A08E7E4150FAC3C7E-2024-W08-1@mytimetable.hull.ac.
+ uk
+DESCRIPTION:Activity name: 601451_A23_T2L1/01\, 771714_A23_T2L1/01_JT <22
+ -25>\n\nType: On Campus\n\nModule code: 771714_A23_T2\n\nLocation(s):\nW
+ ilberforce Building - Lecture Theatre 29 (68)\n\nStaff member(s): Dr. Pe
+ ter Clough\n\nWeekly pattern: 22 - 25\n\nThis appointment is managed by 
+ MyTimetable.\n\nLast synchronised on 2024-02-23 at 12:26 GMT
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T122644Z
+DTSTART;TZID=Europe/London:20240219T160000
+DTEND;TZID=Europe/London:20240219T180000
+SUMMARY:Human Factors [Workshop] - 601451_A23_T2W1/01\, 771714_A23_T2W1/0
+ 1_JT
+LOCATION:Brynmor Jones Library - Teaching Room 4
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20240223T122644Z
+LAST-MODIFIED:20240223T122644Z
+UID:2023!1A6BBA6C8576D13A08E7E4150FAC3C80-2024-W08-1@mytimetable.hull.ac.
+ uk
+DESCRIPTION:Activity name: 601451_A23_T2W1/01\, 771714_A23_T2W1/01_JT\n\n
+ Type: On Campus\n\nModule code: 771714_A23_T2\n\nLocation(s):\nBrynmor J
+ ones Library - Teaching Room 4 (40)\n\nStaff member(s): Dr. Peter Clough
+ \n\nWeekly pattern: 23\, 25\, 27\, 29\, 33\n\nThis appointment is manage
+ d by MyTimetable.\n\nLast synchronised on 2024-02-23 at 12:26 GMT
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T122644Z
+DTSTART;TZID=Europe/London:20240221T130000
+DTEND;TZID=Europe/London:20240221T140000
+SUMMARY:Rather Useful Seminars [Lec] - 441190_A23_T12L2/01
+LOCATION:Wilberforce Building - Lecture Theatre 1
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20240223T122644Z
+LAST-MODIFIED:20240223T122644Z
+UID:2023!0F5D142DC03D4A4D7330F208452CC9BC-2024-W08-1@mytimetable.hull.ac.
+ uk
+DESCRIPTION:Activity name: 441190_A23_T12L2/01\n\nType: On Campus\n\nModu
+ le code: 441190_A23_T12\n\nLocation(s):\nWilberforce Building - Lecture 
+ Theatre 1 (244)\n\nStaff member(s): Mr Warren Viant\, Simon Grey\n\nWeek
+ ly pattern: 24 - 29\, 32 - 33\n\nThis appointment is managed by MyTimeta
+ ble.\n\nLast synchronised on 2024-02-23 at 12:26 GMT
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T122644Z
+DTSTART;TZID=Europe/London:20240222T100000
+DTEND;TZID=Europe/London:20240222T120000
+SUMMARY:Research Projects in Offshore Wind [Workshop] - 771753_A23_T23AW1
+ /01
+LOCATION:Fenner Building - Seminar Room 172
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20240223T122644Z
+LAST-MODIFIED:20240223T122644Z
+UID:2023!AE9CC539425145CE470A182DBCF918A6-2024-W08-1@mytimetable.hull.ac.
+ uk
+DESCRIPTION:Activity name: 771753_A23_T23AW1/01\n\nType: On Campus\n\nMod
+ ule code: 771753_A23_T23A\n\nLocation(s):\nFenner Building - Seminar Roo
+ m 172 (22)\n\nStaff member(s): Dr Agota Mockute\n\nWeekly pattern: 25 - 
+ 29\n\nThis appointment is managed by MyTimetable.\n\nLast synchronised o
+ n 2024-02-23 at 12:26 GMT
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T122644Z
+DTSTART;TZID=Europe/London:20240223T100000
+DTEND;TZID=Europe/London:20240223T130000
+SUMMARY:Materials and Manufacturing for Offshore Wind [Workshop] - 771715
+ _A23_T2W1/01
+LOCATION:Wilberforce Building - Lecture Room 23
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20240223T122644Z
+LAST-MODIFIED:20240223T122644Z
+UID:2023!AE9CC539425145CE470A182DBCF918C1-2024-W08-1@mytimetable.hull.ac.
+ uk
+DESCRIPTION:Activity name: 771715_A23_T2W1/01\n\nType: On Campus\n\nModul
+ e code: 771715_A23_T2\n\nLocation(s):\nWilberforce Building - Lecture Ro
+ om 23 (16)\n\nStaff member(s): Dr Stuart McLelland\n\nWeekly pattern: 22
+  - 29\, 32\n\nThis appointment is managed by MyTimetable.\n\nLast synchr
+ onised on 2024-02-23 at 12:26 GMT
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T122644Z
+DTSTART;TZID=Europe/London:20240226T130000
+DTEND;TZID=Europe/London:20240226T150000
+SUMMARY:Human Factors [Lec] - 601451_A23_T2L1/01\, 771714_A23_T2L1/01_JT 
+ <26-29\, 32-33>
+LOCATION:Ferens Building - Lecture Room - Basil Reckitt
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20240223T122644Z
+LAST-MODIFIED:20240223T122644Z
+UID:2023!1A6BBA6C8576D13A08E7E4150FAC3C7E-2024-W09-1@mytimetable.hull.ac.
+ uk
+DESCRIPTION:Activity name: 601451_A23_T2L1/01\, 771714_A23_T2L1/01_JT <26
+ -29\, 32-33>\n\nType: On Campus\n\nModule code: 771714_A23_T2\n\nLocatio
+ n(s):\nFerens Building - Lecture Room - Basil Reckitt (124)\n\nStaff mem
+ ber(s): Dr. Peter Clough\n\nWeekly pattern: 26 - 29\, 32 - 33\n\nThis ap
+ pointment is managed by MyTimetable.\n\nLast synchronised on 2024-02-23 
+ at 12:26 GMT
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T122644Z
+DTSTART;TZID=Europe/London:20240228T130000
+DTEND;TZID=Europe/London:20240228T140000
+SUMMARY:Rather Useful Seminars [Lec] - 441190_A23_T12L2/01
+LOCATION:Wilberforce Building - Lecture Theatre 1
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20240223T122644Z
+LAST-MODIFIED:20240223T122644Z
+UID:2023!0F5D142DC03D4A4D7330F208452CC9BC-2024-W09-1@mytimetable.hull.ac.
+ uk
+DESCRIPTION:Activity name: 441190_A23_T12L2/01\n\nType: On Campus\n\nModu
+ le code: 441190_A23_T12\n\nLocation(s):\nWilberforce Building - Lecture 
+ Theatre 1 (244)\n\nStaff member(s): Mr Warren Viant\, Simon Grey\n\nWeek
+ ly pattern: 24 - 29\, 32 - 33\n\nThis appointment is managed by MyTimeta
+ ble.\n\nLast synchronised on 2024-02-23 at 12:26 GMT
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T122644Z
+DTSTART;TZID=Europe/London:20240229T100000
+DTEND;TZID=Europe/London:20240229T120000
+SUMMARY:Research Projects in Offshore Wind [Workshop] - 771753_A23_T23AW1
+ /01
+LOCATION:Fenner Building - Seminar Room 172
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20240223T122644Z
+LAST-MODIFIED:20240223T122644Z
+UID:2023!AE9CC539425145CE470A182DBCF918A6-2024-W09-1@mytimetable.hull.ac.
+ uk
+DESCRIPTION:Activity name: 771753_A23_T23AW1/01\n\nType: On Campus\n\nMod
+ ule code: 771753_A23_T23A\n\nLocation(s):\nFenner Building - Seminar Roo
+ m 172 (22)\n\nStaff member(s): Dr Agota Mockute\n\nWeekly pattern: 25 - 
+ 29\n\nThis appointment is managed by MyTimetable.\n\nLast synchronised o
+ n 2024-02-23 at 12:26 GMT
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T122644Z
+DTSTART;TZID=Europe/London:20240301T100000
+DTEND;TZID=Europe/London:20240301T130000
+SUMMARY:Materials and Manufacturing for Offshore Wind [Workshop] - 771715
+ _A23_T2W1/01
+LOCATION:Wilberforce Building - Lecture Room 23
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20240223T122644Z
+LAST-MODIFIED:20240223T122644Z
+UID:2023!AE9CC539425145CE470A182DBCF918C1-2024-W09-1@mytimetable.hull.ac.
+ uk
+DESCRIPTION:Activity name: 771715_A23_T2W1/01\n\nType: On Campus\n\nModul
+ e code: 771715_A23_T2\n\nLocation(s):\nWilberforce Building - Lecture Ro
+ om 23 (16)\n\nStaff member(s): Dr Stuart McLelland\n\nWeekly pattern: 22
+  - 29\, 32\n\nThis appointment is managed by MyTimetable.\n\nLast synchr
+ onised on 2024-02-23 at 12:26 GMT
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T122644Z
+DTSTART;TZID=Europe/London:20240304T130000
+DTEND;TZID=Europe/London:20240304T150000
+SUMMARY:Human Factors [Lec] - 601451_A23_T2L1/01\, 771714_A23_T2L1/01_JT 
+ <26-29\, 32-33>
+LOCATION:Ferens Building - Lecture Room - Basil Reckitt
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20240223T122644Z
+LAST-MODIFIED:20240223T122644Z
+UID:2023!1A6BBA6C8576D13A08E7E4150FAC3C7E-2024-W10-1@mytimetable.hull.ac.
+ uk
+DESCRIPTION:Activity name: 601451_A23_T2L1/01\, 771714_A23_T2L1/01_JT <26
+ -29\, 32-33>\n\nType: On Campus\n\nModule code: 771714_A23_T2\n\nLocatio
+ n(s):\nFerens Building - Lecture Room - Basil Reckitt (124)\n\nStaff mem
+ ber(s): Dr. Peter Clough\n\nWeekly pattern: 26 - 29\, 32 - 33\n\nThis ap
+ pointment is managed by MyTimetable.\n\nLast synchronised on 2024-02-23 
+ at 12:26 GMT
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T122644Z
+DTSTART;TZID=Europe/London:20240304T160000
+DTEND;TZID=Europe/London:20240304T180000
+SUMMARY:Human Factors [Workshop] - 601451_A23_T2W1/01\, 771714_A23_T2W1/0
+ 1_JT
+LOCATION:Brynmor Jones Library - Teaching Room 4
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20240223T122644Z
+LAST-MODIFIED:20240223T122644Z
+UID:2023!1A6BBA6C8576D13A08E7E4150FAC3C80-2024-W10-1@mytimetable.hull.ac.
+ uk
+DESCRIPTION:Activity name: 601451_A23_T2W1/01\, 771714_A23_T2W1/01_JT\n\n
+ Type: On Campus\n\nModule code: 771714_A23_T2\n\nLocation(s):\nBrynmor J
+ ones Library - Teaching Room 4 (40)\n\nStaff member(s): Dr. Peter Clough
+ \n\nWeekly pattern: 23\, 25\, 27\, 29\, 33\n\nThis appointment is manage
+ d by MyTimetable.\n\nLast synchronised on 2024-02-23 at 12:26 GMT
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T122644Z
+DTSTART;TZID=Europe/London:20240306T130000
+DTEND;TZID=Europe/London:20240306T140000
+SUMMARY:Rather Useful Seminars [Lec] - 441190_A23_T12L2/01
+LOCATION:Wilberforce Building - Lecture Theatre 1
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20240223T122644Z
+LAST-MODIFIED:20240223T122644Z
+UID:2023!0F5D142DC03D4A4D7330F208452CC9BC-2024-W10-1@mytimetable.hull.ac.
+ uk
+DESCRIPTION:Activity name: 441190_A23_T12L2/01\n\nType: On Campus\n\nModu
+ le code: 441190_A23_T12\n\nLocation(s):\nWilberforce Building - Lecture 
+ Theatre 1 (244)\n\nStaff member(s): Mr Warren Viant\, Simon Grey\n\nWeek
+ ly pattern: 24 - 29\, 32 - 33\n\nThis appointment is managed by MyTimeta
+ ble.\n\nLast synchronised on 2024-02-23 at 12:26 GMT
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T122644Z
+DTSTART;TZID=Europe/London:20240307T100000
+DTEND;TZID=Europe/London:20240307T120000
+SUMMARY:Research Projects in Offshore Wind [Workshop] - 771753_A23_T23AW1
+ /01
+LOCATION:Fenner Building - Seminar Room 172
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20240223T122644Z
+LAST-MODIFIED:20240223T122644Z
+UID:2023!AE9CC539425145CE470A182DBCF918A6-2024-W10-1@mytimetable.hull.ac.
+ uk
+DESCRIPTION:Activity name: 771753_A23_T23AW1/01\n\nType: On Campus\n\nMod
+ ule code: 771753_A23_T23A\n\nLocation(s):\nFenner Building - Seminar Roo
+ m 172 (22)\n\nStaff member(s): Dr Agota Mockute\n\nWeekly pattern: 25 - 
+ 29\n\nThis appointment is managed by MyTimetable.\n\nLast synchronised o
+ n 2024-02-23 at 12:26 GMT
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T122644Z
+DTSTART;TZID=Europe/London:20240308T100000
+DTEND;TZID=Europe/London:20240308T130000
+SUMMARY:Materials and Manufacturing for Offshore Wind [Workshop] - 771715
+ _A23_T2W1/01
+LOCATION:Wilberforce Building - Lecture Room 23
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20240223T122644Z
+LAST-MODIFIED:20240223T122644Z
+UID:2023!AE9CC539425145CE470A182DBCF918C1-2024-W10-1@mytimetable.hull.ac.
+ uk
+DESCRIPTION:Activity name: 771715_A23_T2W1/01\n\nType: On Campus\n\nModul
+ e code: 771715_A23_T2\n\nLocation(s):\nWilberforce Building - Lecture Ro
+ om 23 (16)\n\nStaff member(s): Dr Stuart McLelland\n\nWeekly pattern: 22
+  - 29\, 32\n\nThis appointment is managed by MyTimetable.\n\nLast synchr
+ onised on 2024-02-23 at 12:26 GMT
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T122644Z
+DTSTART;TZID=Europe/London:20240311T130000
+DTEND;TZID=Europe/London:20240311T150000
+SUMMARY:Human Factors [Lec] - 601451_A23_T2L1/01\, 771714_A23_T2L1/01_JT 
+ <26-29\, 32-33>
+LOCATION:Ferens Building - Lecture Room - Basil Reckitt
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20240223T122644Z
+LAST-MODIFIED:20240223T122644Z
+UID:2023!1A6BBA6C8576D13A08E7E4150FAC3C7E-2024-W11-1@mytimetable.hull.ac.
+ uk
+DESCRIPTION:Activity name: 601451_A23_T2L1/01\, 771714_A23_T2L1/01_JT <26
+ -29\, 32-33>\n\nType: On Campus\n\nModule code: 771714_A23_T2\n\nLocatio
+ n(s):\nFerens Building - Lecture Room - Basil Reckitt (124)\n\nStaff mem
+ ber(s): Dr. Peter Clough\n\nWeekly pattern: 26 - 29\, 32 - 33\n\nThis ap
+ pointment is managed by MyTimetable.\n\nLast synchronised on 2024-02-23 
+ at 12:26 GMT
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T122644Z
+DTSTART;TZID=Europe/London:20240313T130000
+DTEND;TZID=Europe/London:20240313T140000
+SUMMARY:Rather Useful Seminars [Lec] - 441190_A23_T12L2/01
+LOCATION:Wilberforce Building - Lecture Theatre 1
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20240223T122644Z
+LAST-MODIFIED:20240223T122644Z
+UID:2023!0F5D142DC03D4A4D7330F208452CC9BC-2024-W11-1@mytimetable.hull.ac.
+ uk
+DESCRIPTION:Activity name: 441190_A23_T12L2/01\n\nType: On Campus\n\nModu
+ le code: 441190_A23_T12\n\nLocation(s):\nWilberforce Building - Lecture 
+ Theatre 1 (244)\n\nStaff member(s): Mr Warren Viant\, Simon Grey\n\nWeek
+ ly pattern: 24 - 29\, 32 - 33\n\nThis appointment is managed by MyTimeta
+ ble.\n\nLast synchronised on 2024-02-23 at 12:26 GMT
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T122644Z
+DTSTART;TZID=Europe/London:20240314T100000
+DTEND;TZID=Europe/London:20240314T120000
+SUMMARY:Research Projects in Offshore Wind [Workshop] - 771753_A23_T23AW1
+ /01
+LOCATION:Fenner Building - Seminar Room 172
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20240223T122644Z
+LAST-MODIFIED:20240223T122644Z
+UID:2023!AE9CC539425145CE470A182DBCF918A6-2024-W11-1@mytimetable.hull.ac.
+ uk
+DESCRIPTION:Activity name: 771753_A23_T23AW1/01\n\nType: On Campus\n\nMod
+ ule code: 771753_A23_T23A\n\nLocation(s):\nFenner Building - Seminar Roo
+ m 172 (22)\n\nStaff member(s): Dr Agota Mockute\n\nWeekly pattern: 25 - 
+ 29\n\nThis appointment is managed by MyTimetable.\n\nLast synchronised o
+ n 2024-02-23 at 12:26 GMT
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T122644Z
+DTSTART;TZID=Europe/London:20240315T100000
+DTEND;TZID=Europe/London:20240315T130000
+SUMMARY:Materials and Manufacturing for Offshore Wind [Workshop] - 771715
+ _A23_T2W1/01
+LOCATION:Wilberforce Building - Lecture Room 23
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20240223T122644Z
+LAST-MODIFIED:20240223T122644Z
+UID:2023!AE9CC539425145CE470A182DBCF918C1-2024-W11-1@mytimetable.hull.ac.
+ uk
+DESCRIPTION:Activity name: 771715_A23_T2W1/01\n\nType: On Campus\n\nModul
+ e code: 771715_A23_T2\n\nLocation(s):\nWilberforce Building - Lecture Ro
+ om 23 (16)\n\nStaff member(s): Dr Stuart McLelland\n\nWeekly pattern: 22
+  - 29\, 32\n\nThis appointment is managed by MyTimetable.\n\nLast synchr
+ onised on 2024-02-23 at 12:26 GMT
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T122644Z
+DTSTART;TZID=Europe/London:20240318T130000
+DTEND;TZID=Europe/London:20240318T150000
+SUMMARY:Human Factors [Lec] - 601451_A23_T2L1/01\, 771714_A23_T2L1/01_JT 
+ <26-29\, 32-33>
+LOCATION:Ferens Building - Lecture Room - Basil Reckitt
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20240223T122644Z
+LAST-MODIFIED:20240223T122644Z
+UID:2023!1A6BBA6C8576D13A08E7E4150FAC3C7E-2024-W12-1@mytimetable.hull.ac.
+ uk
+DESCRIPTION:Activity name: 601451_A23_T2L1/01\, 771714_A23_T2L1/01_JT <26
+ -29\, 32-33>\n\nType: On Campus\n\nModule code: 771714_A23_T2\n\nLocatio
+ n(s):\nFerens Building - Lecture Room - Basil Reckitt (124)\n\nStaff mem
+ ber(s): Dr. Peter Clough\n\nWeekly pattern: 26 - 29\, 32 - 33\n\nThis ap
+ pointment is managed by MyTimetable.\n\nLast synchronised on 2024-02-23 
+ at 12:26 GMT
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T122644Z
+DTSTART;TZID=Europe/London:20240318T160000
+DTEND;TZID=Europe/London:20240318T180000
+SUMMARY:Human Factors [Workshop] - 601451_A23_T2W1/01\, 771714_A23_T2W1/0
+ 1_JT
+LOCATION:Brynmor Jones Library - Teaching Room 4
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20240223T122644Z
+LAST-MODIFIED:20240223T122644Z
+UID:2023!1A6BBA6C8576D13A08E7E4150FAC3C80-2024-W12-1@mytimetable.hull.ac.
+ uk
+DESCRIPTION:Activity name: 601451_A23_T2W1/01\, 771714_A23_T2W1/01_JT\n\n
+ Type: On Campus\n\nModule code: 771714_A23_T2\n\nLocation(s):\nBrynmor J
+ ones Library - Teaching Room 4 (40)\n\nStaff member(s): Dr. Peter Clough
+ \n\nWeekly pattern: 23\, 25\, 27\, 29\, 33\n\nThis appointment is manage
+ d by MyTimetable.\n\nLast synchronised on 2024-02-23 at 12:26 GMT
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T122644Z
+DTSTART;TZID=Europe/London:20240320T130000
+DTEND;TZID=Europe/London:20240320T140000
+SUMMARY:Rather Useful Seminars [Lec] - 441190_A23_T12L2/01
+LOCATION:Wilberforce Building - Lecture Theatre 1
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20240223T122644Z
+LAST-MODIFIED:20240223T122644Z
+UID:2023!0F5D142DC03D4A4D7330F208452CC9BC-2024-W12-1@mytimetable.hull.ac.
+ uk
+DESCRIPTION:Activity name: 441190_A23_T12L2/01\n\nType: On Campus\n\nModu
+ le code: 441190_A23_T12\n\nLocation(s):\nWilberforce Building - Lecture 
+ Theatre 1 (244)\n\nStaff member(s): Mr Warren Viant\, Simon Grey\n\nWeek
+ ly pattern: 24 - 29\, 32 - 33\n\nThis appointment is managed by MyTimeta
+ ble.\n\nLast synchronised on 2024-02-23 at 12:26 GMT
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T122644Z
+DTSTART;TZID=Europe/London:20240321T100000
+DTEND;TZID=Europe/London:20240321T120000
+SUMMARY:Research Projects in Offshore Wind [Workshop] - 771753_A23_T23AW1
+ /01
+LOCATION:Fenner Building - Seminar Room 172
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20240223T122644Z
+LAST-MODIFIED:20240223T122644Z
+UID:2023!AE9CC539425145CE470A182DBCF918A6-2024-W12-1@mytimetable.hull.ac.
+ uk
+DESCRIPTION:Activity name: 771753_A23_T23AW1/01\n\nType: On Campus\n\nMod
+ ule code: 771753_A23_T23A\n\nLocation(s):\nFenner Building - Seminar Roo
+ m 172 (22)\n\nStaff member(s): Dr Agota Mockute\n\nWeekly pattern: 25 - 
+ 29\n\nThis appointment is managed by MyTimetable.\n\nLast synchronised o
+ n 2024-02-23 at 12:26 GMT
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T122644Z
+DTSTART;TZID=Europe/London:20240322T100000
+DTEND;TZID=Europe/London:20240322T130000
+SUMMARY:Materials and Manufacturing for Offshore Wind [Workshop] - 771715
+ _A23_T2W1/01
+LOCATION:Wilberforce Building - Lecture Room 23
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20240223T122644Z
+LAST-MODIFIED:20240223T122644Z
+UID:2023!AE9CC539425145CE470A182DBCF918C1-2024-W12-1@mytimetable.hull.ac.
+ uk
+DESCRIPTION:Activity name: 771715_A23_T2W1/01\n\nType: On Campus\n\nModul
+ e code: 771715_A23_T2\n\nLocation(s):\nWilberforce Building - Lecture Ro
+ om 23 (16)\n\nStaff member(s): Dr Stuart McLelland\n\nWeekly pattern: 22
+  - 29\, 32\n\nThis appointment is managed by MyTimetable.\n\nLast synchr
+ onised on 2024-02-23 at 12:26 GMT
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T122644Z
+DTSTART;TZID=Europe/London:20240408T100000
+DTEND;TZID=Europe/London:20240408T120000
+SUMMARY:Research Projects in Offshore Wind [Lec] - 771753_A23_T23AL1/01
+LOCATION:Wilberforce Building - Seminar Room 294
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20240223T122644Z
+LAST-MODIFIED:20240223T122644Z
+UID:2023!AE9CC539425145CE470A182DBCF91898-2024-W15-1@mytimetable.hull.ac.
+ uk
+DESCRIPTION:Activity name: 771753_A23_T23AL1/01\n\nType: On Campus\n\nMod
+ ule code: 771753_A23_T23A\n\nLocation(s):\nWilberforce Building - Semina
+ r Room 294 (20)\n\nStaff member(s): Dr Agota Mockute\n\nWeekly pattern: 
+ 22 - 24\, 32 - 35\n\nThis appointment is managed by MyTimetable.\n\nLast
+  synchronised on 2024-02-23 at 12:26 GMT
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T122644Z
+DTSTART;TZID=Europe/London:20240408T130000
+DTEND;TZID=Europe/London:20240408T150000
+SUMMARY:Human Factors [Lec] - 601451_A23_T2L1/01\, 771714_A23_T2L1/01_JT 
+ <26-29\, 32-33>
+LOCATION:Ferens Building - Lecture Room - Basil Reckitt
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20240223T122644Z
+LAST-MODIFIED:20240223T122644Z
+UID:2023!1A6BBA6C8576D13A08E7E4150FAC3C7E-2024-W15-1@mytimetable.hull.ac.
+ uk
+DESCRIPTION:Activity name: 601451_A23_T2L1/01\, 771714_A23_T2L1/01_JT <26
+ -29\, 32-33>\n\nType: On Campus\n\nModule code: 771714_A23_T2\n\nLocatio
+ n(s):\nFerens Building - Lecture Room - Basil Reckitt (124)\n\nStaff mem
+ ber(s): Dr. Peter Clough\n\nWeekly pattern: 26 - 29\, 32 - 33\n\nThis ap
+ pointment is managed by MyTimetable.\n\nLast synchronised on 2024-02-23 
+ at 12:26 GMT
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T122644Z
+DTSTART;TZID=Europe/London:20240410T130000
+DTEND;TZID=Europe/London:20240410T140000
+SUMMARY:Rather Useful Seminars [Lec] - 441190_A23_T12L2/01
+LOCATION:Wilberforce Building - Lecture Theatre 1
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20240223T122644Z
+LAST-MODIFIED:20240223T122644Z
+UID:2023!0F5D142DC03D4A4D7330F208452CC9BC-2024-W15-1@mytimetable.hull.ac.
+ uk
+DESCRIPTION:Activity name: 441190_A23_T12L2/01\n\nType: On Campus\n\nModu
+ le code: 441190_A23_T12\n\nLocation(s):\nWilberforce Building - Lecture 
+ Theatre 1 (244)\n\nStaff member(s): Mr Warren Viant\, Simon Grey\n\nWeek
+ ly pattern: 24 - 29\, 32 - 33\n\nThis appointment is managed by MyTimeta
+ ble.\n\nLast synchronised on 2024-02-23 at 12:26 GMT
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T122644Z
+DTSTART;TZID=Europe/London:20240412T100000
+DTEND;TZID=Europe/London:20240412T130000
+SUMMARY:Materials and Manufacturing for Offshore Wind [Workshop] - 771715
+ _A23_T2W1/01
+LOCATION:Wilberforce Building - Lecture Room 23
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20240223T122644Z
+LAST-MODIFIED:20240223T122644Z
+UID:2023!AE9CC539425145CE470A182DBCF918C1-2024-W15-1@mytimetable.hull.ac.
+ uk
+DESCRIPTION:Activity name: 771715_A23_T2W1/01\n\nType: On Campus\n\nModul
+ e code: 771715_A23_T2\n\nLocation(s):\nWilberforce Building - Lecture Ro
+ om 23 (16)\n\nStaff member(s): Dr Stuart McLelland\n\nWeekly pattern: 22
+  - 29\, 32\n\nThis appointment is managed by MyTimetable.\n\nLast synchr
+ onised on 2024-02-23 at 12:26 GMT
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T122644Z
+DTSTART;TZID=Europe/London:20240415T100000
+DTEND;TZID=Europe/London:20240415T120000
+SUMMARY:Research Projects in Offshore Wind [Lec] - 771753_A23_T23AL1/01
+LOCATION:Wilberforce Building - Seminar Room 294
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20240223T122644Z
+LAST-MODIFIED:20240223T122644Z
+UID:2023!AE9CC539425145CE470A182DBCF91898-2024-W16-1@mytimetable.hull.ac.
+ uk
+DESCRIPTION:Activity name: 771753_A23_T23AL1/01\n\nType: On Campus\n\nMod
+ ule code: 771753_A23_T23A\n\nLocation(s):\nWilberforce Building - Semina
+ r Room 294 (20)\n\nStaff member(s): Dr Agota Mockute\n\nWeekly pattern: 
+ 22 - 24\, 32 - 35\n\nThis appointment is managed by MyTimetable.\n\nLast
+  synchronised on 2024-02-23 at 12:26 GMT
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T122644Z
+DTSTART;TZID=Europe/London:20240415T130000
+DTEND;TZID=Europe/London:20240415T150000
+SUMMARY:Human Factors [Lec] - 601451_A23_T2L1/01\, 771714_A23_T2L1/01_JT 
+ <26-29\, 32-33>
+LOCATION:Ferens Building - Lecture Room - Basil Reckitt
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20240223T122644Z
+LAST-MODIFIED:20240223T122644Z
+UID:2023!1A6BBA6C8576D13A08E7E4150FAC3C7E-2024-W16-1@mytimetable.hull.ac.
+ uk
+DESCRIPTION:Activity name: 601451_A23_T2L1/01\, 771714_A23_T2L1/01_JT <26
+ -29\, 32-33>\n\nType: On Campus\n\nModule code: 771714_A23_T2\n\nLocatio
+ n(s):\nFerens Building - Lecture Room - Basil Reckitt (124)\n\nStaff mem
+ ber(s): Dr. Peter Clough\n\nWeekly pattern: 26 - 29\, 32 - 33\n\nThis ap
+ pointment is managed by MyTimetable.\n\nLast synchronised on 2024-02-23 
+ at 12:26 GMT
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T122644Z
+DTSTART;TZID=Europe/London:20240415T160000
+DTEND;TZID=Europe/London:20240415T180000
+SUMMARY:Human Factors [Workshop] - 601451_A23_T2W1/01\, 771714_A23_T2W1/0
+ 1_JT
+LOCATION:Brynmor Jones Library - Teaching Room 4
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20240223T122644Z
+LAST-MODIFIED:20240223T122644Z
+UID:2023!1A6BBA6C8576D13A08E7E4150FAC3C80-2024-W16-1@mytimetable.hull.ac.
+ uk
+DESCRIPTION:Activity name: 601451_A23_T2W1/01\, 771714_A23_T2W1/01_JT\n\n
+ Type: On Campus\n\nModule code: 771714_A23_T2\n\nLocation(s):\nBrynmor J
+ ones Library - Teaching Room 4 (40)\n\nStaff member(s): Dr. Peter Clough
+ \n\nWeekly pattern: 23\, 25\, 27\, 29\, 33\n\nThis appointment is manage
+ d by MyTimetable.\n\nLast synchronised on 2024-02-23 at 12:26 GMT
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T122644Z
+DTSTART;TZID=Europe/London:20240417T130000
+DTEND;TZID=Europe/London:20240417T140000
+SUMMARY:Rather Useful Seminars [Lec] - 441190_A23_T12L2/01
+LOCATION:Wilberforce Building - Lecture Theatre 1
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20240223T122644Z
+LAST-MODIFIED:20240223T122644Z
+UID:2023!0F5D142DC03D4A4D7330F208452CC9BC-2024-W16-1@mytimetable.hull.ac.
+ uk
+DESCRIPTION:Activity name: 441190_A23_T12L2/01\n\nType: On Campus\n\nModu
+ le code: 441190_A23_T12\n\nLocation(s):\nWilberforce Building - Lecture 
+ Theatre 1 (244)\n\nStaff member(s): Mr Warren Viant\, Simon Grey\n\nWeek
+ ly pattern: 24 - 29\, 32 - 33\n\nThis appointment is managed by MyTimeta
+ ble.\n\nLast synchronised on 2024-02-23 at 12:26 GMT
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T122644Z
+DTSTART;TZID=Europe/London:20240419T090000
+DTEND;TZID=Europe/London:20240419T170000
+SUMMARY:Materials and Manufacturing for Offshore Wind [Practical - Sheffi
+ eld] - 771715_A23_T2P1/01
+LOCATION:
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20240223T122644Z
+LAST-MODIFIED:20240223T122644Z
+UID:2023!AE9CC539425145CE470A182DBCF918C3-2024-W16-1@mytimetable.hull.ac.
+ uk
+DESCRIPTION:Activity name: 771715_A23_T2P1/01\n\nType: On Campus\n\nModul
+ e code: 771715_A23_T2\n\nStaff member(s): Dr Stuart McLelland\n\nWeekly 
+ pattern: 33 - 34\n\nThis appointment is managed by MyTimetable.\n\nLast 
+ synchronised on 2024-02-23 at 12:26 GMT
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T122644Z
+DTSTART;TZID=Europe/London:20240422T100000
+DTEND;TZID=Europe/London:20240422T120000
+SUMMARY:Research Projects in Offshore Wind [Lec] - 771753_A23_T23AL1/01
+LOCATION:Wilberforce Building - Seminar Room 294
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20240223T122644Z
+LAST-MODIFIED:20240223T122644Z
+UID:2023!AE9CC539425145CE470A182DBCF91898-2024-W17-1@mytimetable.hull.ac.
+ uk
+DESCRIPTION:Activity name: 771753_A23_T23AL1/01\n\nType: On Campus\n\nMod
+ ule code: 771753_A23_T23A\n\nLocation(s):\nWilberforce Building - Semina
+ r Room 294 (20)\n\nStaff member(s): Dr Agota Mockute\n\nWeekly pattern: 
+ 22 - 24\, 32 - 35\n\nThis appointment is managed by MyTimetable.\n\nLast
+  synchronised on 2024-02-23 at 12:26 GMT
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T122644Z
+DTSTART;TZID=Europe/London:20240426T090000
+DTEND;TZID=Europe/London:20240426T170000
+SUMMARY:Materials and Manufacturing for Offshore Wind [Practical - Sheffi
+ eld] - 771715_A23_T2P1/01
+LOCATION:
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20240223T122644Z
+LAST-MODIFIED:20240223T122644Z
+UID:2023!AE9CC539425145CE470A182DBCF918C3-2024-W17-1@mytimetable.hull.ac.
+ uk
+DESCRIPTION:Activity name: 771715_A23_T2P1/01\n\nType: On Campus\n\nModul
+ e code: 771715_A23_T2\n\nStaff member(s): Dr Stuart McLelland\n\nWeekly 
+ pattern: 33 - 34\n\nThis appointment is managed by MyTimetable.\n\nLast 
+ synchronised on 2024-02-23 at 12:26 GMT
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20240223T122644Z
+DTSTART;TZID=Europe/London:20240429T100000
+DTEND;TZID=Europe/London:20240429T120000
+SUMMARY:Research Projects in Offshore Wind [Lec] - 771753_A23_T23AL1/01
+LOCATION:Wilberforce Building - Seminar Room 294
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20240223T122644Z
+LAST-MODIFIED:20240223T122644Z
+UID:2023!AE9CC539425145CE470A182DBCF91898-2024-W18-1@mytimetable.hull.ac.
+ uk
+DESCRIPTION:Activity name: 771753_A23_T23AL1/01\n\nType: On Campus\n\nMod
+ ule code: 771753_A23_T23A\n\nLocation(s):\nWilberforce Building - Semina
+ r Room 294 (20)\n\nStaff member(s): Dr Agota Mockute\n\nWeekly pattern: 
+ 22 - 24\, 32 - 35\n\nThis appointment is managed by MyTimetable.\n\nLast
+  synchronised on 2024-02-23 at 12:26 GMT
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR
