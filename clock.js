@@ -79,7 +79,7 @@ function init() {
   if (date_obj.getHours() < 7 || date_obj.getHours() > 22) {
     text.textContent = "SLEEP TIME";
   } else {
-    text.textContent = "SLEEP TIME";
+    text.textContent = "DAY TIME";
   }
 }
 
