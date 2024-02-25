@@ -6,13 +6,15 @@ let time;
 let bedtime = 23;
 let daytime = 7;
 
+const update_interval = 5000;
+
 document.addEventListener("DOMContentLoaded", () => {
   day = document.querySelector(".day");
   text = document.querySelector(".text");
   date = document.querySelector(".date");
   time = document.querySelector(".time");
   init();
-  setInterval(init, 1000);
+  setInterval(init, update_interval);
 });
 
 const GetDayName = (day) => {
@@ -29,7 +31,7 @@ const GetDayName = (day) => {
       return "Friday";
     case 6:
       return "Saturday";
-    case 7:
+    case 0:
       return "Sunday";
   }
 };
@@ -65,7 +67,7 @@ const GetMonthName = (month) => {
 
 function init() {
   const date_obj = new Date();
-  day.textContent = GetDayName(date_obj.getDay()).toUpperCase();
+  day.textContent = GetDayName(date_obj.getDay())?.toUpperCase() ?? "";
 
   time.innerHTML = GetTime(date_obj);
 
