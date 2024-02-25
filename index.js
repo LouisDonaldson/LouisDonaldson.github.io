@@ -9,6 +9,18 @@ async function init() {
   <div class="text">
     Welcome!
   </div>`;
+
+  text.addEventListener("click", () => {
+    const main_body = document.querySelector(".main_body");
+    main_body.innerHTML = `
+    <ul class="ul_nav">
+        <li class="li_nav_item">
+            <a href="bywater.html">Bywater Concept Website</a>
+        </li>
+        <li class="li_nav_item">
+            <a href="./pathfinding/pathfinding.html">Pathfinding Demonstration</a>
+        </li>    </ul>`;
+  });
 }
 
 function Timeout(milsecs) {

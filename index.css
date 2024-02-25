@@ -1,3 +1,46 @@
+.main_body{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items:center ;
+    position: absolute;
+}
+
+.ul_nav{
+    list-style: none;
+    display: flex;
+    font-size: 16pt;
+    -webkit-animation: tracking-in-expand-fwd 2s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+        animation: tracking-in-expand-fwd 2s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+}
+
+.li_nav_item{
+    margin: 5px 10px;
+    padding: 10px;
+    border: solid 1pt black;
+    border-radius: 5px;
+    transition: 0.25s;
+    color: black;
+}
+
+.li_nav_item:hover {
+    cursor: pointer;
+    border: solid 1pt #bd4141;
+    background-color: #bd4141;
+    color: white;
+    transition: 0.5s;
+}
+
+a{
+    text-decoration: none;
+        color: inherit;
+        outline: 0;
+        /* cursor: auto; */
+}
+
+
+
 .title{
     font-weight: 300;
     position: absolute;
@@ -5,11 +48,61 @@
     left: calc(50% - 75%);
     width: 150%;
     font-size: 30pt;
+    transition: 0.25s;
 }
 
 .text{
-    -webkit-animation: tracking-in-expand-fwd 2s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+        -webkit-animation: tracking-in-expand-fwd 2s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
         animation: tracking-in-expand-fwd 2s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+    }
+
+.title:hover {
+    transition: 1s;
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.tracking-out-contract-bck {
+    -webkit-animation: tracking-out-contract-bck 0.8s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+    animation: tracking-out-contract-bck 0.8s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+}
+
+@-webkit-keyframes tracking-out-contract-bck {
+    0% {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+        opacity: 1;
+    }
+
+    60% {
+        opacity: 1;
+    }
+
+    100% {
+        letter-spacing: -0.5em;
+        -webkit-transform: translateZ(-500px);
+        transform: translateZ(-500px);
+        opacity: 0;
+    }
+}
+
+@keyframes tracking-out-contract-bck {
+    0% {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+        opacity: 1;
+    }
+
+    60% {
+        opacity: 1;
+    }
+
+    100% {
+        letter-spacing: -0.5em;
+        -webkit-transform: translateZ(-500px);
+        transform: translateZ(-500px);
+        opacity: 0;
+    }
 }
 
 @-webkit-keyframes tracking-in-expand-fwd {
@@ -359,7 +452,7 @@ body {
 
 .bg {
     animation: slide 3s ease-in-out infinite alternate;
-    background-image: linear-gradient(-60deg, #ff9f9f 50%, #cae5ff 50%);
+    background-image: linear-gradient(-60deg, #0a7b63 50%, #dfffca 50%);
     bottom: 0;
     left: -50%;
     opacity: .5;
