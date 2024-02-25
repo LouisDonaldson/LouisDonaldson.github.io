@@ -63,8 +63,8 @@ html{
     top: calc(50% - 25px);
     left: calc(50% - 25px);
     border-radius: 50%;
-    background-color: #9acfc5;
-    border: 5px solid #43beae;
+    background-color: #ee8181;
+    border: 5px solid #bd4141;
     box-sizing: border-box;
 }
 
@@ -292,7 +292,7 @@ html{
     position: absolute;
     bottom: 25px;
     left: calc(50% - 47.5%);
-    background-color: #41bdad;
+    background-color: #bd4141;
     border-radius: 10px;
 }
 
@@ -316,7 +316,7 @@ body {
 
 .bg {
     animation: slide 3s ease-in-out infinite alternate;
-    background-image: linear-gradient(-60deg, #6c3 50%, #09f 50%);
+    background-image: linear-gradient(-60deg, #021839 50%, #28f7ff 50%);
     bottom: 0;
     left: -50%;
     opacity: .5;
