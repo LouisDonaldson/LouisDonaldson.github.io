@@ -7,6 +7,7 @@ let bedtime = 23;
 let daytime = 7;
 
 const update_interval = 5000;
+const refresh_time = 60000 * 60 * 2;
 
 document.addEventListener("DOMContentLoaded", () => {
   day = document.querySelector(".day");
@@ -15,6 +16,9 @@ document.addEventListener("DOMContentLoaded", () => {
   time = document.querySelector(".time");
   init();
   setInterval(init, update_interval);
+  setTimeout(() => {
+    window.location.reload();
+  }, refresh_time);
 });
 
 const GetDayName = (day) => {
