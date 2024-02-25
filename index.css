@@ -15,6 +15,7 @@
     animation: tracking-in-expand-fwd 2s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
     flex-wrap: wrap;
     justify-content: center;
+    padding: 0px;
 }
 
 .li_nav_item{
