@@ -14,7 +14,14 @@ document.addEventListener("DOMContentLoaded", () => {
   text = document.querySelector(".text");
   date = document.querySelector(".date");
   time = document.querySelector(".time");
-  init();
+  try {
+    init();
+  } catch (e) {
+    document.querySelector(".body").innerHTML = `${e}`;
+    setTimeout(() => {
+      window.location.reload();
+    }, 60000);
+  }
   setInterval(init, update_interval);
   setTimeout(() => {
     window.location.reload();
@@ -71,7 +78,7 @@ const GetMonthName = (month) => {
 
 function init() {
   const date_obj = new Date();
-  day.textContent = GetDayName(date_obj.getDay())?.toUpperCase() ?? "";
+  day.textContent = GetDayName(date_obj.getDay()).toUpperCase();
 
   time.innerHTML = GetTime(date_obj);
 
