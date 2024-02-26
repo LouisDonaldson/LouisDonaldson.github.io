@@ -7,6 +7,10 @@ const links = [
     name: "Bywater Concept Website",
     href: "bywater.html",
   },
+  {
+    name: "Alzheimers Clock (phone layout not optimised)",
+    href: "clock.html",
+  },
 ];
 
 document.addEventListener("DOMContentLoaded", () => {
