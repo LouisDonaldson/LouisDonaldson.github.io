@@ -1,0 +1,24 @@
+html{
+    background-color: rgb(6, 13, 29);
+}
+
+body{
+        font-family: "Raleway" !important;
+}
+
+
+.bg{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inner{
+    padding: 50px 100px;
+    color: gray;
+    border-radius: 10px;
+    border: solid 2pt gray;
+}
