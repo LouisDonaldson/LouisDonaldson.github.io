@@ -1,0 +1,162 @@
+html{
+    font-family: "Poppins";
+    --dark_linear: linear-gradient(180deg, #27314B 0%, #2C1532 100%);
+    --green_linear: linear-gradient(180deg, #5FF352 0%, #3EEE9A 100%);
+}
+
+body{
+    font-family: "Poppins";
+}
+
+.body_div{
+    position: absolute;
+    height: 100%;
+    width: 100vw;
+}
+
+.add_btn{
+    position: absolute;
+    height: auto;
+    bottom: 10px;
+    background: var(--dark_linear);
+    border-radius: 20pt;
+}
+
+.banner {
+    background: var(--dark_linear);
+    width: 100%;
+    height: 160px;
+    position: absolute;
+    z-index: -1;
+}
+
+.accounts_div{
+    padding: 10pt 20pt;
+}
+
+.account{
+    display: flex;
+    flex-direction: column;
+    background: var(--green_linear);
+    border-radius: 10pt;
+    padding: 5pt 10pt;
+    margin-bottom: 10px;
+}
+
+.account_name{
+    font-size: 16pt;
+}
+
+.account_amount{
+    font-size: 20pt;
+}
+
+.edit_account{
+    display: inline-flex;
+        justify-content: center;
+        background: var(--dark_linear);
+        color: white;
+        border-radius: 5px;
+        padding: 5px 10px;
+        font-size: 10pt;
+}
+
+.upcoming_transactions{
+    display: flex;
+    padding: 10pt 20pt;
+    flex-direction: column;
+    padding-top: 0pt;
+}
+
+.upcoming_trans_title{
+
+}
+
+.filter_bar{
+    display: flex;
+    width: 100%;
+}
+
+.filter_bar.filter {
+    display: inline-flex;
+    width: 100%;
+        justify-content: center;
+}
+
+.filter{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.filter>div{
+    display: flex;
+    /* margin: 0px 5px; */
+}
+
+.filter>div>div {
+    /* display: flex; */
+    /* margin: 0px 5px; */
+    padding: 5px 10px;
+    border: solid 1pt white;
+    background: var(--dark_linear);
+    color: white;
+    border-radius: 5pt;
+    font-size: 10pt;
+    transition: 0.1s;
+}
+
+.filter>div>div:hover {
+    /* display: flex; */
+    /* margin: 0px 5px; */
+    padding: 5px 10px;
+    border: solid 1pt white;
+    background: var(--green_linear);
+    color: black;
+    border-radius: 5pt;
+    cursor:pointer;
+    transition: 0.25s;
+}
+
+.filter>div>div.selected {
+    /* display: flex; */
+    /* margin: 0px 5px; */
+    padding: 5px 10px;
+    border: solid 1pt white;
+    background: var(--green_linear);
+    color: black;
+    border-radius: 5pt;
+    cursor:not-allowed;
+    transition: 0.25s;
+}
+
+.left_radius{
+    border-radius: 5px 0px 0px 5px !important;
+}
+
+.right_radius{
+    border-radius: 0px 5px 5px 0px !important;
+}
+
+.no_radius{
+    border-radius: 0px !important;
+}
+
+.transaction{
+    margin-top: 5px 0px;
+    padding: 5px 0px;
+    display: flex;
+    justify-content: space-between;
+    border-top: solid 1pt lightgray;
+}
+
+.edit_transaction{
+    display: inline-flex;
+    justify-content: center;
+    background: var(--dark_linear);
+    color: white;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 10pt;
+    margin-top: 10px;
+}

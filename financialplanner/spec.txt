@@ -1,0 +1,13 @@
+Needs to have:
+- Add multiple accounts
+- Show ingoings and outgoings
+- Add projected ingoings and outgoings
+- Add past outgoings and ingoings
+
+- Separates essentials from useable money
+    - Add direct debits
+    - monthly outgoings
+    - Allow weekly income
+    - Allow savings section
+    - Bills
+    - Spendable money 
