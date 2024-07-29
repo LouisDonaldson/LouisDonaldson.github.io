@@ -11,6 +11,10 @@ const links = [
     name: "Alzheimers Clock (phone layout not optimised)",
     href: "clock.html",
   },
+  {
+    name: "PhD Explainable Reinforcement Learning in the Offshore Wind Industry",
+    href: "Poster-Link/PosterReferences.html",
+  },
 ];
 
 document.addEventListener("DOMContentLoaded", () => {
