@@ -53,6 +53,7 @@ body{
     align-items: center;
     background-color: #357faa;
     padding: 10px 20px;
+    text-align: center;
 }
 
 .links>.link{
