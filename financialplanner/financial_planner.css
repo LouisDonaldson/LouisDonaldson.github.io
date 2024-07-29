@@ -150,6 +150,16 @@ body{
     border-top: solid 1pt lightgray;
 }
 
+<<<<<<< Updated upstream
+=======
+.transactions{
+    max-height: 40vh;
+    height: 40vh;
+    overflow-y: scroll;
+    border-bottom: solid 1pt lightgray;
+}
+
+>>>>>>> Stashed changes
 .edit_transaction{
     display: inline-flex;
     justify-content: center;
@@ -160,3 +170,33 @@ body{
     font-size: 10pt;
     margin-top: 10px;
 }
+<<<<<<< Updated upstream
+=======
+
+.edit_buttons{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.edit_buttons>div{
+    display: flex;
+    width: 80vw;
+    background: var(--dark_linear);
+    color: white;
+    margin-bottom: 10px;
+    border-radius: 5pt;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.edit_buttons>div:hover{
+    border: solid 1pt white;
+    background: var(--green_linear);
+    color: black;
+    border-radius: 5pt;
+    cursor: pointer;
+    transition: 0.25s;
+}
+>>>>>>> Stashed changes
