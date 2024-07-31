@@ -26,7 +26,7 @@ body{
 
 .subtitle_banner{
     position: relative;
-        left: -30px;
+        left: -40px;
         display: inline-flex;
         flex-direction: column;
         justify-content: center;
@@ -42,8 +42,27 @@ body{
 .subtitle{
     transform: skewX(20deg);
         position: relative;
-        left: 30px;
+        left: 40px;
         margin-bottom: 0px;
+}
+
+.heading_banner{
+    position: relative;
+    left: -40px;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    padding: 10px 20px;
+    padding-right: 15vw;
+    background-color: #de6449;
+    color: white;
+    transform: skewX(-20deg);
+    margin-bottom: 20px;
+}
+
+.subtitle.heading{
+    left: 20px;
 }
 
 .links{
