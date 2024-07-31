@@ -1,0 +1,185 @@
+body{
+    font-family: "Titillium Web";
+}
+
+.navbar{
+    display: flex;
+    padding: 10px;
+    /* background-color: lightcoral; */
+    /* border-bottom: solid 1pt lightgray; */
+    justify-content: space-between;
+    min-height: 10vh;
+}
+
+.navbar>ul{
+    list-style: none;
+    padding: 0px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+    margin: 0px;
+}
+
+.navbar>ul>li{
+    padding: 0px;
+    margin: 10px;
+    transition: 0.25s;
+}
+
+.navbar>ul>li:hover {
+    /* transform: translateY(2.5px); */
+    transition: 0.25s;
+}
+
+.logo_div{
+    display: flex;
+    align-items: center;
+}
+
+.location_text{
+    margin-left: 10px;
+    color: gray;
+}
+
+.logo{
+    max-height: 5vh;
+}
+
+.about_us{
+    display: flex;
+    height: 90vh;
+    align-items: center;
+}
+
+.about_us_img{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;    
+    width: 100%;
+    z-index: -1;
+    position: absolute;
+
+    background-image: url(./images/temp_landing_img.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 70%;
+}
+
+.about_us_img::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background: rgb(255, 255, 255);
+        background: linear-gradient(240deg, rgba(255, 255, 255, 0) 0%, #023047 100%);
+    /* Change the color and opacity as needed */
+}
+
+.about_us_content{
+    /* width: 50%; */
+    display: inline-flex;
+    position: relative;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.about_us_content>h1{
+    color: white;
+    font-weight: bold;
+}
+
+.about_us_content>p {
+    color: white;
+}
+
+.get_in_touch_btn{
+    background-color: #fb8500;
+    border-color: #fb8500;
+}
+
+.locations_btn{
+    background-color: #219ebc;
+    border-color: #219ebc;
+}
+
+h1{
+    font-weight: bold;
+}
+
+.hull_div{
+    background-color: #8ecae6;
+}
+
+.lincoln_div{
+    background-color: #219ebc;
+}
+
+.locations_content{
+    display: flex;
+    height: 100vh;
+    align-items: center;
+}
+
+.btn-hull{
+    background-color: #023047;
+    border-color: #023047;
+}
+
+.btn-lincoln{
+    background-color: #023047;
+    border-color: #023047;
+}
+
+.location_img_div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.location_img{
+    /* background-color: #fb8500; */
+    height: 20vw;
+    max-height: 200px;
+}
+
+.what_we_can_provide_content{
+    background-color: #023047;
+    padding: 10vh 0px;
+    min-height: 100vh;
+}
+
+.justify{
+    text-align: justify;
+}
+
+.get_in_touch_div{
+    padding: 10vh 0px;
+}
+
+h1{
+    font-weight: bold;
+}
+
+.location_btn{
+    background-color: #fb8500;
+    border-color: #fb8500;
+}
+
+.pre_footer{
+    background-color: #023047;
+    padding: 10vh 0px;
+}
+
+footer{
+    height: 5vh;
+    background-color: #fb8500;
+    display: flex;
+    align-items: center;
+}
