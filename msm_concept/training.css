@@ -21,7 +21,7 @@
     width: 100%;
     height: 100%;
     background: var(--primary_blue);
-    opacity: 70%;
+    opacity: 80%;
     /* background: linear-gradient(240deg, rgba(255, 255, 255, 0) 0%, #023047 90%); */
         /* Change the color and opacity as needed */
 }
@@ -82,6 +82,10 @@ min-height: 100vh;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 50%;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 .instructor_div::before{
@@ -94,7 +98,7 @@ min-height: 100vh;
     height: 100%;
     z-index: 1;
     background: var(--primary_blue);
-    opacity: 70%;
+    opacity: 80%;
     /* Change the color and opacity as needed */
 }
 
