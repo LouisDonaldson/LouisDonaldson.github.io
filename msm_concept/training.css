@@ -1,0 +1,108 @@
+.rider_div{
+    min-height: 100vh;
+    /* background-color: var(--primary_blue); */
+    background-image: url(./images/temp_landing_img.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 65%;
+    position: relative;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.rider_div::before{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--primary_blue);
+    opacity: 70%;
+    /* background: linear-gradient(240deg, rgba(255, 255, 255, 0) 0%, #023047 90%); */
+        /* Change the color and opacity as needed */
+}
+
+.rider_content {
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.btn_primary{
+    background-color: var(--primary_orange);
+    border-color: var(--primary_orange);
+    color: white;
+}
+
+.driver_div {
+    min-height: 100vh;
+    /* background-color: var(--primary_blue); */
+    position: relative;
+    background-image: url(./images/car_bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50%;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.driver_div::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background: var(--primary_blue);
+        opacity: 80%;
+    /* Change the color and opacity as needed */
+}
+
+.driver_div{
+    min-height: 100vh;
+    /* background-color: #023047; */
+}
+
+.instructor_div {
+min-height: 100vh;
+    /* background-color: var(--primary_blue); */
+    position: relative;
+    background-image: url(./images/classroom.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50%;
+}
+
+.instructor_div::before{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background: var(--primary_blue);
+    opacity: 70%;
+    /* Change the color and opacity as needed */
+}
+
+h1{
+    font-weight: bold;
+}
+
+.z-index-front{
+    z-index: 2;
+    position: relative;
+}

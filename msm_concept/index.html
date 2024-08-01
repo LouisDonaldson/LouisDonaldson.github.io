@@ -9,6 +9,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
         crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="./index_primary.css">
     <link rel="stylesheet" href="./index.css">
     <script src="./index.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,41 +20,48 @@
 </head>
 <body>
     <nav class="navbar navbar-expand-lg">
-            <div class="logo_div">
-                <a class="nav-link" href="./index.html" role="button">
-                    <img src="./images/first_logo.png" alt="" class="logo">
-                </a>
-                <!-- <div class="location_text">Kingston Upon Hull</div> -->
-            </div>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
-                <ul class="navbar-nav justify-content-center align-items-center">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about_us" role="button">About us</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Locations</a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Kingston Upon Hull</a></li>
-                            <li><a class="dropdown-item" href="#">Lincoln</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#what_we_provide" role="button">What we provide</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" role="button">Gallery</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" role="button">Testimonials</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#get_in_touch" role="button">Get in touch</a>
-                    </li>
-                </ul>
-            </div>
+        <div class="logo_div">
+            <a class="nav-link" href="./index.html" role="button">
+                <img src="./images/first_logo.png" alt="" class="logo">
+            </a>
+            <!-- <div class="location_text">Kingston Upon Hull</div> -->
+        </div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
+            <ul class="navbar-nav justify-content-center align-items-center">
+                <li class="nav-item">
+                    <a class="nav-link" href="./index.html#about_us" role="button">About us</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Training</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="./index.html#what_we_provide">Overview</a></li>
+                        <li><a class="dropdown-item" href="./training.html#rider">Rider</a></li>
+                        <li><a class="dropdown-item" href="./training.html#driver">Driver</a></li>
+                        <li><a class="dropdown-item" href="./training.html#instructor">Instructor</a></li>
+    
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Locations</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Kingston Upon Hull</a></li>
+                        <li><a class="dropdown-item" href="#">Lincoln</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" role="button">Gallery</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" role="button">Testimonials</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./index.html#get_in_touch" role="button">Get in touch</a>
+                </li>
+            </ul>
+        </div>
     </nav>
    
     <div class="about_us" id="about_us">
@@ -68,8 +76,8 @@
             experienced instructors are dedicated to providing personalised training that caters to the unique needs of each student.
             Whether you're a first-time driver, looking to enhance your skills or become an instructor, we are here to guide you every step of the way.</p>
             <div class="buttons">
-                <a href="#get_in_touch" class="btn btn-primary m-1 get_in_touch_btn">
-                    Get in touch
+                <a href="./index.html#what_we_provide" class="btn btn-primary m-1 get_in_touch_btn">
+                    See our services
                 </a>
                 <a href="#locations_content" class="btn btn-outline-primary m-1 locations_btn">
                     Check our locations
@@ -99,7 +107,7 @@
                         Scheme (DAS). Additionally, we provide both off-road and on-road training to ensure you are fully
                         prepared for any riding
                         conditions.</p>
-                        <a href="" class="btn btn-outline-primary find_out_more_btn">Find out more</a>
+                        <a href="./training.html#rider" class="btn btn-outline-primary find_out_more_btn">Find out more</a>
 
                 </div>
                 <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center text-justify mb-5">
@@ -113,7 +121,7 @@
                         provide personalized training tailored to your individual needs, covering all aspects of
                         driving from basic skills to advanced techniques.
                     </p>
-                    <a href="" class="btn btn-outline-primary find_out_more_btn">Find out more</a>
+                    <a href="./training.html#driver" class="btn btn-outline-primary find_out_more_btn">Find out more</a>
                 </div>
                 <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center text-justify mb-5">
                     <div class="provide_img_div">
@@ -127,7 +135,7 @@
                         and instructional
                         techniques. This ensures you are fully equipped to teach and guide new drivers with confidence and
                         expertise.</p>
-                    <a href="" class="btn btn-outline-primary find_out_more_btn">Find out more</a>
+                    <a href="./training.html#instructor" class="btn btn-outline-primary find_out_more_btn">Find out more</a>
 
                 </div>
             </div>
@@ -243,8 +251,11 @@
             </div>
         </div>
     </div>
-    <footer class="p-5 text-white">
-        Copyright © MSM All rights reserved
-    </footer>
 </body>
+<footer class="p-5 text-white">
+    <div class="d-flex justify-content-between w-100 flex-wrap">
+        <p>Copyright © MSM All rights reserved</p>
+        <a href="" class="terms_and_conditions_link">Terms and Conditions</a>
+    </div>
+</footer>
 </html>

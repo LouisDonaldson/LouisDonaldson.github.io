@@ -1,50 +1,8 @@
-body{
-    font-family: "Titillium Web";
-}
-
-.navbar{
-    display: flex;
-    padding: 10px;
-    /* background-color: lightcoral; */
-    /* border-bottom: solid 1pt lightgray; */
-    justify-content: space-between;
-    min-height: 10vh;
-}
-
-.navbar>ul{
-    list-style: none;
-    padding: 0px;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: flex-end;
-    margin: 0px;
-}
-
-.navbar>ul>li{
-    padding: 0px;
-    margin: 10px;
-    transition: 0.25s;
-}
-
-.navbar>ul>li:hover {
-    /* transform: translateY(2.5px); */
-    transition: 0.25s;
-}
-
-.logo_div{
-    display: flex;
-    align-items: center;
-}
-
 .location_text{
     margin-left: 10px;
     color: gray;
 }
 
-.logo{
-    max-height: 5vh;
-}
 
 .about_us{
     display: flex;
@@ -100,13 +58,13 @@ body{
 }
 
 .get_in_touch_btn{
-    background-color: #fb8500;
-    border-color: #fb8500;
+    background-color: var(--primary_orange);
+    border-color: var(--primary_orange);
 }
 
 .locations_btn{
-    border-color: #fb8500;
-    color: #fb8500;
+    border-color: var(--primary_orange);
+    color: var(--primary_orange);
 }
 
 h1{
@@ -136,19 +94,19 @@ h1{
     width: 100%;
     height: 100%;
     z-index: 1;
-    background: #023047bd;
-    /* background: linear-gradient(-120deg, rgba(255, 255, 255, 0) 0%, #023047 75%); */
+    background: var(--primary_blue);
+    background: linear-gradient(-120deg, rgba(255, 255, 255, 0) 0%, #023047 75%);
 }
 
 .find_out_more_btn{
-    color: #fb8500;
-    border-color: #fb8500;
+    color: var(--primary_orange);
+    border-color: var(--primary_orange);
 }
 
 .find_out_more_btn:hover {
     color: white;
-    background-color: #fb8500;
-        border-color: #fb8500;
+    background-color: var(--primary_orange);
+        border-color: var(--primary_orange);;
 }
 
 .hull_location{
@@ -176,13 +134,13 @@ h1{
 }
 
 .btn-hull{
-    background-color: #023047;
-    border-color: #023047;
+    background-color: var(--primary_blue);
+    border-color: var(--primary_blue);
 }
 
 .btn-lincoln{
-    background-color: #023047;
-    border-color: #023047;
+    background-color: var(--primary_blue);
+    border-color: var(--primary_blue);
 }
 
 .location_img_div{
@@ -198,7 +156,7 @@ h1{
 }
 
 .what_we_can_provide_content{
-    background-color: #023047;
+    background-color: var(--primary_blue);
     padding: 10vh 0px;
     min-height: 100vh;
 }
@@ -230,18 +188,11 @@ h1{
 }
 
 .location_btn{
-    background-color: #fb8500;
-    border-color: #fb8500;
+    background-color: var(--primary_orange);;
+    border-color: var(--primary_orange);;
 }
 
 .pre_footer{
-    background-color: #023047;
+    background-color: var(--primary_blue);
     padding: 10vh 0px;
-}
-
-footer{
-    height: 5vh;
-    background-color: #fb8500;
-    display: flex;
-    align-items: center;
 }
