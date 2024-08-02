@@ -1,10 +1,33 @@
+.training_section{
+    /* background-color: var(--primary_blue); */
+
+    background-image: url(./images/temp_landing_img.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: 65%;
+        position: relative;
+}
+
+.training_section::before{
+    content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: var(--primary_blue);
+        /* background: linear-gradient(240deg, #0230477c 40%, #023047 100%); */
+        opacity: 70%;
+}
+
 .rider_div{
     min-height: 100vh;
     /* background-color: var(--primary_blue); */
-    background-image: url(./images/temp_landing_img.jpg);
+    background-image: url(./images/mike-landing-img.jpeg);
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: 65%;
+    background-position: 45%;
     position: relative;
 
     display: flex;
@@ -35,11 +58,6 @@
     height: 100%;
 }
 
-.btn_primary{
-    background-color: var(--primary_orange);
-    border-color: var(--primary_orange);
-    color: white;
-}
 
 .driver_div {
     min-height: 100vh;

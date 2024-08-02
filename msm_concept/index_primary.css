@@ -7,8 +7,32 @@ body {
     font-family: "Titillium Web";
 }
 
-h2{
+h1,
+h2 {
     font-weight: bold;
+    color: var(--primary_orange);
+}
+
+.btn_outline_primary{
+    border-color: var(--primary_orange);
+    color: var(--primary_orange);
+}
+
+.btn_outline_primary:hover {
+    background-color: var(--primary_orange);
+    border-color: var(--primary_orange);
+    color: white;
+}
+
+.btn_primary {
+    background-color: var(--primary_orange);
+    border-color: var(--primary_orange);
+    color: white;
+}
+
+.btn_primary:hover {
+    background-color: #ff961d;
+    border-color: #ff961d;
 }
 
 .navbar {
@@ -51,8 +75,10 @@ h2{
 }
 
 footer {
-    height: 5vh;
+    min-height: 5vh;
     background-color: var(--primary_orange);
     display: flex;
     align-items: center;
+    justify-content: center;
+    padding: 20px;
 }
