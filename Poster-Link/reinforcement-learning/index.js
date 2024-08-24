@@ -15,6 +15,8 @@
 //   Title } = chart_js
 
 document.addEventListener("DOMContentLoaded", () => {
+  const config_menu_button = document.querySelector("#config_menu_button");
+  config_menu_button.click();
   const run_code_btn = document.querySelector("#run_code_btn");
   run_code_btn.addEventListener("click", RunCode);
 
@@ -90,7 +92,11 @@ const status_div = document.querySelector(".status");
 function DisplayGraphs(csv_string) {
   FormatCSV(csv_string);
   const status_div = document.querySelector(".status");
+  const config_menu_button = document.querySelector("#config_menu_button");
+  config_menu_button.classList.remove("d-none");
+
   status_div.classList.add("d-none");
+  config_menu_button.click();
 }
 
 function FormatCSV(csv_string) {
@@ -118,13 +124,11 @@ function FormatCSV(csv_string) {
 }
 
 function CreateLineChart(episode, reward, steps) {
-  const left_side = document.querySelector(".left");
+  const left_side = document.querySelector(".charts");
 
   left_side.innerHTML = `
-  <div class="canvases h-sm-100">
     <canvas id="chart_canvas_reward" class="h-sm-50"></canvas>
-    <canvas id="chart_canvas_steps" class="h-sm-50"></canvas>
-  </div>`;
+    <canvas id="chart_canvas_steps" class="h-sm-50"></canvas>`;
 
   const chart_canvas_1 = left_side.querySelector("#chart_canvas_reward");
   const chart_canvas_2 = left_side.querySelector("#chart_canvas_steps");
@@ -216,12 +220,13 @@ function HandlePathData(data) {
       
     </div>
     <div class="grid"></div>
-    <div class="grid_controls">
+  </div>
+  <div class="grid_controls">
       <div class="next_btn btn btn-primary">Next step</div>
       <div class="grid_step_info">
       </div>
     </div>
-  </div>
+  
   `;
 
   const grid = path_content.querySelector(".grid");
