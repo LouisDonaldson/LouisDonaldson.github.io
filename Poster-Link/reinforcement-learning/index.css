@@ -1,0 +1,106 @@
+body{
+    padding: 20px 0px;
+}
+
+.content{
+    display: flex;
+    justify-content: center;
+    padding: 0px 20px;
+    /* flex-wrap: wrap; */
+}
+
+.left{
+    display: flex;
+    /* width: 75%; */
+    /* min-width: 500px; */
+    padding: 0px 10px;
+}
+
+.right{
+    padding: 20px 10px;
+    display: flex;
+    flex-direction: column;
+    /* width: 50%; */
+}
+
+.status{
+    display: flex;
+    text-align: center;
+    margin: 10px;
+
+    justify-content: center;
+    align-items: center;
+    background-color: lightgreen;
+    border: solid 1pt green;
+    border-radius: 5pt;
+    padding: 10px 0px;
+}
+
+.canvases{
+    display: flex;
+    flex-wrap: wrap;
+    /* max-width: 50vw; */
+    /* width: 100%; */
+}
+
+.canvases>canvas{
+    display: flex;
+    max-width: 100%;
+    /* min-width: %; */
+    max-height: 100vh;
+}
+
+.path_content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+        /* margin: 40px 0px; */
+}
+
+.grid_content{
+    display: flex;
+    /* height: 100vh; */
+    margin-top: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid{
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    margin-bottom: 20px;
+}
+
+.grid_row{
+    display: flex;
+}
+
+.cell{
+    width: 20px;
+    height: 20px;
+    border: solid 1pt gray;
+}
+
+.empty{
+    background-color: lightblue;
+}
+
+.turbine{
+    background-color: red;
+}
+
+.agent{
+    background-color: green;
+}
+
+.grid_controls{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.next_btn{
+    margin-bottom: 20px;
+}
