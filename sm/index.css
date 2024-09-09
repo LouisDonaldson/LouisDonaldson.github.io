@@ -81,6 +81,7 @@ h1,h2,h3{
     overflow: hidden;
     background-color: white;
     /* height: 5vh; */
+    box-shadow: #00000063 0px -3px 10px 5px;
 }
 
 .nav_links{
