@@ -82,19 +82,17 @@
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">Coordinates for Turbines</label>
-                                <input type="text" class="form-control" id="coords_input" value="2,7/4,2/8,6" aria-describedby="coords_help">
-                                <div id="coords_help" class="form-text">Ensure the format is x,y/x,y...</div>
+                                <div class="d-flex">
+                                    <input type="text" class="form-control" id="coords_input" value="2,7/4,2/8,6" aria-describedby="coords_help">
+                                    <!-- <button class="btn btn-success px-3 ms-3" id="choose_coordinates_btn">Choose Coordinates</button> -->
+                                </div>
+                                <div id="coords_help" class="form-text">Ensure this isn't empty otherwise the algorithm won't work correctly.</div>
                             </div>
                             <button type="submit" class="btn btn-primary" id="run_code_btn">Run code</button>
                         </div>
                         
                     </div>
                 </div>
-                
             </div>
-            
-    
-    
-
 </body>
 </html>

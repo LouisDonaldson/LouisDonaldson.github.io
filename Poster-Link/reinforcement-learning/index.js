@@ -1,28 +1,10 @@
 // window.ChartJS is the access to the Chart-JS bundled npm module
-// console.log(window.socket_io);
-
-// const socket = window.socket_io.Socket;
-
-// const socket = io();
-// const chart_js = window.ChartJS;
-
-// { Chart,
-//   ChartConfiguration,
-//   LineController,
-//   LineElement,
-//   PointElement,
-//   LinearScale,
-//   Title } = chart_js
 
 document.addEventListener("DOMContentLoaded", () => {
   const config_menu_button = document.querySelector("#config_menu_button");
   config_menu_button.click();
   const run_code_btn = document.querySelector("#run_code_btn");
   run_code_btn.addEventListener("click", RunCode);
-
-  // socket.on("path_data", (data) => {
-  //   HandlePathData(data);
-  // });
 });
 
 function RunCode() {
@@ -71,7 +53,7 @@ function RunCode() {
   });
 }
 
-function UpdateStatus(status) {
+async function UpdateStatus(status) {
   const status_div = document.querySelector(".status");
   status_div.innerHTML = status;
   status_div.classList.remove("d-none");
@@ -597,6 +579,7 @@ class Wrapper {
   }
 
   async Start(exploit = false) {
+    // await UpdateStatus(`Executing reinforcement learning.\n`);
     csv_string = "Episode,Reward,Steps,Explored,Exploited\n";
 
     let shortest_path_steps = this.steps;
@@ -649,9 +632,6 @@ class Wrapper {
 
     // episodes
     for (let episode = 0; episode < this.episodes; episode++) {
-      UpdateStatus(
-        `Executing reinforcement learning.\nCurrent episode: ${episode}.\n`
-      );
       // status = `Still executing reinforcement learning.\nCurrent episode: ${episode}.\n`;
 
       let steps_taken = 0;
