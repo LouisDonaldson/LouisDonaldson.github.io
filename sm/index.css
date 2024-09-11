@@ -51,9 +51,10 @@ body{
     font-family: "Urbanist" !important;
 }
 
-h1,h2,h3{
+h1,h2,h3,h4{
     font-family: "Crimson Text" !important;
     font-weight: 600 !important;
+    /* margin-bottom: 0px !important; */
 }
 
 .logo_banner {
@@ -74,14 +75,11 @@ h1,h2,h3{
     /* background-color: black; */
 }
 
-.sticky{
-    position: sticky;
-    /* padding: 0px 20px; */
-    top: 0;
-    overflow: hidden;
+
+.sticky-top{
     background-color: white;
-    /* height: 5vh; */
-    box-shadow: #00000063 0px -3px 10px 5px;
+        /* height: 5vh; */
+        box-shadow: #00000063 0px -3px 10px 5px;
 }
 
 .nav_links{
