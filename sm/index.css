@@ -33,8 +33,17 @@ html{
     transition: 0.25s;
 }
 
+.nav-item{
+    transition: 0.5s;
+}
+
+.nav-item:hover{
+    transform: translateY(2px);
+    transition: 0.25s;
+}
+
 .navbar>ul>li:hover {
-    /* transform: translateY(2.5px); */
+    transform: translateY(2.5px);
     transition: 0.25s;
 }
 
@@ -350,6 +359,9 @@ h1,h2,h3,h4{
     background-color: var(--primary-colour);
     background: linear-gradient(90deg, var(--primary-colour), var(--accent-colour));
     min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .item{
@@ -367,7 +379,7 @@ h1,h2,h3,h4{
     background-repeat: no-repeat;
     position: relative;
 
-    transition: 0.25s;
+    transition: 0.5s;
 }
 
 .comparison_img::before {
