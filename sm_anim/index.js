@@ -30,7 +30,7 @@ window.addEventListener(
     const add_animation_when_in_viewport = (
       id_name,
       animation_class_name,
-      pixel_offset = 100
+      pixel_offset = 0
     ) => {
       const element = document.querySelector(`#${id_name}`);
       const result = isElementInViewport(element, pixel_offset);
