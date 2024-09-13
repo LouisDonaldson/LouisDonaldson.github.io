@@ -199,6 +199,12 @@
     padding: 20px;
 }
 
+.social_media_icons>*>img{
+    height: 5vh;
+    width: auto;
+    margin: 0px 10px;
+}
+
 .pre_footer{
     background-color: var(--primary_blue);
     padding: 10vh 0px;
