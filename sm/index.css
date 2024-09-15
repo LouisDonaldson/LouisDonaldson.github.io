@@ -384,10 +384,15 @@ h1,h2,h3,h4{
     justify-content: center;
 }
 
+#before_after_row>*{
+    font-family: "Crimson Text" !important;
+    /* font-weight: bold; */
+}
+
 .item{
     display: flex;
     box-shadow: black -1px -1px 5px;
-    
+    margin-bottom: 10px;
 }
 
 .comparison_img{
