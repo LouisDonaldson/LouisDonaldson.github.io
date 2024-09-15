@@ -155,11 +155,15 @@ h1,h2,h3,h4{
     /* max-height: 30vh; */
     /* max-height: 100%; */
     width: 100%;
-    height: auto;
+    height: 50dvh;
+    background-position: 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .img_wrap{
-    max-height: 50vh;
+    /* max-height: 50vh; */
+    width: 100%;
     overflow-y: hidden;
     display: flex;
     align-items: center;
@@ -297,12 +301,13 @@ h1,h2,h3,h4{
 }
 
 .bg{
-    background-image: url(./images/carousel_bg.jpg);
+    background-image: url(./images/in_progress.jpg);
     /* min-height: 80vh; */
     width: 100%;
     display: flex;
     background-size: cover;
     background-position: center;
+    background-position-y: 60%;
 
     z-index: -2;
     position: relative;
@@ -403,4 +408,8 @@ h1,h2,h3,h4{
 .comparison_img:hover::before{
     background:none;
     transition: 0.25s;
+}
+
+.box-shadow{
+    /* box-shadow: #7a7a7a -1px -1px 5px; */
 }
