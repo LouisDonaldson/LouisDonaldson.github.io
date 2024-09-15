@@ -297,9 +297,10 @@ h1,h2,h3,h4{
     font-weight: 600;
 }
 
+
 .price_item>p{
     font-size: 10pt;
-    
+    /* margin: 0px !important; */
 }
 
 .price_item {
@@ -307,6 +308,12 @@ h1,h2,h3,h4{
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
+}
+
+.p{
+    font-family: "Urbanist" !important;
+    font-weight: 500;
+    font-size: 10pt;
 }
 
 .testimonials_section{
