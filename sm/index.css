@@ -152,10 +152,10 @@ h1,h2,h3,h4{
     box-shadow: none !important;
 }
 
-.about_us_img{
+/* .about_us_img{
     height: auto;
     max-width: 100%;
-}
+} */
 
 .about_us_img{
     width: 100%;
