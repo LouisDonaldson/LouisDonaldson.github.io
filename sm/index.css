@@ -122,6 +122,12 @@ h1,h2,h3,h4{
     font-family: "Crimson Text" !important;
     border-color: black !important;
     text-transform: capitalize;
+    transition: 0.5s !important;
+}
+
+.btn_primary:hover {
+    transform: translateY(3px);
+    transition: 0.25s;
 }
 
 .btn_outline_primary{
@@ -149,6 +155,15 @@ h1,h2,h3,h4{
 .about_us_img{
     height: auto;
     max-width: 100%;
+}
+
+.about_us_img{
+    width: 100%;
+    height: 50dvh;
+    background-position-x: 30%;
+    background-position-y: 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .services_img{
@@ -412,4 +427,39 @@ h1,h2,h3,h4{
 
 .box-shadow{
     /* box-shadow: #7a7a7a -1px -1px 5px; */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background-color: var(--primary-colour);
+        background: linear-gradient(90deg, var(--primary-colour), var(--accent-colour));
+        border-left: solid 1pt lightgray;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: black;
+    transition: 0.25s;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+    transition: 0.25s;
 }
