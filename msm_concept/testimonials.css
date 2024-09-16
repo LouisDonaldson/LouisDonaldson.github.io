@@ -1,0 +1,20 @@
+.testimonials_section{
+    min-height: 100vh;
+    background-color: var(--primary_blue);
+}
+
+.img_wrap{
+    overflow: hidden;
+    max-height: 40vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-direction: column  ;
+}
+
+.img_wrap>img
+{
+    /* max-height: 40vh; */
+    width: 100%;
+}

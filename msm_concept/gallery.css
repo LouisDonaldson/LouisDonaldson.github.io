@@ -19,3 +19,23 @@
     background-position: 50%;
     background-repeat: no-repeat;
 }
+
+.slide-in{
+    animation-name: slide-in;
+    animation-duration: 1s;
+    animation-timing-function: ease-in;
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+
+@keyframes slide-in {
+    0%{
+        transform: translateX(-1000px);
+        opacity: 0;
+        
+    }
+    100%{
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
