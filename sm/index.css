@@ -61,10 +61,154 @@ body{
 }
 
 h1,h2,h3,h4{
-    font-family: "Crimson Text" !important;
+    /* font-family: "Crimson Text" !important; */
+    font-family: "Playfair" !important;
     font-weight: 600 !important;
     /* margin-bottom: 0px !important; */
 }
+
+.welcome_section{
+    max-height: 100vh;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--primary-colour);
+    background: linear-gradient(90deg, var(--primary-colour), var(--accent-colour));
+    overflow: hidden;
+}
+
+.welcome_section>img{
+    z-index: 0;
+    position: absolute;
+    min-width: 100vw;
+    min-height: 120vh;
+    object-fit: cover;
+}
+
+.welcome_section::before{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background: linear-gradient(90deg, #ffffffa5, #ffffff5a);
+}
+
+.welcome_content{
+    z-index: 2;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.welcome_content>img{
+    max-height: 10vh;
+    width: auto;
+    max-width: 80vw;
+}
+
+
+.scroll-up {
+    /* position: relative; */
+        /* make sure it stays put so we can see it! */
+    
+        animation: up 1s linear infinite;
+        animation-play-state: paused;
+        animation-delay: calc(var(--scroll) * -1s);
+}
+
+.scroll-up-fade {
+    /* position: relative; */
+    /* make sure it stays put so we can see it! */
+
+    animation: fade-scroll 1s linear infinite;
+    animation-play-state: paused;
+    animation-delay: calc(var(--scroll) * -1s);
+
+}
+
+.appear{
+    animation-name: appear;
+    animation-duration: .5s;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
+}
+
+.slide-up{
+    animation-name: slide-up;
+    animation-duration: .5s;
+    animation-delay: .5s;
+    animation-timing-function:cubic-bezier(0.075, 0.82, 0.165, 1);
+    animation-fill-mode: forwards;
+    opacity: 0;
+    z-index: 3;
+}
+
+@keyframes slide-up {
+    0%{
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+@keyframes appear {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+@keyframes up {
+    0%{
+        transform: translateY(0px);
+    }
+    
+    100% {
+        transform: translateY(1000px);
+    }
+}
+
+@keyframes fade-scroll {
+    0% {
+        opacity: 1;
+    }
+
+    15% {
+        opacity: 0;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .logo_banner {
     /* background-color: black; */
@@ -87,8 +231,7 @@ h1,h2,h3,h4{
 
 .sticky-top{
     background-color: white;
-        /* height: 5vh; */
-        box-shadow: #00000063 0px -3px 10px 5px;
+    box-shadow: #7979791f 0px 3px 10px 0px;
 }
 
 .nav_links{
@@ -102,7 +245,8 @@ h1,h2,h3,h4{
     text-align: center;
     margin: 5px;
     display: inline-flex;
-    font-family: "Crimson Text";
+    /* font-family: "Crimson Text"; */
+    font-family: "Playfair" !important;
     font-weight: bold;
     font-size: 14pt;
 }
@@ -119,7 +263,8 @@ h1,h2,h3,h4{
 .btn_primary{
     border-radius: 0px !important;
     background-color: black !important;
-    font-family: "Crimson Text" !important;
+    /* font-family: "Crimson Text" !important; */
+    font-family: "Playfair" !important;
     border-color: black !important;
     text-transform: capitalize;
     transition: 0.5s !important;
@@ -133,7 +278,8 @@ h1,h2,h3,h4{
 .btn_outline_primary{
     border-radius: 0px !important;
     background-color: none !important;
-    font-family: "Crimson Text" !important;
+    /* font-family: "Crimson Text" !important; */
+    font-family: "Playfair" !important;
     border-color: black !important;
     text-transform: capitalize;
     color: black !important;
@@ -142,7 +288,7 @@ h1,h2,h3,h4{
 .btn_outline_primary:hover {
     border-radius: 0px !important;
     background-color: black !important;
-    font-family: "Crimson Text" !important;
+    /* font-family: "Crimson Text" !important; */
     border-color: black !important;
     text-transform: capitalize;
     color: white !important;
@@ -248,7 +394,7 @@ h1,h2,h3,h4{
     /* background-color: black; */
     /* height: 400px; */
     color: black !important;
-    font-family: "Crimson text" !important;;
+    /* font-family: "Crimson text" !important;; */
     position: relative;
     min-height: 50vh;
 }
@@ -293,7 +439,8 @@ h1,h2,h3,h4{
 }
 
 .price{
-    font-family: "Crimson Text";
+    /* font-family: "Crimson Text"; */
+    font-family: "Playfair" !important;
     font-weight: 600;
 }
 
@@ -392,7 +539,8 @@ h1,h2,h3,h4{
 }
 
 #before_after_row>*{
-    font-family: "Crimson Text" !important;
+    /* font-family: "Crimson Text" !important; */
+    font-family: "Playfair" !important;
     /* font-weight: bold; */
 }
 
