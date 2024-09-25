@@ -22,12 +22,12 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 async function init() {
-  const text = document.querySelector(".title");
-  await Timeout(1000);
-  text.innerHTML = `
-  <div class="text">
-    Welcome!
-  </div>`;
+  // const text = document.querySelector(".title");
+  // await Timeout(1000);
+  // text.innerHTML = `
+  // <div class="text">
+  //   Welcome!
+  // </div>`;
 
   text.addEventListener("click", () => {
     const main_body = document.querySelector(".main_body");
