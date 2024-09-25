@@ -76,7 +76,7 @@ h2 {
 
 footer {
     min-height: 5vh;
-    background-color: var(--primary_orange);
+    background-color:black;
     display: flex;
     align-items: center;
     justify-content: center;

@@ -3,7 +3,7 @@ window.addEventListener("DOMContentLoaded", () => {
   nav_el.innerHTML = `
     <div class="logo_div">
         <a class="nav-link" href="./index.html" role="button">
-            <img src="./images/first_logo.png" alt="MSM Logo" class="logo">
+            <img src="./images/new_logo.png" alt="MSM Logo" class="logo">
         </a>
     </div>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
