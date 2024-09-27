@@ -28,9 +28,9 @@ async function LandingPageLoad(parent) {
   parent.innerHTML = `
   <div class="top h-100 d-flex flex-column justify-content-center align-items-center">
     <div class="animated px-3">
-        <h1 class="title">LOUIS DONALDSON</h1>
-        <p class="tag fs-5 tag-animation">PHD STUDENT - COMPUTER SCIENCE</p>
-        <!-- <p class="sub fs-6">University of Hull - AuraCDT</p> -->
+        <h1 class="title fs-3">LOUIS DONALDSON</h1>
+        <p class="tag fs-6 tag-animation">- PHD STUDENT -<br>COMPUTER SCIENCE</p>
+        
     </div>
     
    </div>

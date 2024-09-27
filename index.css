@@ -27,8 +27,8 @@ body{
 }
 
 .tag-animation {
-    -webkit-animation: focus-in-expand 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
-    animation: focus-in-expand 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+    -webkit-animation: focus-in-expand 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+    animation: focus-in-expand 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
     animation-delay: 0.25s;
 }
 
@@ -149,7 +149,7 @@ body{
 .bounce-top {
     -webkit-animation: bounce-top 0.9s both;
     animation: bounce-top 0.9s both;
-    animation-delay: 1.25s;
+    animation-delay: 0.75s;
 }
 
 @-webkit-keyframes bounce-top {
