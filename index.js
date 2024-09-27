@@ -52,7 +52,7 @@ async function LandingPageLoad(parent) {
 }
 
 async function AboutMeLoad(parent) {
-  parent.innerHTML = `
+  const html = `
   <div class="slide-up animated">
     <div class="d-flex justify-content-center arrow_div">
         <div class="arrow_up">
@@ -65,6 +65,9 @@ async function AboutMeLoad(parent) {
     </div>
     
         <div class="content d-flex justify-content-center align-items-center flex-column text-center">
+            <div class="about_me_img_div mb-3">
+              <img src="https://media.licdn.com/dms/image/v2/D4E03AQEPVKyE552JAA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1697366279598?e=1732752000&v=beta&t=u094oOpFgl4NYjEKA8MbheaNDo_GamTyNOm8DGsleJM" alt="Image of Louis">
+            </div>
             <h2 class="title">About me</h2>
             <div class="px-5 container">
                 <div class="row justify-content-center align-items-center my-2">
@@ -86,7 +89,7 @@ async function AboutMeLoad(parent) {
         </div>
    </div>
   `;
-
+  parent.innerHTML = html;
   parent.querySelector(".arrow_up").addEventListener("click", () => {
     LandingPageLoad(parent);
   });

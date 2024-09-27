@@ -366,3 +366,16 @@ body{
     color: black !important;
     cursor: pointer;
 }
+
+.about_me_img_div{
+    max-height: 10vh;
+    max-width: 10vh;
+    border-radius: 100%;
+    overflow: hidden;
+}
+
+.about_me_img_div>img {
+    object-fit: cover;
+    object-position: 50%;
+    height: 100%;
+}
