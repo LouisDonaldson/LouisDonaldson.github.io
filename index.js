@@ -73,8 +73,7 @@ async function AboutMeLoad(parent) {
                 <div class="row justify-content-center align-items-center my-2">
                     <div class="col-md-8 ">
                         <p class="text-muted">
-                            I have a BSc in Computer Science and I'm currently a post-graduate researcher at the University of Hull. I am
-                            currently undertaking a PhD focused on the Offshore Wind Industry.
+                            I have a BSc in Computer Science and I'm currently a post-graduate researcher at the University of Hull, undertaking a PhD focused on optimisation of maintenance scheduling in the Offshore Wind Industry.
                         </p>
                         <div class="links text-muted px-3 d-flex justify-content-center align-items-center ">
                             <div class="button" id="projects">Projects</div>
