@@ -29,7 +29,7 @@ async function LandingPageLoad(parent) {
   <div class="top h-100 d-flex flex-column justify-content-center align-items-center">
     <div class="animated px-3">
         <h1 class="title fs-3">LOUIS DONALDSON</h1>
-        <p class="tag fs-6 tag-animation">- PHD STUDENT -<br>COMPUTER SCIENCE</p>
+        <p class="tag fs-6 tag-animation">- PHD PGR -<br>COMPUTER SCIENCE</p>
         
     </div>
     
@@ -78,7 +78,7 @@ async function AboutMeLoad(parent) {
                         <div class="links text-muted px-3 d-flex justify-content-center align-items-center ">
                             <div class="button" id="projects">Projects</div>
                             <div class="button" id="research">Research</div>
-                            <div class="button" id="interests">Interests</div>
+                            <!-- <div class="button" id="interests">Interests</div> -->
                         </div>
                         
                     </div>

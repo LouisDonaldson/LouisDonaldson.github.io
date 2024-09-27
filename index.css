@@ -6,6 +6,10 @@ body{
     font-family: "Poppins" !important;
     min-height: 100vh;
     overflow: hidden;
+
+    display: grid;
+    justify-content: center;
+    align-items: center;
 }
 
 .top{
@@ -27,8 +31,8 @@ body{
 }
 
 .tag-animation {
-    -webkit-animation: focus-in-expand 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
-    animation: focus-in-expand 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+    -webkit-animation: focus-in-expand 0.5s cubic-bezier(0, .68, 0, 1) both;
+    animation: focus-in-expand 0.5s cubic-bezier(0, .68, 0, 1) both;
     animation-delay: 0.25s;
 }
 
