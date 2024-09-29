@@ -84,7 +84,6 @@ async function AboutMeLoad(parent) {
                         <div class="links text-muted px-3 d-flex justify-content-center align-items-center ">
                             <div class="button" id="projects">Projects</div>
                             <div class="button" id="research">Research</div>
-                            <!-- <div class="button" id="interests">Interests</div> -->
                         </div>
                         
                     </div>
@@ -125,18 +124,18 @@ async function ProjectsLoad(parent) {
             <h2 class="title">my Projects</h2>
             <div class="px-5 container">
                 <div class="justify-content-center align-items-center my-2 w-100 flex-wrap">
-                    <div class="m-3 d-inline-flex flex-column justify-content-center align-items-center">
+                    <div class="m-2 d-inline-flex flex-column justify-content-center align-items-center">
                         <a href="./Poster-Link/reinforcement-learning/index.html" target="_blank">
                             <p class="title no-letter-spacing m-0 text-muted link">Reinforcement Learning Showcase</p>
                         </a>
                     </div>
-                    <div class="mx-3 d-inline-flex flex-column justify-content-center align-items-center">
+                    <div class="m-2 d-inline-flex flex-column justify-content-center align-items-center">
                         <a href="./pathfinding/pathfinding.html" target="_blank">
                             <p class="title no-letter-spacing m-0 text-muted link">Pathfinding Showcase</p>
                         </a>
                         
                     </div>
-                    <div class="mx-3 d-inline-flex flex-column justify-content-center align-items-center">
+                    <div class="m-2 d-inline-flex flex-column justify-content-center align-items-center">
                         <a href=".//bywater.html" target="_blank">
                             <p class="title no-letter-spacing m-0 text-muted link">Bywater Concept Website</p>
                         </a>
