@@ -28,12 +28,31 @@ body{
     animation-duration: 0.5s;
     animation-timing-function: ease-in-out;
     animation-fill-mode: forwards;
+    
 }
 
 .tag-animation {
     -webkit-animation: focus-in-expand 0.5s cubic-bezier(0, .68, 0, 1) both;
     animation: focus-in-expand 0.5s cubic-bezier(0, .68, 0, 1) both;
     animation-delay: 0.25s;
+}
+
+.exit-zoom{
+    animation-name: zoom-out;
+    animation-duration: 0.25s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes zoom-out {
+    0%{
+        transform: scale(1);
+        
+    }
+    100%{
+        transform: scale(0);
+        filter: blur(5px);
+    }
 }
 
 @-webkit-keyframes focus-in-expand {

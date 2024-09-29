@@ -47,7 +47,13 @@ async function LandingPageLoad(parent) {
    </div>`;
 
   parent.querySelector(".about_me_button").addEventListener("click", () => {
-    AboutMeLoad(parent);
+    const top = parent.querySelector(".top");
+    top.classList.add("exit-zoom");
+    const bottom = parent.querySelector(".bottom");
+    bottom.classList.add("exit-zoom");
+    setTimeout(() => {
+      AboutMeLoad(parent);
+    }, 250);
   });
 }
 
