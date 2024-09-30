@@ -72,7 +72,7 @@ async function AboutMeLoad(parent) {
     
         <div class="content d-flex justify-content-center align-items-center flex-column text-center">
             <div class="about_me_img_div mb-3">
-              <img src="https://media.licdn.com/dms/image/v2/D4E03AQEPVKyE552JAA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1697366279598?e=1732752000&v=beta&t=u094oOpFgl4NYjEKA8MbheaNDo_GamTyNOm8DGsleJM" alt="Image of Louis">
+              <img src="./linkedin.jpg" alt="Image of Louis">
             </div>
             <h2 class="title">About me</h2>
             <div class="px-5 container">
