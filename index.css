@@ -21,7 +21,8 @@ body{
 
 .top{
     min-height: 100vh; 
-    width: 100vw;
+    min-width: 100vw;
+    /* position: absolute; */
 }
 
 .text>*{
@@ -29,11 +30,11 @@ body{
     
 }
 
-.right{
-    
+
+.gradient_border{
     border-left: solid 2pt;
-    border-image: linear-gradient(var(--light-1),
-        var(--light-2)) 1;
+        border-image: linear-gradient(var(--light-1),
+                var(--light-2)) 1;
 }
 
 .img_div>img{
@@ -45,6 +46,9 @@ body{
     position: relative;
     aspect-ratio: 1 / 1;
     height: 100%;
+    max-height: 30vh;
+    flex-grow: 1;
+    
     width: auto;
     display: flex;
     align-items: center;
@@ -55,14 +59,15 @@ body{
 }
 
 .icon_link{
-   height: calc(2.5vh + 2.5vw);
-   
+   height: calc(3.5vh + 1.5vw);
+   max-width: 50px;
 }
 
 .icon_link>svg {
     fill: var(--light-1);
     transition: 0.25s;
     height: 100%;
+    max-height: 40px;
     width: auto;
 }
 
@@ -359,6 +364,10 @@ body{
     height: 5vh;
     fill: var(--accent-color);
     stroke: var(--accent-color);
+}
+
+.about_me_button>svg{
+    stroke: var(--light-1);
 }
 
 .more_btn{
