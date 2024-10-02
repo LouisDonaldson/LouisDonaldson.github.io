@@ -1,8 +1,15 @@
 html{
     --accent-color: rgb(255, 170, 0);
-}
+
+    --light-1: #F36D54;
+    --light-2: #EE4086;
+
+    --dark-1: #2C1532;
+    --dark-2: #27314B;
+    }
 
 body{
+    background-image: linear-gradient(0deg, var(--dark-1), var(--dark-2));
     font-family: "Poppins" !important;
     min-height: 100vh;
     overflow: hidden;
@@ -13,9 +20,55 @@ body{
 }
 
 .top{
-    min-height: 100vh;
+    min-height: 100vh; 
+    width: 100vw;
+}
 
+.text>*{
+    margin: 0px;
     
+}
+
+.right{
+    
+    border-left: solid 2pt;
+    border-image: linear-gradient(var(--light-1),
+        var(--light-2)) 1;
+}
+
+.img_div>img{
+    /* object-fit: cover; */
+}
+
+.img_div{
+    /* overflow: hidden; */
+    position: relative;
+    aspect-ratio: 1 / 1;
+    height: 100%;
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(./linkedin.jpg);
+    background-size: contain;
+    border-radius: 100%;
+}
+
+.icon_link{
+   height: calc(2.5vh + 2.5vw);
+   
+}
+
+.icon_link>svg {
+    fill: var(--light-1);
+    transition: 0.25s;
+    height: 100%;
+    width: auto;
+}
+
+.icon_link>svg:hover {
+    transition: 0.25s;
+    fill: var(--light-2);
 }
 
 .animated{

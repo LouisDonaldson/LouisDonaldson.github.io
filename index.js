@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const body = document.querySelector("body");
 
   // loads landing page //
-  LandingPageLoad(body);
+  // LandingPageLoad(body);
 });
 
 async function LandingPageLoad(parent) {
