@@ -63,8 +63,13 @@ body{
    max-width: 50px;
 }
 
+.icon_link:hover{
+    cursor: pointer;
+}
+
 .icon_link>svg {
-    fill: var(--light-1);
+    /* fill: var(--light-1); */
+    fill: url(#SVG_grad);
     transition: 0.25s;
     height: 100%;
     max-height: 40px;
@@ -73,14 +78,12 @@ body{
 
 .icon_link>svg:hover {
     transition: 0.25s;
-    fill: var(--light-2);
+    fill: white;
+    transform: translateY(5px);
 }
 
 .animated{
-    text-align: center;
-    display: grid;
-    justify-content: center;
-    align-items: center;
+    
 
     animation-name: slide-down;
     animation-duration: 0.5s;
@@ -176,25 +179,34 @@ body{
     /* font-size: 20pt; */
     letter-spacing: 5px;
     text-transform: uppercase;
+    padding: 0px 10px;
+    margin: 0px 10px;
+    border-left: solid 2pt;
+        border-image: linear-gradient(var(--light-1),
+                var(--light-2)) 1;
+                color: white;
 }
 
 .no-letter-spacing{
     letter-spacing: 0px !important;
 }
 
-.title::before {
-    content: "{";
+/* .title::before {
+    content: "|";
     position: relative;
+    height: 100%;
+    border-left: solid 2pt;
+    border-image: linear-gradient(to bottom, var(--light-1),var(--light-2));
     left: -10px;
-    color: var(--accent-color);  
-}
+    color: linear-gradient(var(--light-1), var(--light-2));;  
+} */
 
-.title::after {
+/* .title::after {
     content: "}";
     position: relative;
     right: -10px;
     color: var(--accent-color);
-}
+} */
 
 .tag{
     font-weight: bold;
@@ -219,6 +231,7 @@ body{
 
 .bottom>div{
     border: solid 1pt;
+    border-color: var(--light-1);
     border-radius: 100%;
     padding: 10px;
     display: grid;
@@ -354,7 +367,7 @@ body{
 }
 
 .bottom>div:hover{
-    background-color: black;
+    background-color: white;
     transition: 0.25s;
     cursor: pointer;
     transform: scale(1.1);
@@ -376,10 +389,6 @@ body{
     transition: 0.5s;
 }
 
-.more_btn:hover {
-    stroke: white;
-    transition: 0.25s;
-}
 
 .content{
     height: 100vh;
@@ -388,16 +397,17 @@ body{
 }
 
 .button{
+    border: solid 1pt var(--light-1);
     padding: 5px 10px;
-    border: solid var(--accent-color) 1pt;
+    /* border: solid var(--accent-color) 1pt; */
     border-radius: 5px;
     margin: 0px 10px;
     transition: 0.5s;
+    background: none;
 }
 
 .button:hover{
-    background-color: var(--accent-color);
-    color: white;
+    background: linear-gradient(var(--light-1), var(--light-2));    color: white;
     transition: 0.25s;
     cursor: pointer;
     /* border: solid 1pt black; */
@@ -413,6 +423,7 @@ body{
     position: relative;
     /* top: 5vh; */
     border: solid 1pt;
+    border-color: var(--light-1);
     border-radius: 100%;
     padding: 10px;
     display: grid;
@@ -426,7 +437,7 @@ body{
 
 
 .arrow_up:hover{
-    background-color: black;
+    background-color: white;
     transition: 0.25s;
     cursor: pointer;
 }
@@ -434,22 +445,25 @@ body{
 .arrow_up>svg {
     /* stroke: white; */
     transition: 0.5s;
+    stroke: var(--light-1);
 }
 
-.arrow_up>svg:hover {
-    stroke: white;
-    transition: 0.25s;
-    cursor: pointer;
+a{
+    text-decoration: none !important;
 }
 
 .link{
-    text-decoration: underline;
+    text-decoration: none !important;
+    color: white !important;
+    font-weight: 300 !important;
+    transition: 0.25s;
 }
 
 .link:hover {
     text-decoration: underline;
-    color: black !important;
+    color: var(--light-1) !important;
     cursor: pointer;
+    transition: 0.5s;
 }
 
 .about_me_img_div{
