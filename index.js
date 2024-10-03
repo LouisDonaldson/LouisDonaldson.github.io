@@ -54,8 +54,8 @@ async function LandingPageLoad(parent) {
                     <h1 class="animated">Louis Donaldson</h1>
     
                     <h2 class="fw-light tag-animation">PhD PGR with AuraCDT</h2>
-                    <p class="fw-light tag-animation">School of Computer Science</p>
-                    <p class="fw-light tag-animation">University of Hull</p>
+                    <p class="fw-light tag-animation text-light">School of Computer Science</p>
+                    <p class="fw-light tag-animation text-light">University of Hull</p>
                 </div>
                 <div class="links d-flex tag-animation">
                     <a href="https://www.linkedin.com/in/louis-donaldson-162822207/" target="_blank">
