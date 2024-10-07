@@ -456,19 +456,26 @@ a{
     text-decoration: none !important;
 }
 
-.link{
+.link-title{
     text-decoration: none !important;
     color: white !important;
     font-weight: 300 !important;
     transition: 0.25s;
 }
 
-.link:hover {
+/* .link-title:hover {
     text-decoration: underline;
     color: var(--light-1) !important;
     cursor: pointer;
     transition: 0.5s;
-}
+} */
+
+/* .link_a>*:hover{
+    text-decoration: underline;
+        color: var(--light-1) !important;
+        cursor: pointer;
+        transition: 0.5s;
+} */
 
 .about_me_img_div{
     max-height: 15vh;
@@ -482,4 +489,16 @@ a{
     object-fit: cover;
     object-position: 50%;
     height: 100%;
+}
+
+.link-tag{
+    letter-spacing: normal;
+    color: lightgray;
+    text-align: start;
+    text-transform: none;
+    font-weight: 200 !important;
+}
+
+.link-div{
+    max-width: 400px;
 }

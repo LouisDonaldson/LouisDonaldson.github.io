@@ -176,43 +176,54 @@ async function AboutMeLoad(parent) {
 }
 
 async function ProjectsLoad(parent) {
+  const project_links = [
+    {
+      title: "Reinforcement Learning Showcase",
+      tag: "RL TSP Sandbox - Offshore Wind Turbines",
+      href: "./Poster-Link/reinforcement-learning/index.html",
+    },
+    {
+      title: "Pathfinding Showcase",
+      tag: "Simple Pathfinding Sandbox",
+      href: "./pathfinding/pathfinding.html",
+    },
+  ];
+
   parent.innerHTML = `
    <div class="slide-up animated">
-        <div class="d-flex justify-content-center arrow_div">
-            <div class="arrow_up">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                    class="bi bi-arrow-down more_btn" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd"
-                        d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1" />
-                </svg>
-            </div>
+    <div class="d-flex justify-content-center arrow_div">
+        <div class="arrow_up">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down more_btn"
+                viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                    d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1" />
+            </svg>
         </div>
+    </div>
     
         <div class="content d-flex justify-content-center align-items-center flex-column text-center">
-            <h2 class="title">my Projects</h2>
+            <h2 class="title">My Projects</h2>
             <div class="px-5 container">
-                <div class="justify-content-center align-items-center my-2 w-100 flex-wrap">
-                    <div class="m-2 d-inline-flex flex-column justify-content-center align-items-center">
-                        <a href="./Poster-Link/reinforcement-learning/index.html" target="_blank">
-                            <p class="title no-letter-spacing m-0 link">Reinforcement Learning Showcase</p>
-                        </a>
-                    </div>
-                    <div class="m-2 d-inline-flex flex-column justify-content-center align-items-center">
-                        <a href="./pathfinding/pathfinding.html" target="_blank">
-                            <p class="title no-letter-spacing m-0 link">Pathfinding Showcase</p>
-                        </a>
-    
-                    </div>
-                    <div class="m-2 d-inline-flex flex-column justify-content-center align-items-center">
-                        <a href=".//bywater.html" target="_blank">
-                            <p class="title no-letter-spacing m-0 link">Bywater Concept Website</p>
-                        </a>
-                    </div>
+                <div class="justify-content-center align-items-center my-2 w-100 flex-wrap" id="links_div">
+                    
                 </div>
             </div>
         </div>
-    </div>
+   </div>
   `;
+
+  const links_parent = parent.querySelector("#links_div");
+  for (const i in project_links) {
+    const { title, tag, href } = project_links[i];
+
+    links_parent.innerHTML += `
+    <div class="title link-div m-3 d-inline-flex flex-column justify-content-center align-items-center text-start" id="${i}">
+        <a href="${href}" target="_blank" class="link_a">
+            <p class="no-letter-spacing m-0 link-title fs-6">${title}</p>
+            <p class="link-tag m-0 fs-6">${tag}</p>
+        </a>
+    </div>`;
+  }
 
   parent.querySelector(".arrow_up").addEventListener("click", () => {
     AboutMeLoad(parent);
@@ -220,6 +231,19 @@ async function ProjectsLoad(parent) {
 }
 
 async function ResearchLoad(parent) {
+  const research_links = [
+    {
+      title: "AuraCDT PGR Profile",
+      tag: "About me and my research",
+      href: "https://auracdt.hull.ac.uk/louis-donaldson/",
+    },
+    {
+      title: "2024 Website for conference",
+      tag: "Further information regarding my PhD",
+      href: "./Poster-Link/PosterReferences.html",
+    },
+  ];
+
   parent.innerHTML = `
   <div class="slide-up animated">
     <div class="d-flex justify-content-center arrow_div">
@@ -235,17 +259,26 @@ async function ResearchLoad(parent) {
         <div class="content d-flex justify-content-center align-items-center flex-column text-center">
             <h2 class="title">My Research</h2>
             <div class="px-5 container">
-                <div class="justify-content-center align-items-center my-2 w-100 flex-wrap">
-                    <div class="m-3 d-inline-flex flex-column justify-content-center align-items-center">
-                        <a href="./Poster-Link/PosterReferences.html" target="_blank">
-                            <p class="title no-letter-spacing m-0 link">2024 Website for conference</p>
-                        </a>
-                    </div>
+                <div class="justify-content-center align-items-center my-2 w-100 flex-wrap" id="links_div">
+                    
                 </div>
             </div>
         </div>
    </div>
   `;
+
+  const links_parent = parent.querySelector("#links_div");
+  for (const i in research_links) {
+    const { title, tag, href } = research_links[i];
+
+    links_parent.innerHTML += `
+    <div class="title link-div m-3 d-inline-flex flex-column justify-content-center align-items-center text-start" id="${i}">
+        <a href="${href}" target="_blank" class="link_a">
+            <p class="no-letter-spacing m-0 link-title fs-6">${title}</p>
+            <p class="link-tag m-0 fs-6">${tag}</p>
+        </a>
+    </div>`;
+  }
 
   parent.querySelector(".arrow_up").addEventListener("click", () => {
     AboutMeLoad(parent);
