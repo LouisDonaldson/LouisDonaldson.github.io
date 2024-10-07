@@ -463,6 +463,18 @@ a{
     transition: 0.25s;
 }
 
+.link-div{
+    transition: 0.5s;
+    /* border-right: 2pt solid; */
+    /* padding-bottom: 5px;
+    margin-bottom: 5px; */
+}
+
+.link-div:hover {
+    transform: scale(1.05);
+    transition: 0.25s;
+}
+
 /* .link-title:hover {
     text-decoration: underline;
     color: var(--light-1) !important;

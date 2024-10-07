@@ -144,7 +144,7 @@ async function AboutMeLoad(parent) {
             <div class="px-5 container">
                 <div class="row justify-content-center align-items-center my-2">
                     <div class="col-md-8 ">
-                        <p class="fw-lighter">
+                        <p class="fw-light">
                             I have a BSc in Computer Science and I'm currently a post-graduate researcher at the University
                             of Hull, undertaking a PhD focused on optimisation of maintenance scheduling in the Offshore
                             Wind Industry.
