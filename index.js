@@ -1,21 +1,21 @@
-const links = [
-  {
-    name: "Pathfinding Demonstration",
-    href: "./pathfinding/pathfinding.html",
-  },
-  {
-    name: "Bywater Concept Website",
-    href: "bywater.html",
-  },
-  {
-    name: "Alzheimers Clock (phone layout not optimised)",
-    href: "clock.html",
-  },
-  {
-    name: "PhD Explainable Reinforcement Learning in the Offshore Wind Industry",
-    href: "Poster-Link/PosterReferences.html",
-  },
-];
+// const links = [
+//   {
+//     name: "Pathfinding Demonstration",
+//     href: "./pathfinding/pathfinding.html",
+//   },
+//   {
+//     name: "Bywater Concept Website",
+//     href: "bywater.html",
+//   },
+//   {
+//     name: "Alzheimers Clock (phone layout not optimised)",
+//     href: "clock.html",
+//   },
+//   {
+//     name: "PhD Explainable Reinforcement Learning in the Offshore Wind Industry",
+//     href: "Poster-Link/PosterReferences.html",
+//   },
+// ];
 
 document.addEventListener("DOMContentLoaded", () => {
   const body = document.querySelector("body");
@@ -54,12 +54,12 @@ async function LandingPageLoad(parent) {
                     <h1 class="animated">Louis Donaldson</h1>
     
                     <h2 class="fw-light tag-animation">PhD PGR with AuraCDT</h2>
-                    <p class="fw-light tag-animation text-light">School of Computer Science</p>
-                    <p class="fw-light tag-animation text-light">University of Hull</p>
+                    <p class="fw-lighter tag-animation text-light">School of Computer Science</p>
+                    <p class="fw-lighter tag-animation text-light">University of Hull</p>
                 </div>
                 <div class="links d-flex tag-animation">
                     <a href="https://www.linkedin.com/in/louis-donaldson-162822207/" target="_blank">
-                        <div class="icon_link mx-2">
+                        <div class="icon_link mx-2 ms-0">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                 class="bi bi-linkedin" viewBox="0 0 16 16">
                                 <defs>
@@ -125,7 +125,7 @@ async function LandingPageLoad(parent) {
 
 async function AboutMeLoad(parent) {
   const html = `
-  <div class="slide-up animated">
+ <div class="slide-up animated">
         <div class="d-flex justify-content-center arrow_div">
             <div class="arrow_up">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -144,7 +144,7 @@ async function AboutMeLoad(parent) {
             <div class="px-5 container">
                 <div class="row justify-content-center align-items-center my-2">
                     <div class="col-md-8 ">
-                        <p class="">
+                        <p class="fw-lighter">
                             I have a BSc in Computer Science and I'm currently a post-graduate researcher at the University
                             of Hull, undertaking a PhD focused on optimisation of maintenance scheduling in the Offshore
                             Wind Industry.
