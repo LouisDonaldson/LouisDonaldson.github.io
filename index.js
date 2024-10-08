@@ -187,6 +187,11 @@ async function ProjectsLoad(parent) {
       tag: "Simple Pathfinding Sandbox",
       href: "./pathfinding/pathfinding.html",
     },
+    {
+      title: "Hull University Buddy",
+      tag: "Student Helper Browser Extension",
+      href: "https://chromewebstore.google.com/detail/hull-university-buddy/jnppmhcoifoohipnnhdabhnolnilncbk",
+    },
   ];
 
   parent.innerHTML = `
