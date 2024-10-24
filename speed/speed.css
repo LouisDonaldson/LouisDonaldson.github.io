@@ -1,0 +1,30 @@
+html{
+    --accent-color: rgb(255, 170, 0);
+    --light-1: #F36D54;
+    --light-2: #EE4086;
+    --dark-1: #2C1532;
+    --dark-2: #27314B;
+}
+
+body{
+    font-family: "Poppins";
+    background: linear-gradient(90deg, var(--dark-1), var(--dark-2));
+}
+
+.content{
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.speed_indicator{
+    color: white;
+    font-size: 10vw;
+    align-items: baseline;
+}
+
+.value{
+    font-size: 5vw;
+    color: lightgray;
+}
