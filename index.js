@@ -17,7 +17,7 @@
 //   },
 // ];
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
   const body = document.querySelector("body");
 
   // loads landing page //
