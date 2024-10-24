@@ -12,7 +12,7 @@ body{
 }
 
 .content{
-    height: 100vh;
+    height: 100dvh;
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -20,11 +20,16 @@ body{
 
 .speed_indicator{
     color: white;
-    font-size: 10vw;
+    font-size: 30vw;
     align-items: baseline;
 }
 
 .value{
     font-size: 5vw;
     color: lightgray;
+    font-weight: 200;
+}
+
+.top_speed_num{
+    color: var(--light-1);
 }
