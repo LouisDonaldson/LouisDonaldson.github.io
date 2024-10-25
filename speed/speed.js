@@ -51,7 +51,7 @@ window.addEventListener("DOMContentLoaded", async () => {
           const diff_in_mins = difference_in_secs / 60;
           const diff_in_hours = diff_in_mins / 60;
 
-          const speed = Math.floor(m / diff_in_hours);
+          const speed = Math.round((m / diff_in_hours) * 10) / 10;
 
           number.innerHTML = speed;
           if (speed > top_speed) {
