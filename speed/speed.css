@@ -33,3 +33,9 @@ body{
 .top_speed_num{
     color: var(--light-1);
 }
+
+.distance_travelled_div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
