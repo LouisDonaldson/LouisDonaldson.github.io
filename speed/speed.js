@@ -2,7 +2,7 @@ let locations = [];
 let interval;
 let last_position;
 let top_speed = 0;
-let distance_travelled = 0;
+let distance_travelled_num = 0;
 
 window.addEventListener("DOMContentLoaded", async () => {
   let started = false;
@@ -48,7 +48,7 @@ window.addEventListener("DOMContentLoaded", async () => {
           const difference_in_msecs = new_date - old_date;
           console.log(difference_in_msecs);
           let { m, km } = GetDistance(last_position, pos);
-          distance_travelled += m;
+          distance_travelled_num += m;
 
           const difference_in_secs = difference_in_msecs / 1000;
           const diff_in_mins = difference_in_secs / 60;
@@ -57,7 +57,7 @@ window.addEventListener("DOMContentLoaded", async () => {
           const speed = Math.round(m / diff_in_hours);
 
           number.innerHTML = speed;
-          distance_travelled.innerHTML = `${Math.round(m)} miles`;
+          distance_travelled.innerHTML = `${Math.round(m * 10) / 10} miles`;
           if (speed > top_speed) {
             top_speed = speed;
             top_speed_div.innerHTML = `${top_speed} mph`;
