@@ -1,0 +1,26 @@
+
+body{
+    font-family: "Roboto" !important;
+        background-color: #ffffff !important;
+}
+
+.content{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+.img_div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.img_div>img{
+        max-width: 75vw;
+        max-height: 50vh
+}
