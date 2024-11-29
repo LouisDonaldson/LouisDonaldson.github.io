@@ -94,6 +94,10 @@ p {
 .section {
 	position: relative;
 	z-index: 2;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
 }
 
 .landing_title {
@@ -121,44 +125,61 @@ p {
 	border-color: white !important;
 }
 
-.where_next_div {
-	display: inline-flex;
-	justify-content: center;
-	align-items: center;
+.where_section {
 	background-color: white;
-	color: black;
-	box-shadow: black 0px 0px 25px 0px;
+	display: inline-flex;
+	min-width: 300px;
+	width: 40vw;
+	justify-content: space-between;
 	position: relative;
-	top: 20px;
-	flex-wrap: wrap;
+	top: 30px;
+	box-shadow: 2px 2px 10px 0px var(--bg);
 }
 
-.where_section {
+.when_where {
 	display: flex;
 	align-items: center;
-	justify-content: center;
-	text-align: center;
-	flex-direction: column;
-	text-transform: uppercase;
+	justify-content: space-around;
+	padding: 10px 0px;
 	width: 100%;
 }
 
-.left {
-	border-right: solid 1pt lightgray;
-}
-
-.where_section > .focus {
-	font-weight: bolder;
+.when_where > div > .h1 {
 	font-family: "Texturina" !important;
-	color: black !important;
+	white-space: nowrap;
 }
 
-.where_section > p {
+.when_where > div > p {
 	margin: 0px;
+	font-weight: 500;
+}
+
+.orange {
 	color: var(--orange);
 }
 
-.right {
+.when_where > div {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 10px 20px;
+	flex-direction: column;
+	width: 100%;
+}
+
+.where {
+	border-right: solid 1pt lightgray;
+}
+
+.direction {
+	display: flex;
 	background-color: var(--orange);
-	color: white;
+	align-items: center;
+	justify-content: center;
+	padding: 20px 20px;
+}
+
+.direction > a {
+	color: black;
+	text-decoration: none;
 }
