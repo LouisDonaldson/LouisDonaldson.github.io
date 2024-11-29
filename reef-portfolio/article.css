@@ -1,0 +1,278 @@
+html {
+	--bg: #1d1d1d;
+	--red: #e65757;
+	--darker-red: #c14343;
+
+	background-color: var(--bg) !important;
+}
+
+body {
+	font-family: "Roboto Mono" !important;
+
+	background-color: var(--bg) !important;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+	color: var(--red) !important;
+}
+
+.logo {
+	display: flex;
+	align-items: center;
+	object-fit: contain;
+	position: relative;
+}
+
+.logo>a>img {
+	position: relative;
+	height: 100%;
+	max-height: 50px;
+}
+
+.nav {
+	background-color: #1d1d1d7e !important;
+	backdrop-filter: blur(50px);
+
+	z-index: 4;
+	display: flex;
+	width: 100%;
+	justify-content: flex-end;
+	color: white;
+	padding: 10px 0px;
+	border-bottom: solid 1pt gray;
+}
+
+.link {
+	margin: 5px 15px;
+	transition: 0.25s;
+	font-weight: 300;
+}
+
+.link:hover {
+	transition: 0.25s;
+	cursor: pointer;
+	color: var(--red);
+	font-weight: 800;
+}
+
+.link.active {
+	color: var(--red) !important;
+	font-weight: 800 !important;
+}
+
+.red_box_shadow {
+	box-shadow: var(--red) 0px 0px 20px 5px;
+}
+
+.section {
+	padding-top: 10vh;
+	min-height: 100vh;
+}
+
+.border_top {
+	border-top: solid 1pt #8e8e8e;
+}
+
+.main_article {
+	display: flex;
+	flex-direction: column;
+}
+
+.img_and_caption>img {
+	width: 100%;
+	/* margin-bottom: 10px; */
+}
+
+.content>.text>img {
+	width: 100%;
+	/* margin-bottom: 10px; */
+}
+
+.hero_img {
+	display: flex;
+	background-position: 50%;
+	background-size: cover;
+	/* height: 25vh; */
+	min-height: 300px;
+	max-height: 50vh;
+	position: relative;
+	justify-content: flex-end;
+	align-items: flex-start;
+	flex-direction: column;
+	padding: 20px;
+	padding-top: 50px;
+}
+
+.hero_img>* {
+	z-index: 2;
+}
+
+.hero_img::before {
+	top: 0px;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: rgb(29, 29, 29);
+	background: linear-gradient(0deg, #1d1d1d 10%, #1d1d1d45 100%);
+	content: "";
+	left: 0px;
+}
+
+.other_articles {
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+	display: flex;
+	align-items: center;
+	justify-content: start;
+	flex-direction: column;
+	position: relative;
+}
+
+.blog_article {
+	margin-bottom: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	box-shadow: 3px 3px 5px 0px #0000001c;
+	transition: 0.25s;
+}
+
+.blog_article>.inner {
+	display: flex;
+	align-items: start;
+	justify-content: center;
+	flex-direction: column;
+	width: 100%;
+	padding-top: 10vh;
+	padding-bottom: 20px;
+	position: relative;
+	transition: 0.25s;
+	border: solid 1pt #8e8e8e;
+
+	background-size: cover;
+	background-position: 50%;
+	background-repeat: no-repeat;
+}
+
+.blog_article>.inner::before {
+	top: 0px;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: rgb(29, 29, 29);
+	background: linear-gradient(0deg, #1d1d1d 10%, #1d1d1d45 100%);
+	content: "";
+	left: 0px;
+}
+
+.blog_article:hover {
+	/* margin-bottom: 20px; */
+	/* margin-bottom: 10px; */
+	transition: 0.25s;
+	color: white !important;
+	cursor: pointer;
+}
+
+.blog_article>.inner>* {
+	transition: 0.25s;
+}
+
+.blog_article:hover>.inner>.title {
+	color: white;
+	transition: 0.25s;
+}
+
+.blog_article:hover>.inner {
+	/* margin: 0px 10px; */
+	transition: 0.5s;
+	border: solid 1pt white;
+	padding-top: 20vh;
+}
+
+.blog_article>.inner>* {
+	z-index: 2;
+}
+
+.datetime_tag {
+	margin: 0px;
+}
+
+.title {
+	color: var(--red);
+	font-weight: bold;
+}
+
+.tags {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	flex-wrap: wrap;
+}
+
+.article_tag {
+	text-align: center;
+	background-color: #292929;
+	border: solid 1pt #8e8e8e;
+	padding: 5px 10px;
+	border-radius: 5px;
+	color: white;
+	font-size: 10pt;
+	font-weight: 300;
+	margin-right: 10px;
+	margin-bottom: 5px;
+}
+
+.img_and_caption {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	margin-bottom: 10px;
+}
+
+.img_and_caption>label {
+	position: absolute;
+	bottom: 0px;
+	right: 20px;
+	padding: 5px 10px;
+	background-color: var(--red);
+	color: white;
+	font-size: 0.75rem !important;
+	opacity: 0;
+	transition: 0.25s;
+}
+
+.img_and_caption:hover>label {
+	bottom: 20px;
+	opacity: 1;
+	transition: 0.25s;
+}
+
+.img_and_caption>.img_gradient {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(0deg, var(--bg), #29292929);
+	opacity: 0;
+	transition: 0.25s;
+}
+
+.img_and_caption:hover>.img_gradient {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(0deg, var(--bg), #29292929);
+	opacity: 1;
+	transition: 0.25s;
+}
