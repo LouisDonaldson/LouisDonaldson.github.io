@@ -18,35 +18,14 @@
 // ];
 
 document.addEventListener("DOMContentLoaded", async () => {
-  const body = document.querySelector("body");
+	const body = document.querySelector("body");
 
-  // loads landing page //
-  LandingPageLoad(body);
+	// loads landing page //
+	LandingPageLoad(body);
 });
 
 async function LandingPageLoad(parent) {
-  // parent.innerHTML = `
-  // <div class="top h-100 d-flex flex-column justify-content-center align-items-center">
-  //   <div class="animated px-3">
-  //       <h1 class="title fs-3 ">LOUIS DONALDSON</h1>
-  //       <p class="tag fs-6 tag-animation text-muted">- PHD PGR -<br>COMPUTER SCIENCE</p>
-
-  //   </div>
-
-  //  </div>
-  //  <div class="bottom">
-  //       <div class="bounce-top about_me_button">
-  //           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down more_btn"
-  //               viewBox="0 0 16 16">
-  //               <path fill-rule="evenodd"
-  //                   d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1" />
-  //           </svg>
-  //           <!-- <img src="./images/arrow-down.svg" alt="See More Arrow"> -->
-
-  //       </div>
-  //  </div>`;
-
-  parent.innerHTML = `
+	parent.innerHTML = `
    <div class="top h-100 d-flex flex-column justify-content-center align-items-center">
         <div class="d-flex flex-wrap">
             <div class="right gradient_border px-3 mx-3 d-flex flex-column justify-content-center align-items-start">
@@ -112,19 +91,19 @@ async function LandingPageLoad(parent) {
     </div>
   `;
 
-  parent.querySelector(".about_me_button").addEventListener("click", () => {
-    const top = parent.querySelector(".top");
-    top.classList.add("exit-zoom");
-    const bottom = parent.querySelector(".bottom");
-    bottom.classList.add("exit-zoom");
-    setTimeout(() => {
-      AboutMeLoad(parent);
-    }, 250);
-  });
+	parent.querySelector(".about_me_button").addEventListener("click", () => {
+		const top = parent.querySelector(".top");
+		top.classList.add("exit-zoom");
+		const bottom = parent.querySelector(".bottom");
+		bottom.classList.add("exit-zoom");
+		setTimeout(() => {
+			AboutMeLoad(parent);
+		}, 250);
+	});
 }
 
 async function AboutMeLoad(parent) {
-  const html = `
+	const html = `
  <div class="slide-up animated">
         <div class="d-flex justify-content-center arrow_div">
             <div class="arrow_up">
@@ -146,7 +125,7 @@ async function AboutMeLoad(parent) {
                     <div class="col-md-8 ">
                         <p class="fw-light">
                             I have a BSc in Computer Science and I'm currently a post-graduate researcher at the University
-                            of Hull, undertaking a PhD focused on optimisation of maintenance scheduling in the Offshore
+                            of Hull, undertaking a PhD focused on OPtimisation EXplainability (OPEX) for maintenance scheduling in the Offshore
                             Wind Industry.
                         </p>
                         <div class="links px-3 d-flex justify-content-center align-items-center ">
@@ -161,40 +140,40 @@ async function AboutMeLoad(parent) {
         </div>
     </div>
   `;
-  parent.innerHTML = html;
-  parent.querySelector(".arrow_up").addEventListener("click", () => {
-    LandingPageLoad(parent);
-  });
+	parent.innerHTML = html;
+	parent.querySelector(".arrow_up").addEventListener("click", () => {
+		LandingPageLoad(parent);
+	});
 
-  parent.querySelector("#projects").addEventListener("click", () => {
-    ProjectsLoad(parent);
-  });
+	parent.querySelector("#projects").addEventListener("click", () => {
+		ProjectsLoad(parent);
+	});
 
-  parent.querySelector("#research").addEventListener("click", () => {
-    ResearchLoad(parent);
-  });
+	parent.querySelector("#research").addEventListener("click", () => {
+		ResearchLoad(parent);
+	});
 }
 
 async function ProjectsLoad(parent) {
-  const project_links = [
-    {
-      title: "Reinforcement Learning Showcase",
-      tag: "RL TSP Sandbox - Offshore Wind Turbines",
-      href: "./Poster-Link/reinforcement-learning/index.html",
-    },
-    {
-      title: "Pathfinding Showcase",
-      tag: "Simple Pathfinding Sandbox",
-      href: "./pathfinding/pathfinding.html",
-    },
-    {
-      title: "Hull University Buddy",
-      tag: "Student Helper Browser Extension",
-      href: "https://chromewebstore.google.com/detail/hull-university-buddy/jnppmhcoifoohipnnhdabhnolnilncbk",
-    },
-  ];
+	const project_links = [
+		{
+			title: "Reinforcement Learning Showcase",
+			tag: "RL TSP Sandbox - Offshore Wind Turbines",
+			href: "./Poster-Link/reinforcement-learning/index.html",
+		},
+		{
+			title: "Pathfinding Showcase",
+			tag: "Simple Pathfinding Sandbox",
+			href: "./pathfinding/pathfinding.html",
+		},
+		{
+			title: "Hull University Buddy",
+			tag: "Student Helper Browser Extension",
+			href: "https://chromewebstore.google.com/detail/hull-university-buddy/jnppmhcoifoohipnnhdabhnolnilncbk",
+		},
+	];
 
-  parent.innerHTML = `
+	parent.innerHTML = `
    <div class="slide-up animated">
     <div class="d-flex justify-content-center arrow_div">
         <div class="arrow_up">
@@ -217,39 +196,39 @@ async function ProjectsLoad(parent) {
    </div>
   `;
 
-  const links_parent = parent.querySelector("#links_div");
-  for (const i in project_links) {
-    const { title, tag, href } = project_links[i];
+	const links_parent = parent.querySelector("#links_div");
+	for (const i in project_links) {
+		const { title, tag, href } = project_links[i];
 
-    links_parent.innerHTML += `
+		links_parent.innerHTML += `
     <div class="title link-div m-3 d-inline-flex flex-column justify-content-center align-items-center text-start" id="${i}">
         <a href="${href}" target="_blank" class="link_a">
             <p class="no-letter-spacing m-0 link-title fs-6">${title}</p>
             <p class="link-tag m-0 fs-6">${tag}</p>
         </a>
     </div>`;
-  }
+	}
 
-  parent.querySelector(".arrow_up").addEventListener("click", () => {
-    AboutMeLoad(parent);
-  });
+	parent.querySelector(".arrow_up").addEventListener("click", () => {
+		AboutMeLoad(parent);
+	});
 }
 
 async function ResearchLoad(parent) {
-  const research_links = [
-    {
-      title: "AuraCDT PGR Profile",
-      tag: "About me and my research",
-      href: "https://auracdt.hull.ac.uk/louis-donaldson/",
-    },
-    {
-      title: "2024 Website for conference",
-      tag: "Further information regarding my PhD",
-      href: "./Poster-Link/PosterReferences.html",
-    },
-  ];
+	const research_links = [
+		{
+			title: "AuraCDT PGR Profile",
+			tag: "About me and my research",
+			href: "https://auracdt.hull.ac.uk/louis-donaldson/",
+		},
+		{
+			title: "2024 Website for conference",
+			tag: "Further information regarding my PhD",
+			href: "./Poster-Link/PosterReferences.html",
+		},
+	];
 
-  parent.innerHTML = `
+	parent.innerHTML = `
   <div class="slide-up animated">
     <div class="d-flex justify-content-center arrow_div">
         <div class="arrow_up">
@@ -272,20 +251,20 @@ async function ResearchLoad(parent) {
    </div>
   `;
 
-  const links_parent = parent.querySelector("#links_div");
-  for (const i in research_links) {
-    const { title, tag, href } = research_links[i];
+	const links_parent = parent.querySelector("#links_div");
+	for (const i in research_links) {
+		const { title, tag, href } = research_links[i];
 
-    links_parent.innerHTML += `
+		links_parent.innerHTML += `
     <div class="title link-div m-3 d-inline-flex flex-column justify-content-center align-items-center text-start" id="${i}">
         <a href="${href}" target="_blank" class="link_a">
             <p class="no-letter-spacing m-0 link-title fs-6">${title}</p>
             <p class="link-tag m-0 fs-6">${tag}</p>
         </a>
     </div>`;
-  }
+	}
 
-  parent.querySelector(".arrow_up").addEventListener("click", () => {
-    AboutMeLoad(parent);
-  });
+	parent.querySelector(".arrow_up").addEventListener("click", () => {
+		AboutMeLoad(parent);
+	});
 }
