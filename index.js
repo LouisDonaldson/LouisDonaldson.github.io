@@ -226,6 +226,11 @@ async function ResearchLoad(parent) {
 			tag: "Further information regarding my PhD",
 			href: "./Poster-Link/PosterReferences.html",
 		},
+		{
+			title: "2025 Loughborough Conference",
+			tag: "Online link for the poster",
+			href: "./images/Poster Loughborough Conference 2025.png",
+		},
 	];
 
 	parent.innerHTML = `
