@@ -1,247 +1,287 @@
 html {
-	/* --bg: #242424; */
-	--bg: #18130e;
-	--cream: #c1b492;
-	--orange: #cc8e57;
+  /* --bg: #242424; */
+  --bg: #18130e;
+  --cream: #c1b492;
+  --orange: #cc8e57;
+  --dark_orange: #b86e3c;
 }
 
 body {
-	font-family: "Texturina" !important;
-	background-color: #ffffff !important;
+  font-family: "Texturina" !important;
+  background-color: #ffffff !important;
 }
 
 p {
-	font-family: "Raleway" !important;
-	/* font-weight: 300; */
+  font-family: "Raleway" !important;
+  /* font-weight: 300; */
 }
 
 .content {
-	position: relative;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	height: 100vh;
-	width: 100vw;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
 }
 
 .img_div {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .img_div > img {
-	max-width: 75vw;
-	max-height: 50vh;
+  max-width: 75vw;
+  max-height: 50vh;
 }
 
 .navbar {
-	z-index: 2;
-	width: 100%;
+  z-index: 2;
+  width: 100%;
 }
 
 .navbar-nav {
-	display: flex;
-	justify-content: space-around;
-	align-items: flex-start;
-	width: 100%;
-	max-width: 1300px;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 1300px;
 }
 
 .logo_img {
-	width: 20vw;
-	max-width: 200px;
+  width: 20vw;
+  max-width: 200px;
 }
 
 .nav-link {
-	text-transform: uppercase !important;
-	color: white !important;
-	transition: 0.5s;
-	margin-top: 20px;
+  text-transform: uppercase !important;
+  color: white !important;
+  transition: 0.5s;
+  margin-top: 20px;
 }
 
 .nav-link:hover {
-	color: var(--orange) !important;
-	text-decoration: underline;
-	transition: 0.25s;
+  color: var(--orange) !important;
+  text-decoration: underline;
+  transition: 0.25s;
 }
 
 .hero {
-	/* min-height: 90vh;
+  /* min-height: 90vh;
 	max-height: 500px; */
-	background-image: url(./images/floral_bg.png);
-	background-position: 25%;
-	background-repeat: repeat-x;
-	width: 100%;
+  background-image: url(./images/floral_bg.png);
+  background-position: 25%;
+  background-repeat: repeat-x;
+  width: 100%;
 
-	height: 100%;
-	z-index: -1;
+  height: 100%;
+  z-index: -1;
 
-	position: absolute;
+  position: absolute;
 }
 
 .hero::before {
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	top: 0px;
-	left: 0px;
-	content: "";
-	background-image: linear-gradient(180deg, var(--bg), #24242496);
-	z-index: 1;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  content: "";
+  background-image: linear-gradient(180deg, var(--bg), #24242496);
+  z-index: 1;
 }
 
 .section {
-	position: relative;
-	z-index: 2;
+  position: relative;
+  z-index: 2;
 }
 
 .landing_title {
-	text-transform: uppercase;
+  text-transform: uppercase;
 }
 
 .links {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-wrap: wrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .links > div {
-	border: solid 1pt var(--orange);
-	padding: 5px 30px;
-	color: white;
-	background-color: var(--orange);
-	font-weight: 200;
-	margin: 5px 10px;
+  border: solid 1pt var(--orange);
+  padding: 5px 30px;
+  color: white;
+  background-color: var(--orange);
+  font-weight: 200;
+  margin: 5px 10px;
 }
 
 .link_outline_button {
-	background: none !important;
-	border-color: white !important;
+  background: none !important;
+  border-color: white !important;
+}
+
+#contact_us_btn {
+  transition: 0.25s;
+}
+
+#contact_us_btn:hover {
+  background-color: var(--dark_orange);
+  transition: 0.25s;
+  border-color: var(--dark_orange);
+
+  cursor: pointer;
+}
+
+#find_us_btn {
+  background: none !important;
+  border-color: white !important;
+  color: white !important;
+  transition: 0.25s;
+}
+
+#find_us_btn:hover {
+  background-color: white !important;
+  color: var(--orange) !important;
+  transition: 0.25s;
+  cursor: pointer;
 }
 
 .where_next_div {
-	display: inline-flex;
-	justify-content: center;
-	align-items: center;
-	background-color: white;
-	color: black;
-	box-shadow: black 0px 0px 25px 0px;
-	position: relative;
-	top: 20px;
-	flex-wrap: wrap;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  color: black;
+  box-shadow: black 0px 0px 25px 0px;
+  position: relative;
+  top: 20px;
+  flex-wrap: wrap;
 }
 
 .where_section {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	text-align: center;
-	flex-direction: column;
-	text-transform: uppercase;
-	width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  text-transform: uppercase;
+  width: 100%;
 }
 
 .left {
-	border-right: solid 1pt lightgray;
+  border-right: solid 1pt lightgray;
 }
 
 .where_section > .focus {
-	font-weight: bolder;
-	font-family: "Texturina" !important;
-	color: black !important;
+  font-weight: bolder;
+  font-family: "Texturina" !important;
+  color: black !important;
 }
 
 .where_section > p {
-	margin: 0px;
-	color: var(--orange);
+  margin: 0px;
+  color: var(--orange);
+}
+
+#directions_link {
+  transition: 0.25s;
+}
+
+#directions_link:hover {
+  background-color: var(--dark_orange);
+  transition: 0.25s;
+  cursor: pointer;
 }
 
 .right {
-	background-color: var(--orange);
-	color: white;
+  background-color: var(--orange);
+  color: white;
 }
 
-.divider{
-	display: flex;
-	width: 100%;
-	border-bottom: solid 1px var(--orange);
-
+.divider {
+  display: flex;
+  width: 100%;
+  border-bottom: solid 1px var(--orange);
 }
 
-.glide__slide{
-	display: flex;
-	justify-content: center;
-	align-items: center;
+.glide__slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.image_placeholder{
-	width: 100%;
-	height: 200px;
-	background-image: url(./images/floral_bg.png);
-	background-size: contain;
-	
-	background-position: center;
+.image_placeholder {
+  width: 100%;
+  height: 200px;
+  background-image: url(./images/floral_bg.png);
+  background-size: contain;
+
+  background-position: center;
 }
 
 .bottom_bg {
-	background-image: url(./images/metal_floral_bg.png);
-	background-position: center;
-	background-repeat: repeat-x;
-	width: 100%;
-	z-index: -1;
-	position: relative;
-	top: -100px;
-	height: 80%;
+  background-image: url(./images/metal_floral_bg.png);
+  background-position: center;
+  background-repeat: repeat-x;
+  width: 100%;
+  z-index: -1;
+  position: relative;
+  top: -100px;
+  height: 80%;
 
-	/* Remove this once div is filled */
-	/* height: 500px; */
+  /* Remove this once div is filled */
+  /* height: 500px; */
 }
 
 .bottom_bg::before {
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	top: 0px;
-	left: 0px;
-	content: "";
-	background-image: linear-gradient(180deg, var(--bg), #24242496);
-	z-index: 1;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  content: "";
+  background-image: linear-gradient(180deg, var(--bg), #24242496);
+  z-index: 1;
 }
 
-.section.contact{
-	padding-top: 50px;
-	position: relative;
-	top: 50px;
-	z-index: 2;
+.section.contact {
+  padding-top: 50px;
+  position: relative;
+  top: 50px;
+  z-index: 2;
 }
 
-.contact_card{
-	background-color: white;
-	box-shadow: black 0px 0px 25px 0px;
+.contact_card {
+  background-color: white;
+  box-shadow: black 0px 0px 25px 0px;
 }
 
-.contact_small_card{
-	border: solid 1pt lightgray;
+.contact_small_card {
+  border: solid 1pt lightgray;
 }
 
-.contact_info{
-	margin: 10px 0px;
+.contact_info {
+  margin: 10px 0px;
 }
 
-.contact_info>svg{
-	fill: var(--orange);
-	margin-right: 10px;
-	width: 30px;
+.contact_info > svg {
+  fill: var(--orange);
+  margin-right: 10px;
+  width: 30px;
 }
 
-.contact_info>p{
-	margin: 0px;
-	/* font-weight: 200; */
+.contact_info > p {
+  margin: 0px;
+  /* font-weight: 200; */
 }
 
-.footer{
-	background-color: var(--bg);
+.footer {
+  background-color: var(--bg);
+}
+
+.footer_logo {
+  height: 50px;
 }
