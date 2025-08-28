@@ -1,0 +1,214 @@
+html {
+  --accent-color: rgb(255, 170, 0);
+
+  --light-1: #f36d54;
+  --light-2: #ee4086;
+
+  --dark-1: #2c1532;
+  --dark-2: #27314b;
+}
+
+body {
+  background-image: linear-gradient(0deg, var(--dark-1), var(--dark-2));
+  font-family: "Poppins" !important;
+  min-height: 100vh;
+  overflow: hidden;
+
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+.top {
+  min-height: 100vh;
+  min-width: 100vw;
+  /* position: absolute; */
+}
+
+.text > * {
+  margin: 0px;
+}
+
+p {
+  font-weight: 300 !important;
+}
+
+.gradient_border {
+  border-left: solid 2pt;
+  border-image: linear-gradient(var(--light-1), var(--light-2)) 1;
+}
+
+.img_div > img {
+  /* object-fit: cover; */
+}
+
+.img_div {
+  /* overflow: hidden; */
+  position: relative;
+  aspect-ratio: 1 / 1;
+  height: 100%;
+  max-height: 30vh;
+  flex-grow: 1;
+
+  width: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url(./linkedin.jpg);
+  background-size: contain;
+  border-radius: 100%;
+}
+
+.icon_link {
+  height: calc(3.5vh + 1.5vw);
+  max-width: 50px;
+  max-height: 50px;
+}
+
+.icon_link:hover {
+  cursor: pointer;
+}
+
+.icon_link > svg {
+  /* fill: var(--light-1); */
+  fill: url(#SVG_grad);
+  transition: 0.25s;
+  height: 100%;
+  max-height: 40px;
+  width: auto;
+}
+
+.icon_link > svg:hover {
+  transition: 0.25s;
+  fill: white;
+  transform: translateY(5px);
+}
+
+.animated {
+  animation-name: slide-down;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+.tag-animation {
+  -webkit-animation: focus-in-expand 0.5s cubic-bezier(0, 0.68, 0, 1) both;
+  animation: focus-in-expand 0.5s cubic-bezier(0, 0.68, 0, 1) both;
+  animation-delay: 0.25s;
+}
+
+.exit-zoom {
+  animation-name: zoom-out;
+  animation-duration: 0.25s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes zoom-out {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+    filter: blur(5px);
+  }
+}
+
+@-webkit-keyframes focus-in-expand {
+  0% {
+    letter-spacing: -0.5em;
+    -webkit-filter: blur(12px);
+    filter: blur(12px);
+    opacity: 0;
+  }
+
+  100% {
+    -webkit-filter: blur(0px);
+    filter: blur(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes focus-in-expand {
+  0% {
+    /* content: "PHD STUDENT"; */
+    letter-spacing: -0.5em;
+    -webkit-filter: blur(12px);
+    filter: blur(12px);
+    opacity: 0;
+  }
+
+  100% {
+    /* content: "PHD STUDENT"; */
+    -webkit-filter: blur(0px);
+    filter: blur(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes text-focus-in {
+  0% {
+    -webkit-filter: blur(12px);
+    filter: blur(12px);
+    opacity: 0;
+  }
+
+  100% {
+    -webkit-filter: blur(0px);
+    filter: blur(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-down {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+.title {
+  font-weight: 500;
+  /* font-size: 20pt; */
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  padding: 0px 10px;
+  margin: 0px 10px;
+  border-left: solid 2pt;
+  border-image: linear-gradient(var(--light-1), var(--light-2)) 1;
+  color: white;
+}
+
+a {
+  color: var(--light-1);
+  text-decoration: none !important;
+  font-weight: 500;
+  font-size: 12pt;
+}
+
+.card > ul {
+  list-style: none;
+  padding-left: 0px;
+  margin-left: 0px;
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card > ul > li {
+  border-bottom: solid 1pt var(--dark-1);
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  display: flex;
+  width: 100%;
+}
+
+.card > ul > li > a:hover {
+  color: black !important;
+}
