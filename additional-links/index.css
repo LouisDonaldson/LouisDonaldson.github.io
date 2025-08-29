@@ -191,6 +191,10 @@ a {
   font-size: 12pt;
 }
 
+.card {
+  border-radius: 0px !important;
+}
+
 .card > ul {
   list-style: none;
   padding-left: 0px;
@@ -203,8 +207,8 @@ a {
 
 .card > ul > li {
   border-bottom: solid 1pt var(--dark-1);
-  margin-bottom: 10px;
-  padding-bottom: 10px;
+  margin-bottom: 5px;
+  padding-bottom: 5px;
   display: flex;
   width: 100%;
 }
