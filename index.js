@@ -188,7 +188,7 @@ async function ProjectsLoad(parent) {
         <div class="content d-flex justify-content-center align-items-center flex-column text-center">
             <h2 class="title">My Projects</h2>
             <div class="px-5 container">
-                <div class="justify-content-center align-items-center my-2 w-100 flex-wrap" id="links_div">
+                <div class="d-flex justify-content-start justify-content-sm-center align-items-center my-2 w-100 flex-wrap" id="links_div">
                     
                 </div>
             </div>
@@ -231,6 +231,11 @@ async function ResearchLoad(parent) {
 			tag: "Online link for the poster",
 			href: "./images/Poster Loughborough Conference 2025.png",
 		},
+        {
+			title: "NSGA3 OSWOP",
+			tag: "Streamlit Dashboard",
+			href: "https://nsga-iii-osw-optimisation.streamlit.app",
+		},
 	];
 
 	parent.innerHTML = `
@@ -248,7 +253,7 @@ async function ResearchLoad(parent) {
         <div class="content d-flex justify-content-center align-items-center flex-column text-center">
             <h2 class="title">My Research</h2>
             <div class="px-5 container">
-                <div class="justify-content-center align-items-center my-2 w-100 flex-wrap" id="links_div">
+                <div class="d-flex justify-content-start justify-content-sm-center align-items-center my-2 w-100 flex-wrap" id="links_div">
                     
                 </div>
             </div>
