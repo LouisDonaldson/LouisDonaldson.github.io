@@ -36,14 +36,14 @@ window.addEventListener("DOMContentLoaded", () => {
   for (let i = 0; i < testimonials.length; i++) {
     const test_obj = testimonials[i];
     test_image_text_section.innerHTML += `
-     <div class="row justify-content-center">
-        <div class="col-md-6 mb-3">
+     <div class="row justify-content-center testimonial_card">
+        <div class="col-md-5 mb-3">
             <div class="img_wrap">
                 <img src="${test_obj.image_url}" alt="" srcset="">
             </div>
         </div>
-        <div class="col-md-6 mb-3 text-md-start text-center d-flex flex-column justify-content-center">
-            <h2>- ${test_obj.name}</h2>
+        <div class="col-md-7 mb-3 text-md-start text-center d-flex flex-column justify-content-center">
+            <h2>${test_obj.name}</h2>
             <p>${test_obj.text}</p>
         </div>
     </div>`;

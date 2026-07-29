@@ -1,130 +1,125 @@
-.training_section{
-    /* background-color: var(--primary_blue); */
-
+.training_section {
     background-image: url(./images/temp_landing_img.jpg);
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: 65%;
-        position: relative;
-}
-
-.training_section::before{
-    content: "";
-        display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: var(--primary_blue);
-        /* background: linear-gradient(240deg, #0230477c 40%, #023047 100%); */
-        opacity: 70%;
-}
-
-.rider_div{
-    min-height: 100vh;
-    /* background-color: var(--primary_blue); */
-    background-image: url(./images/mike-landing-img.jpeg);
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: 45%;
+    background-position: 65%;
     position: relative;
-
+    min-height: 70vh;
     display: flex;
-    justify-content: flex-start;
     align-items: center;
 }
 
-.rider_div::before{
+.training_section::before {
     content: "";
     display: block;
     position: absolute;
-    top: 0;
+    inset: 0;
+    background: linear-gradient(100deg, var(--navy) 20%, rgba(2, 48, 71, 0.55) 75%);
+}
+
+.training_section h1 {
+    max-width: 40rem;
+}
+
+.pricing {
+    background: var(--paper);
+    padding: var(--space-4) 0;
+}
+
+.pricing h2 {
+    position: relative;
+    padding-bottom: 0.6rem;
+    display: inline-block;
+}
+
+.pricing h2::after {
+    content: "";
+    position: absolute;
     left: 0;
-    width: 100%;
-    height: 100%;
-    background: var(--primary_blue);
-    opacity: 80%;
-    /* background: linear-gradient(240deg, rgba(255, 255, 255, 0) 0%, #023047 90%); */
-        /* Change the color and opacity as needed */
+    bottom: 0;
+    height: 4px;
+    width: 56px;
+    border-radius: var(--radius-pill);
+    background: var(--orange);
 }
 
-.rider_content {
-    z-index: 2;
+.pricing p {
+    max-width: 50rem;
+}
+
+/* -------- shared full-bleed training sections -------- */
+.rider_div,
+.driver_div,
+.instructor_div {
+    min-height: 100vh;
+    position: relative;
+    background-size: cover;
+    background-repeat: no-repeat;
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
-    height: 100%;
+    align-items: center;
+    padding: var(--space-5) 0;
 }
 
+.rider_div {
+    background-image: url(./images/mike-landing-img.jpeg);
+    background-position: 45%;
+}
 
 .driver_div {
-    min-height: 100vh;
-    /* background-color: var(--primary_blue); */
-    position: relative;
     background-image: url(./images/car_bg.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
     background-position: 50%;
-
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-}
-
-.driver_div::before {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    background: var(--primary_blue);
-        opacity: 80%;
-    /* Change the color and opacity as needed */
-}
-
-.driver_div{
-    min-height: 100vh;
-    /* background-color: #023047; */
 }
 
 .instructor_div {
-min-height: 100vh;
-    /* background-color: var(--primary_blue); */
-    position: relative;
     background-image: url(./images/classroom.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
     background-position: 50%;
-
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
 }
 
-.instructor_div::before{
+.rider_div::before,
+.driver_div::before,
+.instructor_div::before {
     content: "";
     display: block;
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    background: var(--primary_blue);
-    opacity: 80%;
-    /* Change the color and opacity as needed */
+    inset: 0;
+    background: linear-gradient(180deg, rgba(2, 48, 71, 0.55) 0%, var(--navy) 78%);
 }
 
-h1{
-    font-weight: bold;
-}
-
-.z-index-front{
+.training_panel {
     z-index: 2;
     position: relative;
+    background: rgba(2, 48, 71, 0.55);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: var(--radius-lg);
+    padding: var(--space-4);
+    backdrop-filter: blur(10px);
+    max-width: 60rem;
+}
+
+.training_panel h2 {
+    color: var(--white);
+}
+
+.training_panel h3 {
+    color: var(--amber);
+    margin-top: var(--space-3);
+}
+
+.training_panel ul,
+.training_panel ol {
+    padding-left: 1.3rem;
+}
+
+.training_panel li {
+    margin-bottom: 0.5rem;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.training_panel li strong {
+    color: var(--white);
+}
+
+.training_panel strong {
+    color: var(--amber);
 }

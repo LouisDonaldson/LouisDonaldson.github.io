@@ -44,4 +44,10 @@ window.addEventListener("DOMContentLoaded", () => {
         </ul>
     </div>
     `;
+
+  const toggleScrolled = () => {
+    nav_el.classList.toggle("scrolled", window.scrollY > 40);
+  };
+  toggleScrolled();
+  window.addEventListener("scroll", toggleScrolled, { passive: true });
 });
