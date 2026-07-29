@@ -29,23 +29,35 @@ const testimonials = [
 ];
 
 window.addEventListener("DOMContentLoaded", () => {
-  const test_image_text_section = document.querySelector(
-    "#test_image_text_section"
-  );
+  const track = document.querySelector("#carousel_track");
 
-  for (let i = 0; i < testimonials.length; i++) {
-    const test_obj = testimonials[i];
-    test_image_text_section.innerHTML += `
-     <div class="row justify-content-center testimonial_card">
-        <div class="col-md-5 mb-3">
-            <div class="img_wrap">
-                <img src="${test_obj.image_url}" alt="" srcset="">
+  track.innerHTML = testimonials
+    .map(
+      (t) => `
+    <article class="testimonial_card">
+        <div class="testimonial_top">
+            <div class="testimonial_avatar">
+                <img src="${t.image_url}" alt="${t.name}">
             </div>
+            <h3>${t.name}</h3>
         </div>
-        <div class="col-md-7 mb-3 text-md-start text-center d-flex flex-column justify-content-center">
-            <h2>${test_obj.name}</h2>
-            <p>${test_obj.text}</p>
-        </div>
-    </div>`;
-  }
+        <p class="testimonial_quote">${t.text}</p>
+    </article>`
+    )
+    .join("");
+
+  const prevBtn = document.querySelector("#carousel_prev");
+  const nextBtn = document.querySelector("#carousel_next");
+  const scrollByCard = () => {
+    const card = track.querySelector(".testimonial_card");
+    return card ? card.getBoundingClientRect().width + 28 : 320;
+  };
+
+  prevBtn.addEventListener("click", () => {
+    track.scrollBy({ left: -scrollByCard(), behavior: "smooth" });
+  });
+
+  nextBtn.addEventListener("click", () => {
+    track.scrollBy({ left: scrollByCard(), behavior: "smooth" });
+  });
 });

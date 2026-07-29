@@ -1,125 +1,525 @@
-.training_section {
-    background-image: url(./images/temp_landing_img.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: 65%;
-    position: relative;
-    min-height: 70vh;
-    display: flex;
+/* ================= Shared page hero ================= */
+.training_hero {
+  background: var(--ink);
+  padding-block: var(--space-5) var(--space-4);
+}
+
+.training_hero .container {
+  max-width: 46rem;
+}
+
+.training_hero .hero_actions {
+  margin-top: var(--space-3);
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-on-dark-soft);
+  margin-bottom: var(--space-2);
+}
+
+.breadcrumb a {
+  color: var(--text-on-dark-soft);
+  transition: color 0.2s ease;
+}
+
+.breadcrumb a:hover {
+  color: var(--yellow);
+}
+
+/* ================= Pricing disclaimer band (hub) ================= */
+.pricing_band {
+  background: var(--yellow);
+  padding-block: var(--space-3);
+  padding: var(--space-3) 0px;
+}
+
+.pricing_band_inner {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-content: center;
+}
+
+.pricing_band h2 {
+  font-size: 1.15rem;
+  white-space: nowrap;
+}
+
+.pricing_band p {
+  color: var(--ink);
+  opacity: 0.75;
+  margin: 0;
+  max-width: 46rem;
+}
+
+/* ================= Hub grid (training.html) ================= */
+.hub {
+  padding-block: var(--space-5);
+}
+
+.hub_grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-3);
+}
+
+.hub_card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: var(--space-3);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.hub_card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+}
+
+.hub_card_icon {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-md);
+  background: var(--paper);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  margin-bottom: var(--space-2);
+}
+
+.hub_card h3 {
+  margin-bottom: 0.5rem;
+}
+
+.hub_card p {
+  flex-grow: 1;
+  margin-bottom: var(--space-2);
+}
+
+.hub_card .btn {
+  align-self: flex-start;
+}
+
+@media (max-width: 800px) {
+  .hub_grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hub_card {
     align-items: center;
+    text-align: center;
+  }
+
+  .hub_card .btn {
+    align-self: center;
+  }
 }
 
-.training_section::before {
-    content: "";
-    display: block;
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(100deg, var(--navy) 20%, rgba(2, 48, 71, 0.55) 75%);
+/* ================= Sub-page content ================= */
+.page_body {
+  padding-block: var(--space-5);
 }
 
-.training_section h1 {
-    max-width: 40rem;
+.page_section {
+  margin-bottom: var(--space-5);
 }
 
-.pricing {
-    background: var(--paper);
-    padding: var(--space-4) 0;
+.page_section:last-child {
+  margin-bottom: 0;
 }
 
-.pricing h2 {
-    position: relative;
-    padding-bottom: 0.6rem;
-    display: inline-block;
+.page_content {
+  max-width: 42rem;
+  margin-inline: auto;
+  text-align: center;
 }
 
-.pricing h2::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    height: 4px;
-    width: 56px;
-    border-radius: var(--radius-pill);
-    background: var(--orange);
+.page_content .eyebrow {
+  justify-content: center;
+  margin-bottom: var(--space-1);
 }
 
-.pricing p {
-    max-width: 50rem;
+.page_content h2 {
+  margin-bottom: var(--space-2);
 }
 
-/* -------- shared full-bleed training sections -------- */
-.rider_div,
-.driver_div,
-.instructor_div {
-    min-height: 100vh;
-    position: relative;
-    background-size: cover;
-    background-repeat: no-repeat;
-    display: flex;
+.page_content p {
+  color: var(--text-soft);
+  margin-inline: auto;
+}
+
+.page_content p strong {
+  color: var(--text);
+}
+
+/* free-flowing prose (paragraphs/lists that read better left-aligned) */
+.page_prose {
+  max-width: 42rem;
+  margin-inline: auto;
+}
+
+.page_prose h3 {
+  margin-top: var(--space-3);
+  color: var(--coral);
+  font-size: 1.15rem;
+}
+
+.page_prose p,
+.page_prose li {
+  color: var(--text-soft);
+}
+
+.page_prose ul,
+.page_prose ol {
+  padding-left: 1.3rem;
+  margin: var(--space-2) 0;
+}
+
+.page_prose ul {
+  list-style: disc;
+}
+.page_prose ol {
+  list-style: decimal;
+}
+
+.page_prose li {
+  margin-bottom: 0.55rem;
+}
+
+.page_prose li strong,
+.page_prose p strong {
+  color: var(--text);
+}
+
+/* ================= Feature grid (card layout) ================= */
+.feature_grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-3);
+  margin-top: var(--space-3);
+}
+
+.feature_card {
+  background: var(--paper);
+  border-radius: var(--radius-lg);
+  padding: var(--space-3);
+  text-align: left;
+  box-shadow: var(--shadow-sm);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.feature_card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+}
+
+.feature_card_badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  height: 40px;
+  padding: 0 0.6rem;
+  border-radius: var(--radius-md);
+  background: var(--yellow);
+  color: var(--ink);
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  margin-bottom: var(--space-2);
+}
+
+.feature_card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: var(--text);
+}
+
+.feature_card p,
+.feature_card li {
+  color: var(--text-soft);
+  margin-bottom: 0;
+}
+
+.feature_card ul {
+  padding-left: 1.2rem;
+  margin: 0.5rem 0 0;
+}
+
+.feature_card li {
+  margin-bottom: 0.35rem;
+}
+
+/* when the card count is odd, the final card sits alone on the last row --
+   center it instead of leaving it stuck to the left column */
+.feature_card:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+  width: calc(50% - (var(--space-3) / 2));
+  margin-inline: auto;
+}
+
+@media (max-width: 700px) {
+  .feature_grid {
+    grid-template-columns: 1fr;
+  }
+
+  .feature_card:last-child:nth-child(odd) {
+    width: 100%;
+  }
+}
+
+/* ================= CBT step breakdown ================= */
+.cbt_steps {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-3);
+  margin: var(--space-3) 0 0;
+}
+
+.cbt_step {
+  position: relative;
+  background: var(--white);
+  border: 1px solid var(--paper-dim);
+  border-radius: var(--radius-lg);
+  padding: var(--space-3);
+  padding-top: calc(var(--space-3) + 6px);
+  text-align: left;
+  box-shadow: var(--shadow-sm);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.cbt_step::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: var(--space-3);
+  right: var(--space-3);
+  height: 4px;
+  border-radius: var(--radius-pill);
+  background: var(--coral);
+}
+
+.cbt_step:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+  border-color: transparent;
+}
+
+.cbt_step_top {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  margin-bottom: var(--space-2);
+}
+
+.cbt_step_number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--coral);
+  color: var(--white);
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+.cbt_step_label {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-soft);
+  margin-bottom: 0.2rem;
+}
+
+.cbt_step h3 {
+  font-size: 1.05rem;
+  color: var(--text);
+  margin: 0;
+}
+
+.cbt_step ul {
+  padding-left: 1.2rem;
+  margin: 0;
+}
+
+.cbt_step li {
+  color: var(--text-soft);
+  margin-bottom: 0.35rem;
+}
+
+.cbt_step li:last-child {
+  margin-bottom: 0;
+}
+
+/* when the step count is odd, the final card sits alone on the last row --
+   center it instead of leaving it stuck to the left column */
+.cbt_step:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+  width: calc(50% - (var(--space-3) / 2));
+  margin-inline: auto;
+}
+
+@media (max-width: 700px) {
+  .cbt_steps {
+    grid-template-columns: 1fr;
+  }
+
+  .cbt_step:last-child:nth-child(odd) {
+    width: 100%;
+  }
+}
+
+/* ================= Pricing table (CBT) ================= */
+.pricing_table {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-3);
+  margin: var(--space-3) auto 0;
+  max-width: 46rem;
+}
+
+.price_card {
+  background: var(--ink);
+  border-radius: var(--radius-lg);
+  padding: var(--space-3);
+  color: var(--white);
+  position: relative;
+  overflow: hidden;
+}
+
+.price_card.recommended {
+  background: var(--coral);
+}
+
+.price_card_badge {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 0.3rem 0.7rem;
+  border-radius: var(--radius-pill);
+  margin-bottom: var(--space-2);
+}
+
+.price_card h3 {
+  color: var(--white);
+  margin-bottom: 0.3rem;
+}
+
+.price_card .price {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--yellow);
+  line-height: 1;
+  margin-bottom: 0.3rem;
+}
+
+.price_card .price span {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-on-dark-soft);
+}
+
+.price_card ul {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-2) 0;
+}
+
+.price_card li {
+  color: var(--text-on-dark-soft);
+  padding-left: 1.5rem;
+  position: relative;
+  margin-bottom: 0.5rem;
+}
+
+.price_card li::before {
+  content: "\2713";
+  position: absolute;
+  left: 0;
+  color: var(--yellow);
+  font-weight: 700;
+}
+
+.price_card .btn {
+  width: 100%;
+}
+
+.pricing_note {
+  font-size: 0.85rem;
+  background: var(--paper);
+  border-radius: var(--radius-md);
+  padding: var(--space-2);
+  margin: var(--space-2) auto 0;
+  max-width: 46rem;
+}
+
+.pricing_note strong {
+  color: var(--text);
+}
+
+@media (max-width: 700px) {
+  .pricing_table {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ================= Cross-link callout ================= */
+.cross_link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+  background: var(--paper);
+  border-radius: var(--radius-lg);
+  padding: var(--space-3);
+  margin: var(--space-4) auto 0;
+  max-width: 46rem;
+}
+
+@media (max-width: 700px) {
+  .cross_link {
     justify-content: center;
-    align-items: center;
-    padding: var(--space-5) 0;
+    text-align: center;
+  }
 }
 
-.rider_div {
-    background-image: url(./images/mike-landing-img.jpeg);
-    background-position: 45%;
+.cross_link p {
+  margin: 0;
+  max-width: 32rem;
 }
 
-.driver_div {
-    background-image: url(./images/car_bg.jpg);
-    background-position: 50%;
-}
-
-.instructor_div {
-    background-image: url(./images/classroom.jpg);
-    background-position: 50%;
-}
-
-.rider_div::before,
-.driver_div::before,
-.instructor_div::before {
-    content: "";
-    display: block;
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg, rgba(2, 48, 71, 0.55) 0%, var(--navy) 78%);
-}
-
-.training_panel {
-    z-index: 2;
-    position: relative;
-    background: rgba(2, 48, 71, 0.55);
-    border: 1px solid rgba(255, 255, 255, 0.14);
-    border-radius: var(--radius-lg);
-    padding: var(--space-4);
-    backdrop-filter: blur(10px);
-    max-width: 60rem;
-}
-
-.training_panel h2 {
-    color: var(--white);
-}
-
-.training_panel h3 {
-    color: var(--amber);
-    margin-top: var(--space-3);
-}
-
-.training_panel ul,
-.training_panel ol {
-    padding-left: 1.3rem;
-}
-
-.training_panel li {
-    margin-bottom: 0.5rem;
-    color: rgba(255, 255, 255, 0.85);
-}
-
-.training_panel li strong {
-    color: var(--white);
-}
-
-.training_panel strong {
-    color: var(--amber);
+.cross_link strong {
+  display: block;
+  font-family: "Space Grotesk", sans-serif;
+  color: var(--text);
+  font-size: 1.05rem;
+  margin-bottom: 0.2rem;
 }
