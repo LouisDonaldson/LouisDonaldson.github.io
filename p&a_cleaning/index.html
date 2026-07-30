@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+<div class="scroll-progress"></div>
 
 <header>
   <div class="nav-wrap">
@@ -30,10 +31,13 @@
 </header>
 
 <section class="hero">
+  <div class="hero-orb o1"></div>
+  <div class="hero-orb o2"></div>
+  <div class="hero-orb o3"></div>
   <div class="hero-inner">
     <span class="eyebrow-badge">Trusted by 1,400+ clients</span>
     <h1>Spotless spaces, <span class="amp">&amp;</span> peace of mind.</h1>
-    <p>P&amp;A Cleaning Services delivers reliable, detail-driven cleaning for homes and businesses across the area.</p>
+    <p>P&amp;A Cleaning Services delivers reliable window cleaning, jet washing, fascia cleaning, and carpet cleaning for homes and businesses across Kingston upon Hull and East Yorkshire.</p>
   </div>
 </section>
 <div class="hero-banner-wrap">
@@ -43,11 +47,26 @@
   </div>
 </div>
 
+<div class="trust-marquee">
+  <div class="trust-track">
+    <span>Fully Insured &amp; Bonded</span>
+    <span>Eco-Friendly Products</span>
+    <span>Same-Day Response</span>
+    <span>100% Satisfaction Guarantee</span>
+    <span>DBS-Checked Team</span>
+    <span>Fully Insured &amp; Bonded</span>
+    <span>Eco-Friendly Products</span>
+    <span>Same-Day Response</span>
+    <span>100% Satisfaction Guarantee</span>
+    <span>DBS-Checked Team</span>
+  </div>
+</div>
+
 <section class="stats-section">
   <div class="stats">
-    <div><div class="num">12+</div><div class="label">Years in Business</div></div>
-    <div><div class="num">1,400+</div><div class="label">Happy Clients</div></div>
-    <div><div class="num">98%</div><div class="label">Client Retention</div></div>
+    <div><div class="num" data-count="12" data-suffix="+">0+</div><div class="label">Years in Business</div></div>
+    <div><div class="num" data-count="1400" data-suffix="+" data-format="comma">0+</div><div class="label">Happy Clients</div></div>
+    <div><div class="num" data-count="98" data-suffix="%">0%</div><div class="label">Client Retention</div></div>
     <div><div class="num">24/7</div><div class="label">Support</div></div>
   </div>
 </section>
@@ -56,43 +75,32 @@
   <div class="section-head">
     <span class="eyebrow">What We Do</span>
     <h2>Cleaning Services Built Around You</h2>
-    <p>From weekly home tidy-ups to full commercial contracts, our team handles it with the same care every time.</p>
+    <p>Window cleaning, jet washing, fascia cleaning, and carpet cleaning — handled with the same care every time.</p>
   </div>
-  <div class="grid">
+  <div class="grid grid-4">
     <div class="card">
-      <div class="icon">&#8962;</div>
-      <h3>Residential Cleaning</h3>
-      <p>Recurring or one-time cleans for houses, apartments, and condos — kitchens, bathrooms, and every room between.</p>
+      <span class="card-badge">Most Popular</span>
+      <div class="icon">&#127754;</div>
+      <h3>Window Cleaning</h3>
+      <p>Streak-free interior and exterior window cleaning for homes and businesses, on a schedule that suits you.</p>
       <a href="services.html" class="read-more">Read more</a>
     </div>
     <div class="card">
-      <div class="icon">&#127970;</div>
-      <h3>Commercial Cleaning</h3>
-      <p>Offices, retail spaces, and facilities kept spotless on a schedule that fits your business hours.</p>
+      <div class="icon">&#128167;</div>
+      <h3>Jet Washing</h3>
+      <p>High-pressure jet washing for driveways, patios, decking, and exterior walls — lifting dirt, moss, and grime.</p>
       <a href="services.html" class="read-more">Read more</a>
     </div>
     <div class="card">
-      <div class="icon">&#10024;</div>
-      <h3>Deep Cleaning</h3>
-      <p>A top-to-bottom detailed clean for move-ins, move-outs, or a seasonal refresh.</p>
-      <a href="services.html" class="read-more">Read more</a>
-    </div>
-    <div class="card">
-      <div class="icon">&#128737;</div>
-      <h3>Post-Construction</h3>
-      <p>Dust and debris removal after renovation or build-out, leaving the space move-in ready.</p>
+      <div class="icon">&#127968;</div>
+      <h3>Fascia Cleaning</h3>
+      <p>Restoring fascias, soffits, and guttering — removing algae, grime, and discoloration for a like-new finish.</p>
       <a href="services.html" class="read-more">Read more</a>
     </div>
     <div class="card">
       <div class="icon">&#129513;</div>
-      <h3>Carpet &amp; Upholstery</h3>
-      <p>Deep extraction cleaning that lifts stains, odors, and allergens from carpets and furniture.</p>
-      <a href="services.html" class="read-more">Read more</a>
-    </div>
-    <div class="card">
-      <div class="icon">&#128737;&#65039;</div>
-      <h3>Window Cleaning</h3>
-      <p>Streak-free interior and exterior window washing for homes and storefronts.</p>
+      <h3>Carpet Cleaning</h3>
+      <p>Deep extraction carpet cleaning that lifts stains, odors, and allergens, leaving carpets fresh fast.</p>
       <a href="services.html" class="read-more">Read more</a>
     </div>
   </div>
@@ -115,13 +123,13 @@
 </section>
 
 <section class="feature-split fs-panel" style="padding:0;">
-  <div class="fs-media"><span>Cleaning in Progress Photo Placeholder</span></div>
   <div class="fs-text">
     <span class="accent-line"></span>
     <h2>Eco-Friendly Options</h2>
-    <p>Looking for a deep clean without harsh chemicals? We offer sustainable, eco-friendly products for every service — standalone or as part of a regular clean.</p>
+    <p>Looking for a clean without harsh chemicals? We offer sustainable, eco-friendly products across our cleaning and carpet cleaning services on request.</p>
     <a href="contact.html" class="btn-white-outline">Get a free quote</a>
   </div>
+  <div class="fs-media"><span>Cleaning in Progress Photo Placeholder</span></div>
 </section>
 
 <section>
@@ -132,17 +140,17 @@
   <div class="grid">
     <div class="testimonial-card">
       <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-      <p class="quote">"P&amp;A has cleaned our office every week for two years. Always thorough, always on time."</p>
-      <div class="author">— Maria T., Office Manager</div>
+      <p class="quote">"Our windows have never looked better — streak-free, every single time."</p>
+      <div class="author">— Maria T., Homeowner</div>
     </div>
     <div class="testimonial-card">
       <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-      <p class="quote">"Best move-out clean we've ever had. Got our full deposit back thanks to their attention to detail."</p>
+      <p class="quote">"The jet wash on our driveway made it look brand new. Fantastic result."</p>
       <div class="author">— James R., Homeowner</div>
     </div>
     <div class="testimonial-card">
       <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-      <p class="quote">"Friendly, professional, and genuinely careful with our things. Highly recommend."</p>
+      <p class="quote">"Friendly, professional, and did an amazing job on our carpets. Highly recommend."</p>
       <div class="author">— Aisha K., Homeowner</div>
     </div>
   </div>
@@ -159,7 +167,7 @@
     <div>
       <div class="logo" style="margin-bottom: 14px;">
         <img src="logo-placeholder.svg" alt="P&amp;A Cleaning Services logo" class="logo-img">      </div>
-      <p style="max-width: 320px; font-size: 14px;">Professional residential and commercial cleaning services you can count on, every time.</p>
+      <p style="max-width: 320px; font-size: 14px;">Window cleaning, jet washing, fascia cleaning, and carpet cleaning services you can count on, every time.</p>
     </div>
     <div>
       <h4>Quick Links</h4>
@@ -173,14 +181,16 @@
     <div>
       <h4>Contact</h4>
       <ul>
-        <li>(555) 010-2938</li>
-        <li>hello@pacleaningservices.com</li>
+        <li>01482 356 789</li>
+        <li>hello@pacleaningservices.co.uk</li>
         <li>Mon–Sat, 8am–6pm</li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">&copy; 2026 P&amp;A Cleaning Services. All rights reserved.</div>
 </footer>
+
+<a href="contact.html" class="floating-cta">&#9998; Get a Quote</a>
 
 <script src="script.js"></script>
 </body>

@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+<div class="scroll-progress"></div>
 
 <header>
   <div class="nav-wrap">
@@ -30,77 +31,56 @@
 </header>
 
 <section class="page-hero">
+  <div class="hero-orb o1"></div>
+  <div class="hero-orb o2"></div>
   <span class="eyebrow-badge">We'd Love To Help</span>
   <h1>Get In Touch</h1>
-  <p>Request a free quote or ask us anything — we typically respond within 24 hours.</p>
+  <p>Give us a call or drop us an email — we typically respond within 24 hours.</p>
 </section>
-
 <section>
   <div class="contact-info-grid">
     <div class="card">
       <div class="icon">&#128222;</div>
       <h3>Call Us</h3>
-      <p>(555) 010-2938<br>Mon–Sat, 8am–6pm</p>
+      <p>01482 356 789<br>Mon–Sat, 8am–6pm</p>
     </div>
     <div class="card">
       <div class="icon">&#9993;&#65039;</div>
       <h3>Email Us</h3>
-      <p>hello@pacleaningservices.com<br>Replies within 24 hours</p>
+      <p>hello@pacleaningservices.co.uk<br>Replies within 24 hours</p>
     </div>
     <div class="card">
       <div class="icon">&#128205;</div>
       <h3>Service Area</h3>
-      <p>Serving the greater metro area<br>and surrounding suburbs</p>
+      <p>Kingston upon Hull<br>and the surrounding East Yorkshire area</p>
     </div>
   </div>
 </section>
 
-<section class="section-alt">
-  <div class="section-head">
-    <span class="eyebrow">Request a Quote</span>
-    <h2>Tell Us About Your Space</h2>
-    <p>Fill out the form below and we'll get back to you with a free, no-obligation quote.</p>
-  </div>
-  <form class="form-grid" onsubmit="event.preventDefault(); alert('Thanks! This is a placeholder form — connect it to your email or CRM to go live.');">
-    <div>
-      <label for="name">Full Name</label>
-      <input type="text" id="name" placeholder="Jane Smith" required>
-    </div>
-    <div>
-      <label for="phone">Phone Number</label>
-      <input type="tel" id="phone" placeholder="(555) 123-4567" required>
-    </div>
-    <div class="full">
-      <label for="email">Email Address</label>
-      <input type="email" id="email" placeholder="jane@example.com" required>
-    </div>
-    <div class="full">
-      <label for="service">Service Needed</label>
-      <select id="service">
-        <option>Residential Cleaning</option>
-        <option>Commercial Cleaning</option>
-        <option>Deep Cleaning</option>
-        <option>Move-In / Move-Out</option>
-        <option>Post-Construction Cleanup</option>
-        <option>Other</option>
-      </select>
-    </div>
-    <div class="full">
-      <label for="message">Details</label>
-      <textarea id="message" placeholder="Tell us about your space, frequency needed, and any special requests."></textarea>
-    </div>
-    <div class="full">
-      <button type="submit" class="btn" style="border:none; cursor:pointer; width:100%;">Send Request</button>
-    </div>
-  </form>
+<section class="cta-banner">
+  <h2>Ready to Get Started?</h2>
+  <p>No forms, no hassle — just call or email us directly and we'll take it from there.</p>
+  <a href="tel:01482356789" class="btn">Call 01482 356 789</a>
+  <a href="mailto:hello@pacleaningservices.co.uk" class="btn-white-outline" style="margin-left:14px;">Email Us</a>
 </section>
 
 <section>
   <div class="section-head">
     <span class="eyebrow">Find Us</span>
-    <h2>Proudly Serving the Area</h2>
+    <h2>Proudly Serving Hull &amp; East Yorkshire</h2>
   </div>
-  <div class="img-placeholder" style="max-width:1160px; margin:0 auto; height:320px; border-radius:10px;">Map Placeholder</div>
+  <div class="map-embed">
+    <iframe
+      src="https://www.google.com/maps?q=Kingston%20upon%20Hull,%20UK&output=embed"
+      width="100%"
+      height="100%"
+      style="border:0;"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      title="Map of Kingston upon Hull">
+    </iframe>
+  </div>
 </section>
 
 <footer>
@@ -108,7 +88,7 @@
     <div>
       <div class="logo" style="margin-bottom: 14px;">
         <img src="logo-placeholder.svg" alt="P&amp;A Cleaning Services logo" class="logo-img">      </div>
-      <p style="max-width: 320px; font-size: 14px;">Professional residential and commercial cleaning services you can count on, every time.</p>
+      <p style="max-width: 320px; font-size: 14px;">Window cleaning, jet washing, fascia cleaning, and carpet cleaning services you can count on, every time.</p>
     </div>
     <div>
       <h4>Quick Links</h4>
@@ -122,8 +102,8 @@
     <div>
       <h4>Contact</h4>
       <ul>
-        <li>(555) 010-2938</li>
-        <li>hello@pacleaningservices.com</li>
+        <li>01482 356 789</li>
+        <li>hello@pacleaningservices.co.uk</li>
         <li>Mon–Sat, 8am–6pm</li>
       </ul>
     </div>
