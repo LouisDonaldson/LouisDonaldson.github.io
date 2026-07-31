@@ -574,6 +574,21 @@ section { padding: 96px 24px; }
   opacity: 0.5;
 }
 
+.feature-split .fs-media.has-photo::before { display: none; }
+
+.feature-split .fs-media.has-photo {
+  background: var(--navy-dark);
+}
+
+.feature-split .fs-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  position: relative;
+  z-index: 1;
+}
+
 .feature-split .fs-media span {
   position: relative;
   z-index: 1;
