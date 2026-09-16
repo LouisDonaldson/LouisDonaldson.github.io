@@ -1,0 +1,27 @@
+rules_version = '2';
+
+// Paste these rules into Firebase console → Firestore Database → Rules, then click Publish.
+// Replace YOUR_UID with the User UID shown in Firebase console → Authentication → Users.
+//
+// Only that one account can read or write anything. Everyone else, including
+// anyone who manages to create an account in your project, is refused.
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function isOwner(userId) {
+      return request.auth != null
+        && request.auth.uid == userId
+        && userId == "YOUR_UID";
+    }
+
+    match /users/{userId}/{document=**} {
+      allow read, write: if isOwner(userId);
+    }
+
+    // Deny everything else.
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
