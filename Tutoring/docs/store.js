@@ -17,9 +17,9 @@ export const configured = Boolean(firebaseConfig?.apiKey && !String(firebaseConf
 
 const STATUSES = ["scheduled", "completed", "cancelled", "no_show"];
 const CHARGEABLE = new Set(["completed", "no_show"]);
-const CLIENT_FIELDS = ["name", "contact_name", "email", "phone", "subject", "level", "hourly_rate_pence", "notes", "active"];
-const SESSION_FIELDS = ["client_id", "start_at", "duration_min", "subject", "location", "notes", "status", "amount_pence", "paid", "paid_at", "payment_method"];
-export const SETTING_KEYS = ["business_name", "your_name", "address", "email", "phone", "payment_details", "invoice_footer"];
+const CLIENT_FIELDS = ["name", "contact_name", "email", "phone", "billing_address", "subject", "level", "hourly_rate_pence", "notes", "active"];
+const SESSION_FIELDS = ["client_id", "start_at", "duration_min", "subject", "location", "covered", "homework", "next_steps", "notes", "status", "amount_pence", "paid", "paid_at", "payment_method"];
+export const SETTING_KEYS = ["business_name", "your_name", "address", "billing_address", "email", "phone", "payment_details", "invoice_footer"];
 
 let app, auth, db;
 if (configured) {
@@ -260,7 +260,7 @@ export function getClient(id, now) {
 export async function createClient(data) {
   const c = validateClient(pick(data, CLIENT_FIELDS), false);
   const ref = doc(userCol("clients"));
-  await settle(setDoc(ref, { active: true, hourly_rate_pence: 0, contact_name: null, email: null, phone: null,
+  await settle(setDoc(ref, { active: true, hourly_rate_pence: 0, contact_name: null, email: null, phone: null, billing_address: null,
     subject: null, level: null, notes: null, ...c, created_at: nowIso() }));
   return { id: ref.id };
 }
@@ -296,7 +296,7 @@ export function listSessions(f = {}) {
     (!f.client_id || s.client_id === f.client_id) &&
     (!statuses?.length || statuses.includes(s.status)) &&
     (!f.unpaid || isOwed(s)) &&
-    (!q || [s.client_name, s.subject, s.notes].some((v) => v && v.toLowerCase().includes(q))));
+    (!q || [s.client_name, s.subject, s.covered, s.homework, s.next_steps, s.notes].some((v) => v && v.toLowerCase().includes(q))));
   rows.sort(byStart);
   if (f.order !== "asc") rows.reverse();
   return rows;
@@ -315,7 +315,7 @@ export async function createSessions(data) {
   const seriesId = repeat > 1 ? crypto.randomUUID() : null;
   const ops = [];
   for (let i = 0; i < repeat; i++) {
-    const row = { subject: null, location: null, notes: null, paid_at: null, payment_method: null, ...s,
+    const row = { subject: null, location: null, covered: null, homework: null, next_steps: null, notes: null, paid_at: null, payment_method: null, ...s,
       start_at: addDaysLocal(s.start_at, 7 * i), series_id: seriesId, created_at: nowIso() };
     if (i > 0) Object.assign(row, { status: "scheduled", paid: false, paid_at: null, payment_method: null });
     const ref = doc(userCol("sessions"));

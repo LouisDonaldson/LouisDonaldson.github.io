@@ -256,8 +256,16 @@ async function openSessionForm(session = null, defaults = {}) {
             </div>
           </div>
         </div>
-        <div><label for="f-notes">Notes — what was covered, homework set</label>
-          <textarea id="f-notes" name="notes" placeholder="Covered quadratic equations. Homework: exercise 4B.">${esc(s.notes)}</textarea></div>
+        <div><label for="f-covered">What we covered</label>
+          <textarea id="f-covered" name="covered" rows="3" placeholder="e.g. Solving quadratics by factorising; started completing the square">${esc(s.covered)}</textarea></div>
+        <div class="grid two">
+          <div><label for="f-homework">Homework set</label>
+            <textarea id="f-homework" name="homework" rows="2" placeholder="e.g. Exercise 4B, Q1–10">${esc(s.homework)}</textarea></div>
+          <div><label for="f-next">Next time</label>
+            <textarea id="f-next" name="next_steps" rows="2" placeholder="e.g. Check homework, quadratic formula">${esc(s.next_steps)}</textarea></div>
+        </div>
+        <div><label for="f-notes">Other notes</label>
+          <textarea id="f-notes" name="notes" rows="2" placeholder="Anything else — mood, focus, message for parents…">${esc(s.notes)}</textarea></div>
         ${isNew ? `
         <div class="grid two">
           <div><label for="f-repeat">Repeat weekly</label>
@@ -300,6 +308,9 @@ async function openSessionForm(session = null, defaults = {}) {
           duration_min: Number(d.duration_min),
           subject: d.subject || (isNew ? client?.subject || "" : ""),
           location: d.location,
+          covered: d.covered,
+          homework: d.homework,
+          next_steps: d.next_steps,
           notes: d.notes,
           status: d.status,
           amount_pence: toPence(d.amount),
@@ -416,6 +427,8 @@ function openClientForm(client = null) {
           <div><label for="c-email">Email</label><input id="c-email" type="email" name="email" value="${esc(c.email)}"></div>
           <div><label for="c-phone">Phone</label><input id="c-phone" type="tel" name="phone" value="${esc(c.phone)}"></div>
         </div>
+        <div><label for="c-billing">Billing address <span class="muted" style="font-weight:400">— shown on their invoices</span></label>
+          <textarea id="c-billing" name="billing_address" rows="3" placeholder="e.g. 14 Oak Road&#10;Hull&#10;HU5 3TG">${esc(c.billing_address)}</textarea></div>
         <div class="grid three">
           <div><label for="c-subject">Subject</label><input id="c-subject" name="subject" value="${esc(c.subject)}" placeholder="e.g. Maths"></div>
           <div><label for="c-level">Level</label><input id="c-level" name="level" value="${esc(c.level)}" list="lvl-list" placeholder="e.g. GCSE">
@@ -505,13 +518,21 @@ function sessionsTable(rows, { selectable = false, showClient = true } = {}) {
             ${selectable ? `<td>${isChargeable(s) && !s.paid && s.amount_pence ? `<input type="checkbox" class="sel" value="${s.id}" data-amount="${s.amount_pence}" aria-label="Select">` : ""}</td>` : ""}
             <td class="nowrap">${fmtDate(s.start_at, { day: "numeric", month: "short", year: "2-digit" })}<div class="small muted">${fmtTime(s.start_at)} · ${fmtDur(s.duration_min)}</div></td>
             ${showClient ? `<td><a href="#/clients/${s.client_id}">${esc(s.client_name)}</a></td>` : ""}
-            <td class="hide-sm">${esc(s.subject || "")}${s.notes ? `<div class="notes">${esc(s.notes)}</div>` : ""}</td>
+            <td class="hide-sm">${esc(s.subject || "")}${sessionNotesSummary(s)}</td>
             <td>${statusPill(s.status)}</td>
             <td class="right num">${s.status === "cancelled" ? `<span class="muted">—</span>` : money(s.amount_pence)}</td>
             <td class="hide-sm">${payPill(s)}${s.paid && s.payment_method ? `<div class="small muted">${esc(s.payment_method)}</div>` : ""}</td>
           </tr>`).join("")}
       </tbody>
     </table></div>`;
+}
+
+function sessionNotesSummary(s) {
+  const parts = [
+    ["Covered", s.covered], ["Homework", s.homework], ["Next", s.next_steps], ["Notes", s.notes],
+  ].filter(([, v]) => v && String(v).trim());
+  if (!parts.length) return "";
+  return `<div class="notes">${parts.map(([k, v]) => `<b>${k}:</b> ${esc(v)}`).join(" · ")}</div>`;
 }
 
 function bindTable(root, rows) {
@@ -663,11 +684,11 @@ async function renderSessions(params) {
 }
 
 function downloadCsv(rows) {
-  const cols = ["Date", "Start", "End", "Duration (min)", "Client", "Subject", "Location", "Status", "Charge (£)", "Paid", "Paid on", "Payment method", "Notes"];
+  const cols = ["Date", "Start", "End", "Duration (min)", "Client", "Subject", "Location", "Status", "Charge (£)", "Paid", "Paid on", "Payment method", "Covered", "Homework", "Next time", "Other notes"];
   const q = (v) => `"${String(v ?? "").replace(/"/g, '""')}"`;
   const lines = [cols.map(q).join(",")].concat(rows.map((s) => [
     s.start_at.slice(0, 10), fmtTime(s.start_at), endTime(s.start_at, s.duration_min), s.duration_min, s.client_name,
-    s.subject, s.location, STATUS_LABEL[s.status], toPounds(s.amount_pence), s.paid ? "Yes" : "No", s.paid_at, s.payment_method, s.notes,
+    s.subject, s.location, STATUS_LABEL[s.status], toPounds(s.amount_pence), s.paid ? "Yes" : "No", s.paid_at, s.payment_method, s.covered, s.homework, s.next_steps, s.notes,
   ].map(q).join(",")));
   const blob = new Blob(["﻿" + lines.join("\r\n")], { type: "text/csv" });
   const a = Object.assign(document.createElement("a"), { href: URL.createObjectURL(blob), download: `sessions-${ymd(new Date())}.csv` });
@@ -815,6 +836,7 @@ async function renderClient(id) {
             ${c.contact_name ? `<dt>Contact</dt><dd>${esc(c.contact_name)}</dd>` : ""}
             <dt>Email</dt><dd>${c.email ? `<a href="mailto:${esc(c.email)}">${esc(c.email)}</a>` : "—"}</dd>
             <dt>Phone</dt><dd>${c.phone ? `<a href="tel:${esc(c.phone)}">${esc(c.phone)}</a>` : "—"}</dd>
+            ${c.billing_address ? `<dt>Billing address</dt><dd style="white-space:pre-line">${esc(c.billing_address)}</dd>` : ""}
             <dt>Client since</dt><dd>${fmtDate(c.created_at.replace(" ", "T").slice(0, 16), { month: "short", year: "numeric" })}</dd>
           </dl>
           ${c.notes ? `<h2 style="margin:18px 0 6px">Notes</h2><p style="margin:0;white-space:pre-line">${esc(c.notes)}</p>` : ""}
@@ -848,7 +870,6 @@ async function renderInvoice(id, params) {
   const rows = all.filter((s) => s.amount_pence > 0);
   const today = new Date();
   const invNo = params.get("no") || `INV-${ymd(today).replace(/-/g, "")}-${invCode(c)}`;
-  const due = ymd(addDays(today, 14));
   const biz = settings.business_name || settings.your_name || "Your tutoring business";
 
   view.innerHTML = `
@@ -876,16 +897,16 @@ async function renderInvoice(id, params) {
           <h1>INVOICE</h1>
           <div style="margin-top:12px;font-weight:650">${esc(biz)}</div>
           ${settings.business_name && settings.your_name ? `<div>${esc(settings.your_name)}</div>` : ""}
-          <div class="pre">${esc(settings.address)}</div>
+          <div class="pre">${esc(settings.billing_address || settings.address)}</div>
           <div>${esc([settings.email, settings.phone].filter(Boolean).join(" · "))}</div>
         </div>
         <div class="inv-meta">
           <div><span class="muted">Invoice no.</span> <b>${esc(invNo)}</b></div>
           <div><span class="muted">Date</span> ${fmtDate(ymd(today), { day: "numeric", month: "long", year: "numeric" })}</div>
-          <div><span class="muted">Due</span> ${fmtDate(due, { day: "numeric", month: "long", year: "numeric" })}</div>
           <div style="margin-top:16px" class="muted">Bill to</div>
           <div style="font-weight:650">${esc(c.contact_name || c.name)}</div>
           ${c.contact_name ? `<div>Re: ${esc(c.name)}</div>` : ""}
+          ${c.billing_address ? `<div class="pre">${esc(c.billing_address)}</div>` : ""}
           ${c.email ? `<div>${esc(c.email)}</div>` : ""}
         </div>
       </div>
@@ -929,7 +950,7 @@ async function renderInvoice(id, params) {
   $("#pdf").onclick = async (e) => {
     e.target.disabled = true;
     try {
-      await buildInvoicePdf({ c, settings, rows, invNo, today, due, biz });
+      await buildInvoicePdf({ c, settings, rows, invNo, today, biz });
     } catch (err) {
       toast("Couldn't create the PDF: " + err.message, true);
     } finally {
@@ -951,7 +972,7 @@ function loadScript(src) {
 }
 
 // Builds a real PDF file in the browser (no server, nothing sent anywhere) and downloads it.
-async function buildInvoicePdf({ c, settings, rows, invNo, today, due, biz }) {
+async function buildInvoicePdf({ c, settings, rows, invNo, today, biz }) {
   await loadScript("./vendor/jspdf.umd.min.js");
   await loadScript("./vendor/jspdf.plugin.autotable.min.js");
   const { jsPDF } = window.jspdf;
@@ -969,7 +990,7 @@ async function buildInvoicePdf({ c, settings, rows, invNo, today, due, biz }) {
   doc.setFont("helvetica", "normal").setFontSize(9.5).setTextColor(...grey);
   const fromLines = [
     settings.business_name && settings.your_name ? settings.your_name : "",
-    ...(settings.address || "").split("\n"),
+    ...((settings.billing_address || settings.address) || "").split("\n"),
     settings.email, settings.phone,
   ].filter((l) => l && l.trim());
   for (const l of fromLines) { y += 4.8; doc.text(l.trim(), M, y); }
@@ -978,7 +999,7 @@ async function buildInvoicePdf({ c, settings, rows, invNo, today, due, biz }) {
   // Invoice meta + bill to (right)
   y = 36;
   const R = W - M;
-  const meta = [["Invoice no.", invNo], ["Date", long(ymd(today))], ["Due", long(due)]];
+  const meta = [["Invoice no.", invNo], ["Date", long(ymd(today))]];
   for (const [k, v] of meta) {
     doc.setFont("helvetica", "normal").setTextColor(...grey).text(k, R - 50, y);
     doc.setFont("helvetica", "bold").setTextColor(...ink).text(v, R, y, { align: "right" });
@@ -990,6 +1011,10 @@ async function buildInvoicePdf({ c, settings, rows, invNo, today, due, biz }) {
   doc.setFont("helvetica", "bold").setTextColor(...ink).text(c.contact_name || c.name, R, y, { align: "right" });
   doc.setFont("helvetica", "normal");
   if (c.contact_name) { y += 4.8; doc.text(`Re: ${c.name}`, R, y, { align: "right" }); }
+  for (const line of (c.billing_address || "").split("\n").filter((l) => l.trim())) {
+    y += 4.8;
+    doc.setTextColor(...ink).text(line.trim(), R, y, { align: "right" });
+  }
   if (c.email) { y += 4.8; doc.setTextColor(...grey).text(c.email, R, y, { align: "right" }); }
 
   const unpaidTotal = rows.filter((s) => !s.paid).reduce((a, s) => a + s.amount_pence, 0);
@@ -1065,7 +1090,12 @@ async function renderSettings() {
           <div><label for="s-email">Email</label><input id="s-email" type="email" name="email" value="${esc(s.email)}"></div>
           <div><label for="s-phone">Phone</label><input id="s-phone" name="phone" value="${esc(s.phone)}"></div>
         </div>
-        <div><label for="s-addr">Address</label><textarea id="s-addr" name="address" rows="3">${esc(s.address)}</textarea></div>
+        <div class="grid two">
+          <div><label for="s-addr">Address</label><textarea id="s-addr" name="address" rows="3">${esc(s.address)}</textarea>
+            <div class="field-hint">Your contact address.</div></div>
+          <div><label for="s-billaddr">Billing address</label><textarea id="s-billaddr" name="billing_address" rows="3" placeholder="Leave blank to use your address above">${esc(s.billing_address)}</textarea>
+            <div class="field-hint">Shown at the top of invoices. Fill this in only if it differs from your address.</div></div>
+        </div>
         <div><label for="s-pay">Payment details</label><textarea id="s-pay" name="payment_details" rows="3" placeholder="Account name, sort code, account number, payment reference">${esc(s.payment_details)}</textarea></div>
         <div><label for="s-foot">Invoice footer</label><textarea id="s-foot" name="invoice_footer" rows="2" placeholder="e.g. Payment due within 14 days. Thank you!">${esc(s.invoice_footer)}</textarea></div>
         <div><button class="btn primary">Save settings</button></div>
