@@ -1,26 +1,832 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html class="scroll-smooth" lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Louis Donaldson - Portfolio</title>
-    <link rel="stylesheet" href="index.css">
-    <script src="index.js" defer></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
-    <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Louis Donaldson | OPEX &amp; Agentic RAG</title>
+<meta name="description" content="Louis Donaldson, PhD researcher at the Aura CDT, University of Hull: explainable multi-objective optimisation for offshore wind maintenance scheduling and uncertainty propagation in agentic RAG."/>
+<link rel="canonical" href="https://louisdonaldson.github.io/"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://louisdonaldson.github.io/"/>
+<meta property="og:title" content="Louis Donaldson | Explainable Optimisation &amp; Agentic AI"/>
+<meta property="og:description" content="PhD researcher at the Aura CDT, University of Hull: explainable multi-objective optimisation for offshore wind maintenance and uncertainty propagation in agentic RAG."/>
+<meta property="og:image" content="https://louisdonaldson.github.io/linkedin.jpg"/>
+<meta property="og:image:alt" content="Louis Donaldson"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="theme-color" content="#f8f9ff" media="(prefers-color-scheme: light)"/>
+<meta name="theme-color" content="#070F1E" media="(prefers-color-scheme: dark)"/>
+<link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&amp;display=block" rel="stylesheet"/>
+<style>
+  html,body{margin:0;padding:0;}
+  body{overscroll-behavior:none;}
+  .material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;line-height:1;}
+  .pub-hidden{display:none!important;}
+</style>
+<script>
+  // Apply the saved theme (or the system preference) before the page paints, to avoid a flash.
+  (function () {
+    let saved = null;
+    try { saved = localStorage.getItem('theme'); } catch (e) {}
+    const dark = saved ? saved === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+    document.documentElement.classList.toggle('dark', dark);
+  })();
+</script>
+<style>
+  /* =====================================================================
+     DARK MODE
+     Palette from DESIGN.md: canvas #070F1E, cards #0F2847, borders #1E3A5F.
+     These rules re-map the light utility classes when <html> has .dark.
+     The contact panel is already dark and is deliberately left alone.
+     ===================================================================== */
+  html.dark { color-scheme: dark; }
+  .dark body, .dark .bg-background, .dark .bg-surface { background-color: #070F1E; }
+
+  /* Surfaces */
+  .dark .bg-white, .dark .bg-white\/90, .dark .bg-white\/95 { background-color: #0F2847; }
+  .dark .bg-white\/80 { background-color: rgba(7, 15, 30, 0.82); }
+  .dark section.bg-white { background-color: #070F1E; }                            /* section backgrounds stay on the canvas */               /* header */
+  .dark .bg-slate-50\/80 { background-color: #0A162B; }                            /* footer */
+  .dark .bg-slate-100, .dark .bg-slate-100\/90, .dark .bg-surface-container-high { background-color: #16304F; }
+  .dark .bg-surface-container-low { background-color: #0F2847; }
+  .dark .hover\:bg-slate-50:hover, .dark .hover\:bg-slate-200:hover { background-color: #1A3A60; }
+  .dark .bg-teal-50   { background-color: rgba(45, 212, 191, 0.12); }
+  .dark .bg-sky-50    { background-color: rgba(56, 189, 248, 0.12); }
+  .dark .bg-indigo-50 { background-color: rgba(129, 140, 248, 0.14); }
+  .dark .bg-amber-50  { background-color: rgba(251, 191, 36, 0.12); }
+  .dark .bg-red-50    { background-color: rgba(248, 113, 113, 0.12); }
+
+  /* Gradient backgrounds: sections, banner, inner panels, result tiles */
+  .dark .bg-gradient-to-b.from-white,
+  .dark .bg-gradient-to-b.from-slate-50\/70 { background-image: none; background-color: transparent; }
+  .dark .bg-gradient-to-b.from-slate-50 { background-image: none; background-color: #0A162B; }
+  .dark .bg-gradient-to-r.from-sky-50 { background-image: none; background-color: #0B1F3A; }  /* banner */
+  .dark .bg-gradient-to-r.from-teal-50 { background-image: none; background-color: rgba(45, 212, 191, 0.12); }
+  .dark .bg-gradient-to-br.from-slate-50,
+  .dark .bg-gradient-to-r.from-slate-50 { background-image: none; background-color: #0A1F3C; }
+  .dark .from-teal-50\/60   { background-image: none; background-color: rgba(45, 212, 191, 0.07); }
+  .dark .from-sky-50\/60    { background-image: none; background-color: rgba(56, 189, 248, 0.07); }
+  .dark .from-indigo-50\/60 { background-image: none; background-color: rgba(129, 140, 248, 0.08); }
+  .dark .blur-3xl { opacity: 0.35; }
+  .dark [class*="radial-gradient"] { opacity: 0.06 !important; }
+  .dark .bg-clip-text { background-image: linear-gradient(to right, #38bdf8, #2dd4bf, #818cf8); }
+
+  /* Text */
+  .dark .text-slate-900, .dark .text-on-surface { color: #E6EDF7; }
+  .dark .text-slate-800 { color: #D5DEEA; }
+  .dark .text-slate-700 { color: #C3CFDF; }
+  .dark .text-slate-600 { color: #A9B7CB; }
+  .dark .text-slate-500, .dark .text-on-surface-variant { color: #8B9BB3; }
+  .dark .hover\:text-slate-900:hover, .dark .hover\:text-on-surface:hover { color: #ffffff; }
+  .dark .text-teal-800 { color: #99F6E4; }
+  .dark .text-teal-700 { color: #5EEAD4; }
+  .dark .text-teal-600 { color: #2DD4BF; }
+  .dark .hover\:text-teal-700:hover, .dark .hover\:text-teal-900:hover { color: #CCFBF1; }
+  .dark .text-sky-800, .dark .text-sky-700 { color: #7DD3FC; }
+  .dark .text-sky-600 { color: #38BDF8; }
+  .dark .hover\:text-sky-900:hover { color: #E0F2FE; }
+  .dark .text-indigo-800, .dark .text-indigo-700 { color: #A5B4FC; }
+  .dark .text-indigo-600 { color: #818CF8; }
+  .dark .hover\:text-indigo-900:hover { color: #E0E7FF; }
+  .dark .text-amber-700 { color: #FCD34D; }
+  .dark .text-secondary { color: #5DDBBE; }
+  .dark .bg-secondary { background-color: #5DDBBE; }
+  .dark .text-red-800 { color: #FCA5A5; }
+
+  /* Borders */
+  .dark .border-slate-100 { border-color: #16304F; }
+  .dark .border-slate-200, .dark .border-slate-200\/80, .dark .border-slate-200\/70, .dark .border-slate-200\/60 { border-color: #1E3A5F; }
+  .dark .hover\:border-slate-300:hover { border-color: #2B4C75; }
+  .dark .border-teal-100, .dark .border-teal-200, .dark .border-teal-200\/80, .dark .border-teal-200\/70, .dark .border-teal-200\/60 { border-color: rgba(45, 212, 191, 0.28); }
+  .dark .border-sky-100, .dark .border-sky-100\/80, .dark .border-sky-200, .dark .border-sky-200\/80, .dark .border-sky-200\/70 { border-color: rgba(56, 189, 248, 0.26); }
+  .dark .border-indigo-100, .dark .border-indigo-200\/80, .dark .border-indigo-200\/70 { border-color: rgba(129, 140, 248, 0.3); }
+  .dark .border-amber-200 { border-color: rgba(251, 191, 36, 0.3); }
+  .dark .border-red-200 { border-color: rgba(248, 113, 113, 0.35); }
+
+  /* Primary buttons invert to light-on-dark (filters, "View on arXiv") */
+  .dark .bg-slate-900.text-white { background-color: #E6EDF7; color: #070F1E; }
+  .dark .bg-slate-900.text-white:hover { background-color: #ffffff; }
+  .dark .from-slate-900.via-slate-800 { box-shadow: 0 0 0 1px #2B4C75; }        /* hero "Read Latest Paper" */
+
+  /* Softer shadows on dark */
+  .dark .shadow-sm, .dark .shadow-md, .dark [class*="shadow-[0_"] { --tw-shadow: 0 1px 2px rgba(0, 0, 0, 0.3); --tw-shadow-colored: 0 1px 2px rgba(0, 0, 0, 0.3); }
+</style>
+<script src="https://cdn.tailwindcss.com"></script>
+<script id="tailwind-config">
+tailwind.config={darkMode:"class",theme:{extend:{colors:{"tertiary-container":"#001e2f","primary-fixed":"#d6e3ff","on-primary-fixed":"#0d1c32","outline":"#75777e","on-secondary-fixed-variant":"#005143","surface-dim":"#ccdbf4","surface":"#f8f9ff","background":"#f8f9ff","on-surface-variant":"#44474d","tertiary-fixed":"#c9e6ff","surface-variant":"#d5e3fd","secondary-fixed-dim":"#5ddbbe","error":"#ba1a1a","surface-container-lowest":"#ffffff","surface-container-high":"#dde9ff","secondary-container":"#7cf8da","on-background":"#0d1c2f","secondary":"#006b59","inverse-primary":"#b9c7e4","tertiary":"#000000","primary-fixed-dim":"#b9c7e4","inverse-surface":"#233144","on-surface":"#0d1c2f","outline-variant":"#c5c6cd","on-primary-container":"#76849f","secondary-fixed":"#7cf8da","on-secondary":"#ffffff","on-tertiary-fixed":"#001e2f","on-tertiary":"#ffffff","on-primary":"#ffffff","primary-container":"#0d1c32","on-secondary-fixed":"#00201a","on-error-container":"#93000a","tertiary-fixed-dim":"#89ceff","surface-bright":"#f8f9ff","surface-container-highest":"#d5e3fd","on-primary-fixed-variant":"#39475f","on-error":"#ffffff","surface-container":"#e6eeff","on-tertiary-container":"#008cc7","on-secondary-container":"#00725f","surface-tint":"#515f78","error-container":"#ffdad6","on-tertiary-fixed-variant":"#004c6e","inverse-on-surface":"#ebf1ff","primary":"#000000","surface-container-low":"#eff4ff"},spacing:{"space-lg":"1.5rem","space-3xl":"4.5rem","reading-max":"44rem","space-4xl":"6rem","space-xs":"0.5rem",gutter:"1.5rem","space-xl":"2rem","space-2xl":"3rem","space-md":"1rem","space-2xs":"0.25rem","container-max":"76rem","space-sm":"0.75rem"},maxWidth:{"container-max":"76rem","reading-max":"44rem"},fontFamily:{caption:["Inter"],subheading:["Inter"],"label-code":["JetBrains Mono"],"headline-lg":["Newsreader"],"headline-md":["Newsreader"],"body-lg":["Inter"],"body-sm":["Inter"],"headline-sm":["Newsreader"],"body-md":["Inter"],"label-tag":["JetBrains Mono"],display:["Newsreader"],serif:["Newsreader"]},fontSize:{caption:["0.75rem",{lineHeight:"1.4",fontWeight:"400"}],subheading:["1.125rem",{lineHeight:"1.5",letterSpacing:"-0.01em",fontWeight:"500"}],"label-code":["0.875rem",{lineHeight:"1.6",fontWeight:"400"}],"headline-lg":["2.5rem",{lineHeight:"1.2",letterSpacing:"-0.015em",fontWeight:"500"}],"headline-md":["1.875rem",{lineHeight:"1.3",fontWeight:"500"}],"body-lg":["1.125rem",{lineHeight:"1.75",fontWeight:"400"}],"body-sm":["0.875rem",{lineHeight:"1.55",fontWeight:"400"}],"headline-sm":["1.375rem",{lineHeight:"1.35",fontWeight:"600"}],"body-md":["1rem",{lineHeight:"1.65",fontWeight:"400"}],"label-tag":["0.75rem",{lineHeight:"1.4",letterSpacing:"0.04em",fontWeight:"500"}],display:["3.5rem",{lineHeight:"1.15",letterSpacing:"-0.02em",fontWeight:"400"}]}}}}
+</script>
 </head>
+<!--
+  CONTENT LIVES IN data/portfolio.json
+  Edit that file to change papers, talks, education, projects, links and hero text.
+  This page only holds the layout. To preview locally, serve the folder
+  (e.g. VS Code "Live Server", or `python -m http.server`) rather than double-clicking,
+  because browsers block reading the JSON file from file:// URLs.
+-->
+<body class="bg-background font-body-md text-body-md text-on-surface antialiased">
 
-<body>
+<!-- ============ Header ============ -->
+<header class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-xl border-b border-slate-200/60 shadow-[0_4px_20px_rgba(0,0,0,0.03)]">
+  <div class="h-16 max-w-container-max mx-auto px-gutter flex items-center justify-between gap-6">
+    <a class="flex items-center gap-space-md" href="#top">
+      <img alt="" class="w-9 h-9 object-contain shrink-0" height="36" id="site-logo" src="./images/favicon.png" width="36"/>
+      <span class="flex flex-col">
+        <span class="font-subheading text-base sm:text-subheading text-on-surface tracking-tight leading-none whitespace-nowrap"><span data-text="site.name">Louis Donaldson</span> <span class="hidden sm:inline lg:hidden xl:inline">| <span data-text="site.shortTitle">OPEX &amp; Agentic RAG</span></span></span>
+        <span class="hidden sm:block lg:hidden xl:block font-caption text-caption text-on-surface-variant font-medium mt-1 whitespace-nowrap" data-text="site.affiliation">School of Computer Science, University of Hull &amp; Aura CDT</span>
+      </span>
+    </a>
+    <nav class="hidden lg:flex items-center gap-space-md xl:gap-space-lg font-body-sm text-body-sm whitespace-nowrap" id="desktop-nav">
+      <a class="nav-link text-on-surface font-semibold bg-surface-container-high px-space-xs py-space-2xs rounded" href="#top">Overview</a>
+      <a class="nav-link text-on-surface-variant hover:text-on-surface transition-colors px-space-xs py-space-2xs rounded" href="#research-pillars">Research Pillars</a>
+      <a class="nav-link text-on-surface-variant hover:text-on-surface transition-colors px-space-xs py-space-2xs rounded" href="#publications-and-preprints">Publications &amp; Talks</a>
+      <a class="nav-link text-on-surface-variant hover:text-on-surface transition-colors px-space-xs py-space-2xs rounded" href="#academic-cv">CV &amp; Projects</a>
+      <a class="nav-link text-on-surface-variant hover:text-on-surface transition-colors px-space-xs py-space-2xs rounded" href="#contact">Contact</a>
+    </nav>
+    <div class="flex items-center gap-space-sm">
+      <div class="hidden sm:flex items-center gap-space-2xs px-space-xs py-space-2xs rounded bg-surface-container-low">
+        <span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+        <span class="font-label-tag text-label-tag text-secondary uppercase tracking-wider whitespace-nowrap" data-text="site.headerBadge">Aura CDT · UoH</span>
+      </div>
+      <img alt="" class="hidden sm:block w-8 h-8 rounded-full object-cover shadow-[0_1px_4px_rgba(0,0,0,0.08)]" data-src="site.photo" src="./linkedin.jpg"/>
+      <button aria-label="Switch to dark mode" class="w-9 h-9 rounded-lg border border-slate-200 bg-white flex items-center justify-center text-slate-700 hover:text-slate-900 hover:border-slate-300 transition-colors" id="theme-btn" title="Toggle dark mode" type="button">
+        <span class="material-symbols-outlined text-xl" id="theme-icon">dark_mode</span>
+      </button>
+      <button aria-controls="mobile-nav" aria-expanded="false" aria-label="Open menu" class="lg:hidden w-9 h-9 rounded-lg border border-slate-200 bg-white flex items-center justify-center text-slate-700" id="menu-btn" type="button">
+        <span class="material-symbols-outlined text-xl">menu</span>
+      </button>
+    </div>
+  </div>
+  <nav class="hidden lg:hidden border-t border-slate-200/60 bg-white/95 backdrop-blur-xl" id="mobile-nav">
+    <div class="max-w-container-max mx-auto px-gutter py-3 flex flex-col font-body-sm text-sm">
+      <a class="py-2.5 text-slate-800 border-b border-slate-100" href="#top">Overview</a>
+      <a class="py-2.5 text-slate-800 border-b border-slate-100" href="#research-pillars">Research Pillars</a>
+      <a class="py-2.5 text-slate-800 border-b border-slate-100" href="#publications-and-preprints">Publications &amp; Talks</a>
+      <a class="py-2.5 text-slate-800 border-b border-slate-100" href="#academic-cv">CV &amp; Projects</a>
+      <a class="py-2.5 text-slate-800" href="#contact">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<main class="w-full pt-16 bg-surface" id="top">
+
+<!-- Shown only if data/portfolio.json can't be loaded -->
+<div class="hidden max-w-container-max mx-auto px-gutter pt-8" id="load-error">
+  <div class="p-5 rounded-xl border border-red-200 bg-red-50 text-red-800 text-sm space-y-1">
+    <p class="font-semibold">Couldn't load data/portfolio.json</p>
+    <p id="load-error-detail"></p>
+  </div>
+</div>
+
+<!-- ============ Announcement banner ============ -->
+<section class="hidden w-full bg-gradient-to-r from-sky-50 via-teal-50 to-indigo-50 border-b border-sky-100/80 py-2.5 px-gutter" id="banner">
+  <div class="max-w-container-max mx-auto flex flex-col md:flex-row items-center justify-between gap-space-xs text-caption font-caption">
+    <div class="flex flex-col sm:flex-row items-center gap-2.5 min-w-0 text-center sm:text-left">
+      <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-gradient-to-r from-teal-500 to-emerald-600 text-white font-label-tag text-xs tracking-wider uppercase font-semibold shadow-sm shrink-0"><span class="w-1.5 h-1.5 rounded-full bg-white animate-pulse"></span><span data-text="banner.label"></span></span>
+      <span class="font-medium text-slate-700 shrink-0" data-text="banner.prefix"></span>
+      <span class="md:truncate text-slate-900 font-semibold" data-text="banner.text"></span>
+    </div>
+    <a class="text-teal-700 hover:text-teal-900 font-label-code text-xs font-medium flex items-center gap-1 group transition-colors shrink-0" data-href="banner.link" href="#">
+      <span data-text="banner.linkText"></span><span class="material-symbols-outlined text-sm transition-transform duration-200 group-hover:translate-x-1">arrow_forward</span>
+    </a>
+  </div>
+</section>
+
+<!-- ============ Hero ============ -->
+<section class="w-full py-16 lg:py-24 px-gutter relative overflow-hidden bg-gradient-to-b from-slate-50/70 via-white to-sky-50/30">
+  <div class="absolute -top-40 right-0 w-[550px] h-[550px] rounded-full bg-gradient-to-br from-sky-200/40 via-teal-100/30 to-transparent blur-3xl pointer-events-none"></div>
+  <div class="absolute bottom-0 left-[-10%] w-[500px] h-[500px] rounded-full bg-gradient-to-tr from-indigo-100/30 via-sky-100/20 to-transparent blur-3xl pointer-events-none"></div>
+  <div class="absolute inset-0 bg-[radial-gradient(#e2e8f0_1px,transparent_1px)] [background-size:24px_24px] opacity-40 pointer-events-none"></div>
+  <div class="max-w-container-max mx-auto relative z-10">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+
+      <div class="lg:col-span-4 flex flex-col items-center lg:items-start text-center lg:text-left space-y-6">
+        <div class="relative group">
+          <div class="p-1.5 rounded-3xl bg-gradient-to-tr from-teal-400 via-sky-500 to-indigo-600 shadow-xl shadow-sky-950/10 transition-transform duration-300 group-hover:scale-[1.015]">
+            <img alt="Louis Donaldson" class="w-64 h-64 lg:w-72 lg:h-72 object-cover rounded-[1.35rem] bg-white" data-alt="site.name" data-src="site.photo" src="./linkedin.jpg"/>
+          </div>
+          <div class="absolute -bottom-3 left-1/2 -translate-x-1/2 lg:left-6 lg:translate-x-0 flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/95 backdrop-blur-md border border-slate-200/80 shadow-md whitespace-nowrap">
+            <span class="w-2 h-2 rounded-full bg-teal-500 animate-pulse"></span>
+            <span class="font-label-tag text-xs tracking-wider uppercase font-semibold text-slate-700" data-text="site.photoBadge"></span>
+          </div>
+        </div>
+        <div class="pt-2 space-y-2 w-full max-w-sm">
+          <div class="font-serif text-2xl text-slate-900 font-semibold tracking-tight" data-text="site.name">Louis Donaldson</div>
+          <div class="font-caption text-xs text-teal-700 font-medium tracking-wide uppercase" data-text="site.role"></div>
+          <div class="flex items-center justify-center lg:justify-start gap-2 font-label-code text-xs text-slate-600 pt-1">
+            <span class="material-symbols-outlined text-base text-teal-600">location_on</span><span data-text="site.location"></span>
+          </div>
+          <div class="flex items-center justify-center lg:justify-start gap-2 font-label-code text-xs text-slate-600">
+            <span class="material-symbols-outlined text-base text-teal-600">mail</span><a class="hover:text-teal-700" data-mailto="site.email" data-text="site.email" href="#"></a>
+          </div>
+          <div class="hidden items-center justify-center lg:justify-start gap-2 font-label-code text-xs text-slate-600" id="orcid-row">
+            <span class="material-symbols-outlined text-base text-teal-600">verified</span><a class="hover:text-teal-700" href="#" id="orcid-link" rel="noopener" target="_blank"></a>
+          </div>
+        </div>
+        <div class="flex flex-wrap items-center justify-center lg:justify-start gap-2 pt-1" id="profile-links"></div>
+      </div>
+
+      <div class="lg:col-span-8 space-y-6">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gradient-to-r from-teal-50 to-sky-50 border border-teal-200/60 font-label-tag text-xs text-teal-800 uppercase tracking-widest font-semibold">
+          <span class="w-1.5 h-1.5 rounded-full bg-teal-600"></span><span data-text="hero.eyebrow"></span>
+        </div>
+        <h1 class="font-serif text-4xl lg:text-5xl text-slate-900 font-medium leading-[1.15] tracking-tight"><span data-text="hero.headline"></span> <span class="bg-gradient-to-r from-sky-700 via-teal-600 to-indigo-700 bg-clip-text text-transparent" data-text="hero.headlineHighlight"></span></h1>
+        <div class="p-6 rounded-2xl bg-white/90 backdrop-blur-sm border border-slate-200/80 shadow-[0_8px_30px_rgb(0,0,0,0.04)] relative overflow-hidden">
+          <div class="absolute top-0 left-0 w-1.5 h-full bg-gradient-to-b from-teal-500 to-sky-600"></div>
+          <div class="font-label-tag text-xs uppercase text-slate-500 font-semibold tracking-wider mb-1" data-text="hero.thesisLabel"></div>
+          <p class="font-serif text-lg text-slate-900 italic leading-relaxed">“<span data-text="hero.thesisTitle"></span>”</p>
+        </div>
+        <p class="font-body-lg text-slate-600 max-w-reading-max leading-relaxed" data-text="hero.summary"></p>
+        <div class="flex flex-wrap gap-2 pt-1" id="hero-tags"></div>
+        <div class="flex flex-wrap items-center gap-3 pt-3">
+          <a class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-slate-900 via-slate-800 to-sky-950 text-white font-body-sm text-sm font-medium hover:scale-[1.02] hover:shadow-lg hover:shadow-sky-950/20 transition-all duration-200 flex items-center gap-2 shadow-md" href="#publications-and-preprints" id="latest-paper-btn">
+            <span class="material-symbols-outlined text-lg">description</span><span>Read Latest Paper</span>
+          </a>
+          <a class="px-5 py-2.5 rounded-xl bg-white border border-slate-200 text-slate-800 font-body-sm text-sm font-medium hover:bg-slate-50 hover:border-slate-300 transition-all duration-200 shadow-sm flex items-center gap-2" href="#academic-cv">
+            <span class="material-symbols-outlined text-lg text-slate-600">badge</span><span>View CV</span>
+          </a>
+          <a class="px-5 py-2.5 rounded-xl bg-white border border-slate-200 text-slate-800 font-body-sm text-sm font-medium hover:bg-slate-50 hover:border-slate-300 transition-all duration-200 shadow-sm flex items-center gap-2" href="#" id="github-btn" rel="noopener" target="_blank">
+            <span class="material-symbols-outlined text-lg text-teal-600">code</span><span id="github-btn-label">GitHub</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ Research pillars ============ -->
+<section class="w-full py-20 px-gutter bg-gradient-to-b from-white via-slate-50/50 to-white scroll-mt-16" id="research-pillars">
+  <div class="max-w-container-max mx-auto space-y-12">
+    <div class="max-w-reading-max space-y-2">
+      <div class="inline-flex items-center gap-1.5 font-label-tag text-xs uppercase text-teal-700 font-semibold tracking-widest"><span class="w-2 h-0.5 bg-teal-600"></span>Research Themes</div>
+      <h2 class="font-serif text-3xl lg:text-4xl text-slate-900 font-medium tracking-tight">Two Core Pillars of Doctoral Research</h2>
+      <p class="font-body-md text-slate-600 leading-relaxed">Bringing together multi-objective optimisation, explainable AI and multi-agent language systems to support offshore wind maintenance decisions.</p>
+    </div>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8" id="pillars"></div>
+  </div>
+</section>
+
+<!-- ============ Publications ============ -->
+<section class="w-full py-20 px-gutter bg-white scroll-mt-16" id="publications-and-preprints">
+  <div class="max-w-container-max mx-auto space-y-8">
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-4 border-b border-slate-100">
+      <div class="space-y-2 max-w-reading-max">
+        <div class="inline-flex items-center gap-1.5 font-label-tag text-xs uppercase text-teal-700 font-semibold tracking-widest"><span class="w-2 h-0.5 bg-teal-600"></span>Research Output</div>
+        <h2 class="font-serif text-3xl lg:text-4xl text-slate-900 font-medium tracking-tight">Publications &amp; Preprints</h2>
+        <p class="font-body-md text-slate-600 leading-relaxed">Preprints, conference papers and work in progress.</p>
+      </div>
+      <div class="flex flex-wrap items-center gap-2" id="pub-filters"></div>
+    </div>
+    <div class="space-y-8" id="publications"></div>
+  </div>
+</section>
+
+<!-- ============ CV ============ -->
+<section class="w-full py-20 px-gutter bg-gradient-to-b from-slate-50 via-sky-50/20 to-white scroll-mt-16" id="academic-cv">
+  <div class="max-w-container-max mx-auto space-y-12">
+    <div class="max-w-reading-max space-y-2">
+      <div class="inline-flex items-center gap-1.5 font-label-tag text-xs uppercase text-teal-700 font-semibold tracking-widest"><span class="w-2 h-0.5 bg-teal-600"></span>Background</div>
+      <h2 class="font-serif text-3xl lg:text-4xl text-slate-900 font-medium tracking-tight">Academic CV &amp; Milestones</h2>
+      <p class="font-body-md text-slate-600 leading-relaxed">Education, talks and posters, and software I've built along the way.</p>
+    </div>
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
+      <div class="lg:col-span-7 space-y-8">
+        <div class="space-y-4">
+          <h3 class="font-serif text-2xl text-slate-900 font-medium flex items-center gap-2.5"><span class="material-symbols-outlined text-teal-600">history_edu</span><span>Education</span></h3>
+          <div class="space-y-4" id="education"></div>
+        </div>
+        <div class="space-y-4" id="projects-block">
+          <h3 class="font-serif text-2xl text-slate-900 font-medium flex items-center gap-2.5"><span class="material-symbols-outlined text-teal-600">terminal</span><span>Software &amp; Demos</span></h3>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3" id="projects"></div>
+        </div>
+      </div>
+      <div class="lg:col-span-5 space-y-8">
+        <div class="space-y-4" id="funding-block">
+          <h3 class="font-serif text-2xl text-slate-900 font-medium flex items-center gap-2.5"><span class="material-symbols-outlined text-teal-600">workspace_premium</span><span>Funding</span></h3>
+          <div class="space-y-3" id="funding"></div>
+        </div>
+        <div class="space-y-4" id="talks-block">
+          <h3 class="font-serif text-2xl text-slate-900 font-medium flex items-center gap-2.5"><span class="material-symbols-outlined text-teal-600">campaign</span><span>Talks &amp; Posters</span></h3>
+          <div class="p-5 rounded-2xl bg-white border border-slate-200/80 shadow-sm space-y-4" id="talks"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Contact ============ -->
+<section class="w-full py-20 px-gutter bg-white scroll-mt-16" id="contact">
+  <div class="max-w-container-max mx-auto">
+    <div class="p-6 sm:p-8 lg:p-14 rounded-3xl bg-gradient-to-br from-slate-950 via-slate-900 to-sky-950 border border-slate-800 shadow-2xl grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center relative overflow-hidden">
+      <div class="absolute -top-32 -right-32 w-80 h-80 rounded-full bg-teal-500/10 blur-3xl pointer-events-none"></div>
+      <div class="absolute -bottom-32 -left-32 w-80 h-80 rounded-full bg-sky-500/10 blur-3xl pointer-events-none"></div>
+      <div class="lg:col-span-6 space-y-6 relative z-10">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-950/80 border border-teal-500/30 text-teal-300 font-label-tag text-xs uppercase font-semibold tracking-wider"><span class="w-2 h-2 rounded-full bg-teal-400 animate-pulse"></span>Get in Touch</div>
+        <h2 class="font-serif text-3xl lg:text-4xl text-white font-medium leading-tight">Collaborate on Offshore AI &amp; Optimisation</h2>
+        <p class="font-body-md text-slate-300 leading-relaxed">I'm happy to talk about research collaborations, industry partnerships, datasets, or invitations to speak about explainable optimisation and reliable agentic AI.</p>
+        <div class="space-y-4 pt-2 font-body-sm text-slate-300">
+          <a class="flex items-start gap-3 p-3.5 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors" data-mailto="site.email" href="#">
+            <span class="material-symbols-outlined text-teal-400 text-xl mt-0.5">mail</span>
+            <span><span class="font-semibold block text-white text-xs uppercase tracking-wide">Email</span><span class="font-label-code text-teal-300 text-sm break-all" data-text="site.email"></span></span>
+          </a>
+          <a class="flex items-start gap-3 p-3.5 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors" href="#" id="teams-link" rel="noopener" target="_blank">
+            <span class="material-symbols-outlined text-teal-400 text-xl mt-0.5">forum</span>
+            <span><span class="font-semibold block text-white text-xs uppercase tracking-wide">Microsoft Teams</span><span class="text-slate-300 text-sm">Message me directly</span></span>
+          </a>
+          <div class="flex items-start gap-3 p-3.5 rounded-xl bg-white/5 border border-white/10">
+            <span class="material-symbols-outlined text-teal-400 text-xl mt-0.5">domain</span>
+            <span><span class="font-semibold block text-white text-xs uppercase tracking-wide">Based at</span><span class="text-slate-300 text-sm" data-text="site.basedAt"></span></span>
+          </div>
+        </div>
+      </div>
+      <div class="lg:col-span-6 bg-slate-900/90 border border-slate-800 p-6 sm:p-8 rounded-2xl shadow-xl relative z-10">
+        <form class="space-y-4" id="collab-form">
+          <div>
+            <label class="block font-label-tag text-xs uppercase text-slate-300 font-semibold mb-1.5" for="sender-name">Your Name &amp; Affiliation</label>
+            <input class="w-full px-4 py-2.5 rounded-xl bg-slate-950/70 border border-slate-700 text-white placeholder-slate-500 text-sm focus:outline-none focus:ring-2 focus:ring-teal-400 focus:border-teal-400 transition-all" id="sender-name" placeholder="e.g. Jane Smith (University / Company)" required="" type="text"/>
+          </div>
+          <div>
+            <label class="block font-label-tag text-xs uppercase text-slate-300 font-semibold mb-1.5" for="inquiry-type">Topic</label>
+            <select class="w-full px-4 py-2.5 rounded-xl bg-slate-950/70 border border-slate-700 text-white text-sm focus:outline-none focus:ring-2 focus:ring-teal-400 focus:border-teal-400 transition-all" id="inquiry-type">
+              <option>Research collaboration / joint paper</option>
+              <option>Industry partnership</option>
+              <option>Speaking or seminar invitation</option>
+              <option>Something else</option>
+            </select>
+          </div>
+          <div>
+            <label class="block font-label-tag text-xs uppercase text-slate-300 font-semibold mb-1.5" for="inquiry-message">Message</label>
+            <textarea class="w-full px-4 py-2.5 rounded-xl bg-slate-950/70 border border-slate-700 text-white placeholder-slate-500 text-sm focus:outline-none focus:ring-2 focus:ring-teal-400 focus:border-teal-400 transition-all" id="inquiry-message" placeholder="What would you like to discuss?" required="" rows="4"></textarea>
+          </div>
+          <button class="w-full py-3 rounded-xl bg-gradient-to-r from-teal-500 via-teal-400 to-sky-400 text-slate-950 text-sm font-semibold hover:brightness-110 hover:shadow-lg hover:shadow-teal-500/20 transition-all duration-200 flex items-center justify-center gap-2 shadow-md" type="submit">
+            <span class="material-symbols-outlined text-base">send</span><span>Open in your email app</span>
+          </button>
+          <p class="text-center font-caption text-xs text-slate-400">Opens a pre-filled email to <span data-text="site.email"></span>.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ Footer ============ -->
+<footer class="w-full bg-slate-50/80 border-t border-slate-200/80 text-slate-600">
+  <div class="max-w-container-max mx-auto px-gutter py-space-3xl">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-space-xl">
+      <div class="md:col-span-5 space-y-space-sm">
+        <div class="font-serif text-headline-sm text-on-surface"><span data-text="site.name">Louis Donaldson</span> • <span data-text="site.shortTitle">OPEX &amp; Agentic RAG</span></div>
+        <p class="font-body-sm text-body-sm text-on-surface-variant max-w-reading-max">Doctoral research in explainable multi-objective optimisation and uncertainty-aware agentic AI for offshore wind maintenance, at the University of Hull.</p>
+      </div>
+      <div class="md:col-span-3 space-y-space-xs">
+        <h4 class="font-label-tag text-label-tag uppercase tracking-widest text-on-surface font-semibold">On this site</h4>
+        <ul class="space-y-space-2xs font-body-sm text-body-sm text-on-surface-variant">
+          <li><a class="hover:text-on-surface transition-colors" href="#research-pillars">Research pillars</a></li>
+          <li><a class="hover:text-on-surface transition-colors" href="#publications-and-preprints">Publications &amp; BibTeX</a></li>
+          <li><a class="hover:text-on-surface transition-colors" href="#academic-cv">CV &amp; projects</a></li>
+          <li><a class="hover:text-on-surface transition-colors" href="./additional-links/index.html">Other web work</a></li>
+        </ul>
+      </div>
+      <div class="md:col-span-4 space-y-space-xs">
+        <h4 class="font-label-tag text-label-tag uppercase tracking-widest text-on-surface font-semibold">Elsewhere</h4>
+        <ul class="space-y-space-2xs font-body-sm text-body-sm text-on-surface-variant" id="footer-links"></ul>
+      </div>
+    </div>
+    <div class="mt-space-2xl pt-space-md border-t border-slate-200/80 flex flex-col sm:flex-row justify-between items-center gap-space-sm font-caption text-caption text-on-surface-variant">
+      <p>© <span id="year">2026</span> <span data-text="site.name">Louis Donaldson</span> • Aura CDT, University of Hull</p>
+      <a class="font-label-code hover:text-on-surface" href="#top">Back to top ↑</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* =========================================================================
+   Rendering: reads data/portfolio.json and fills the page.
+   You shouldn't need to edit below this line to change content.
+   ========================================================================= */
+const DATA_URL = './data/portfolio.json';
+
+// ---------- helpers ----------
+const esc = (s) => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const get = (obj, path) => path.split('.').reduce((o, k) => (o == null ? undefined : o[k]), obj);
+const isExternal = (url) => /^https?:\/\//.test(url || '');
+const linkAttrs = (url) => `href="${esc(url)}"` + (isExternal(url) || /\.(png|jpe?g|pdf)$/i.test(url || '') ? ' target="_blank" rel="noopener"' : '');
+const icon = (name, cls = 'text-sm') => `<span class="material-symbols-outlined ${cls}">${esc(name)}</span>`;
+const has = (arr) => Array.isArray(arr) && arr.length > 0;
+
+// Colour themes used by pillars, hero tags and highlight tiles
+const PILLAR_THEMES = {
+  teal: { bar: 'from-teal-400 to-emerald-500', chip: 'bg-teal-50 border-teal-200/70 text-teal-800', iconBg: 'bg-teal-50', icon: 'text-teal-600', box: 'from-slate-50 to-sky-50/50', link: 'text-teal-700 hover:text-teal-900' },
+  sky:  { bar: 'from-sky-400 to-indigo-500',   chip: 'bg-sky-50 border-sky-200/70 text-sky-800',    iconBg: 'bg-sky-50',  icon: 'text-sky-600',  box: 'from-slate-50 to-indigo-50/40', link: 'text-sky-700 hover:text-sky-900' },
+  indigo: { bar: 'from-indigo-400 to-violet-500', chip: 'bg-indigo-50 border-indigo-200/70 text-indigo-800', iconBg: 'bg-indigo-50', icon: 'text-indigo-600', box: 'from-slate-50 to-indigo-50/40', link: 'text-indigo-700 hover:text-indigo-900' }
+};
+const TAG_STYLES = [
+  'bg-slate-100/90 border-slate-200 text-slate-800 font-medium',
+  'bg-teal-50 border-teal-200/80 text-teal-800 font-semibold',
+  'bg-sky-50 border-sky-200/80 text-sky-800 font-medium',
+  'bg-indigo-50 border-indigo-200/80 text-indigo-800 font-medium'
+];
+const TILE_STYLES = [
+  { box: 'from-teal-50/60 to-white border-teal-100', value: 'text-teal-700' },
+  { box: 'from-sky-50/60 to-white border-sky-100', value: 'text-sky-800' },
+  { box: 'from-indigo-50/60 to-white border-indigo-100', value: 'text-indigo-700' }
+];
+// Badge colour by publication "type"
+const TYPE_BADGES = {
+  'journal article':  'bg-teal-50 border border-teal-200 text-teal-800',
+  'conference paper': 'bg-teal-50 border border-teal-200 text-teal-800',
+  'preprint':         'bg-slate-100 border border-slate-200 text-slate-700',
+  'in preparation':   'bg-slate-100 border border-slate-200 text-slate-700',
+  'under review':     'bg-slate-100 border border-slate-200 text-slate-700'
+};
+
+// ---------- simple bindings: data-text / data-href / data-src / data-mailto ----------
+function bindSimple(data) {
+  document.querySelectorAll('[data-text]').forEach(el => { const v = get(data, el.dataset.text); if (v != null) el.textContent = v; });
+  document.querySelectorAll('[data-href]').forEach(el => { const v = get(data, el.dataset.href); if (v) el.setAttribute('href', v); });
+  document.querySelectorAll('[data-src]').forEach(el => { const v = get(data, el.dataset.src); if (v) el.setAttribute('src', v); });
+  document.querySelectorAll('[data-alt]').forEach(el => { const v = get(data, el.dataset.alt); if (v) el.setAttribute('alt', v); });
+  document.querySelectorAll('[data-mailto]').forEach(el => { const v = get(data, el.dataset.mailto); if (v) el.setAttribute('href', 'mailto:' + v); });
+}
+
+// ---------- sections ----------
+function renderSite(site) {
+
+  const teams = site.email ? `https://teams.microsoft.com/l/chat/0/0?users=${encodeURIComponent(site.email)}` : '';
+  const github = site.github ? `https://github.com/${site.github}` : '';
+  document.getElementById('teams-link').setAttribute('href', teams || '#');
+  const gh = document.getElementById('github-btn');
+  if (github) { gh.setAttribute('href', github); document.getElementById('github-btn-label').textContent = `GitHub (@${site.github})`; }
+  else gh.remove();
+
+  if (site.orcid) {
+    const row = document.getElementById('orcid-row');
+    row.classList.remove('hidden'); row.classList.add('flex');
+    const a = document.getElementById('orcid-link');
+    a.href = `https://orcid.org/${site.orcid}`; a.textContent = `ORCID: ${site.orcid}`;
+  }
+
+  const links = [
+    site.linkedin && { label: 'LinkedIn', url: site.linkedin, icon: 'person' },
+    site.auraProfile && { label: 'Aura CDT profile', url: site.auraProfile, icon: 'school' },
+    teams && { label: 'Teams', url: teams, icon: 'forum' }
+  ].filter(Boolean);
+  document.getElementById('profile-links').innerHTML = links.map(l => `
+    <a class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white border border-slate-200 shadow-sm text-xs font-label-code text-slate-700 hover:text-slate-900 hover:border-slate-300 hover:bg-slate-50 transition-all" ${linkAttrs(l.url)}>
+      ${icon(l.icon, 'text-sm text-teal-600')}<span>${esc(l.label)}</span>
+    </a>`).join('');
+
+  const footer = [
+    site.auraProfile && { label: 'Aura CDT profile', url: site.auraProfile },
+    site.linkedin && { label: 'LinkedIn', url: site.linkedin },
+    github && { label: 'GitHub', url: github },
+    site.orcid && { label: 'ORCID', url: `https://orcid.org/${site.orcid}` }
+  ].filter(Boolean);
+  document.getElementById('footer-links').innerHTML = footer.map(l => `<li><a class="hover:text-on-surface transition-colors" ${linkAttrs(l.url)}>${esc(l.label)}</a></li>`).join('');
+}
+
+function renderBanner(banner) {
+  if (banner && banner.show) document.getElementById('banner').classList.remove('hidden');
+}
+
+function renderHeroTags(tags) {
+  document.getElementById('hero-tags').innerHTML = (tags || []).map((t, i) =>
+    `<span class="px-3 py-1 rounded-full border font-label-tag text-xs ${TAG_STYLES[i % TAG_STYLES.length]}">${esc(t)}</span>`).join('');
+}
+
+function renderPillars(pillars) {
+  document.getElementById('pillars').innerHTML = (pillars || []).map(p => {
+    const t = PILLAR_THEMES[p.colour] || PILLAR_THEMES.teal;
+    return `
+    <article class="bg-white/90 rounded-2xl p-6 sm:p-8 border border-slate-200/80 shadow-[0_4px_25px_rgba(0,0,0,0.04)] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between space-y-6 relative overflow-hidden">
+      <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${t.bar}"></div>
+      <div class="space-y-4">
+        <div class="flex items-center justify-between gap-3">
+          <span class="px-3 py-1 rounded-full border font-label-tag text-xs uppercase font-semibold ${t.chip}">${esc(p.label)}</span>
+          <div class="w-10 h-10 rounded-xl ${t.iconBg} flex items-center justify-center shrink-0">${icon(p.icon, 'text-xl ' + t.icon)}</div>
+        </div>
+        <h3 class="font-serif text-2xl text-slate-900 font-medium leading-snug">${esc(p.title)}</h3>
+        <p class="font-body-md text-slate-600 leading-relaxed">${esc(p.body)}</p>
+        ${p.boxTitle ? `
+        <div class="p-5 rounded-xl bg-gradient-to-br ${t.box} border border-slate-200/70 space-y-2">
+          <div class="font-label-code text-xs text-slate-800 font-semibold flex items-center gap-1.5">${icon(p.boxIcon || 'info', 'text-sm ' + t.icon)}<span>${esc(p.boxTitle)}</span></div>
+          <p class="font-body-sm text-xs text-slate-600 leading-relaxed">${esc(p.boxBody)}</p>
+          ${has(p.chips) ? `<div class="grid grid-cols-3 gap-2 pt-1 text-center font-label-code text-xs">${p.chips.map(c => `<div class="bg-white border border-slate-200/80 py-1 px-2 rounded-lg font-medium text-slate-700 shadow-sm">${esc(c)}</div>`).join('')}</div>` : ''}
+        </div>` : ''}
+      </div>
+      ${p.link ? `
+      <div class="pt-2 border-t border-slate-100">
+        <a class="${t.link} font-label-code text-xs font-semibold flex items-center gap-1.5 group" ${linkAttrs(p.link.url)}>
+          <span>${esc(p.link.label)}</span><span class="material-symbols-outlined text-sm transition-transform duration-200 group-hover:translate-x-1">trending_flat</span>
+        </a>
+      </div>` : ''}
+    </article>`;
+  }).join('');
+}
+
+// ---------- publications ----------
+function bibtexFor(p) {
+  if (p.bibtex) return p.bibtex; // optional manual override in the JSON
+  const authors = (p.authors || []).map(a => {
+    const parts = a.trim().split(/\s+/);
+    return parts.length > 1 ? `${parts.pop()}, ${parts.join(' ')}` : a;
+  });
+  const firstLast = (authors[0] || 'anon').split(',')[0].toLowerCase().replace(/[^a-z]/g, '');
+  const firstWord = (p.title || '').toLowerCase().split(/\s+/).find(w => w.length > 3 && !['with','from','into','over','under','using'].includes(w)) || 'paper';
+  const key = p.bibtexKey || `${firstLast}${p.year || ''}${firstWord.replace(/[^a-z]/g, '')}`;
+  const type = (p.type || '').toLowerCase();
+  const fields = [['title', p.title], ['author', authors.join(' and ')], ['year', p.year]];
+  let entry = 'misc';
+  if (p.arxiv) { fields.push(['eprint', p.arxiv], ['archivePrefix', 'arXiv']); }
+  else if (type === 'journal article') { entry = 'article'; fields.push(['journal', p.bibtexVenue || p.venue]); }
+  else if (type === 'conference paper') { entry = 'inproceedings'; fields.push(['booktitle', p.bibtexVenue || p.venue]); }
+  if (p.volume) fields.push(['volume', p.volume]);
+  if (p.pages) fields.push(['pages', p.pages]);
+  if (p.doi) fields.push(['doi', p.doi]);
+  const body = fields.filter(([, v]) => v != null && v !== '').map(([k, v]) => `  ${k}={${v}}`).join(',\n');
+  return `@${entry}{${key},\n${body}\n}`;
+}
+
+function citeBlock(p, i) {
+  if (!p.citation) return { button: '', panel: '' };
+  const id = `bibtex-${i}`;
+  return {
+    button: `<button class="px-4 py-2 rounded-xl bg-slate-100 text-slate-800 font-body-sm text-xs font-medium hover:bg-slate-200 transition-colors flex items-center gap-1.5" data-bibtex-toggle="${id}" type="button">${icon('format_quote')}<span>Cite (BibTeX)</span></button>`,
+    panel: `
+      <div class="hidden p-5 rounded-xl bg-slate-900 text-slate-200 space-y-2 font-label-code text-xs border border-slate-800 shadow-lg" id="${id}">
+        <div class="flex items-center justify-between">
+          <span class="font-label-tag text-xs uppercase text-teal-400 font-semibold tracking-wider">BibTeX Entry</span>
+          <button class="text-sky-300 hover:text-white flex items-center gap-1 text-xs transition-colors" data-bibtex-copy="${id}-content" type="button">${icon('content_copy')}<span class="copy-text">Copy to Clipboard</span></button>
+        </div>
+        <pre class="overflow-x-auto text-xs leading-relaxed text-slate-300" id="${id}-content">${esc(bibtexFor(p))}</pre>
+      </div>`
+  };
+}
+
+function linkButtons(p, primaryFirst) {
+  return (p.links || []).map((l, j) => {
+    const primary = primaryFirst && j === 0;
+    const cls = primary
+      ? 'bg-slate-900 text-white hover:bg-slate-800 shadow-sm'
+      : 'bg-slate-100 text-slate-800 hover:bg-slate-200';
+    return `<a class="px-4 py-2 rounded-xl ${cls} font-body-sm text-xs font-medium transition-colors flex items-center gap-1.5" ${linkAttrs(l.url)}>${icon(l.icon || 'open_in_new')}<span>${esc(l.label)}</span></a>`;
+  }).join('');
+}
+
+function featuredCard(p, i) {
+  const cite = citeBlock(p, i);
+  const badge = `${p.type || ''}${p.year ? ' ' + p.year : ''}`.trim();
+  return `
+  <article class="pub bg-white rounded-2xl p-6 sm:p-8 lg:p-10 border border-slate-200 shadow-[0_10px_35px_rgba(0,0,0,0.05)] space-y-6 scroll-mt-24" data-topic="${esc((p.topics || []).join(' '))}" id="${esc(p.id || 'pub-' + i)}">
+    <div class="flex flex-wrap items-center justify-between gap-3">
+      <div class="flex flex-wrap items-center gap-2">
+        ${badge ? `<span class="px-3 py-1 rounded-full bg-gradient-to-r from-teal-500 to-emerald-600 text-white font-label-tag text-xs uppercase font-semibold shadow-sm">${esc(badge)}</span>` : ''}
+        ${p.arxiv ? `<span class="px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-slate-700 font-label-code text-xs font-medium">arXiv:${esc(p.arxiv)}</span>` : ''}
+        <span class="px-3 py-1 rounded-full bg-sky-50 border border-sky-200 text-sky-800 font-label-tag text-xs font-semibold">Featured</span>
+        ${p.tag ? `<span class="px-3 py-1 rounded-full bg-amber-50 border border-amber-200 text-amber-700 font-label-tag text-xs font-medium">${esc(p.tag)}</span>` : ''}
+      </div>
+      ${p.note ? `<span class="font-label-code text-xs text-slate-500 font-medium">${esc(p.note)}</span>` : ''}
+    </div>
+    <div class="space-y-2">
+      <h3 class="font-serif text-2xl lg:text-3xl text-slate-900 font-medium leading-tight">${esc(p.title)}</h3>
+      ${has(p.authors) ? `<p class="font-caption text-xs text-teal-700 font-medium tracking-wide uppercase">${esc(p.authors.join(', '))}${p.affiliation ? ' • ' + esc(p.affiliation) : ''}</p>` : ''}
+    </div>
+    ${p.summary ? `
+    <div class="p-6 rounded-xl bg-gradient-to-r from-slate-50 to-sky-50/40 border-l-4 border-teal-500 space-y-2">
+      <div class="font-label-tag text-xs uppercase text-slate-800 font-semibold tracking-wider">${esc(p.summaryLabel || 'Summary')}</div>
+      <p class="text-slate-800 text-sm leading-relaxed">${esc(p.summary)}</p>
+    </div>` : ''}
+    ${has(p.highlights) ? `
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      ${p.highlights.map((h, k) => { const s = TILE_STYLES[k % TILE_STYLES.length]; return `
+      <div class="p-4 rounded-xl bg-gradient-to-br ${s.box} border shadow-sm">
+        <div class="font-serif text-2xl ${s.value} font-semibold">${esc(h.value)}</div>
+        <div class="font-body-sm text-xs text-slate-900 font-semibold mt-0.5">${esc(h.label)}</div>
+        ${h.detail ? `<p class="font-caption text-xs text-slate-500 mt-1">${esc(h.detail)}</p>` : ''}
+      </div>`; }).join('')}
+    </div>` : ''}
+    <div class="pt-4 flex flex-wrap items-center justify-between gap-4 border-t border-slate-100">
+      <div class="flex flex-wrap items-center gap-3">${linkButtons(p, true)}${cite.button}</div>
+      ${p.doi ? `<a class="font-label-code text-xs text-slate-500 hover:text-teal-700 font-medium" href="https://doi.org/${esc(p.doi)}" target="_blank" rel="noopener">DOI: ${esc(p.doi)}</a>` : ''}
+    </div>
+    ${cite.panel}
+  </article>`;
+}
+
+function standardCard(p, i) {
+  const cite = citeBlock(p, i);
+  const badgeCls = TYPE_BADGES[(p.type || '').toLowerCase()] || TYPE_BADGES['preprint'];
+  const actions = linkButtons(p, false) + cite.button;
+  return `
+  <article class="pub bg-white rounded-2xl p-6 lg:p-8 border border-slate-200/80 shadow-sm hover:shadow-md transition-all space-y-3" data-topic="${esc((p.topics || []).join(' '))}" id="${esc(p.id || 'pub-' + i)}">
+    <div class="flex flex-wrap items-center justify-between gap-2">
+      <div class="flex flex-wrap items-center gap-2">
+        ${p.type ? `<span class="px-2.5 py-0.5 rounded-full ${badgeCls} font-label-tag text-xs uppercase font-medium">${esc(p.type)}</span>` : ''}
+        ${p.venue ? `<span class="font-label-tag text-xs text-slate-500">${esc(p.venue)}</span>` : ''}
+      </div>
+      ${p.tag ? `<span class="px-2.5 py-0.5 rounded-full bg-amber-50 border border-amber-200 text-amber-700 font-label-tag text-xs font-medium">${esc(p.tag)}</span>`
+              : p.note ? `<span class="font-label-code text-xs text-slate-500 font-medium">${esc(p.note)}</span>` : ''}
+    </div>
+    <h4 class="font-serif text-xl text-slate-900 font-medium leading-snug">${esc(p.title)}</h4>
+    ${has(p.authors) ? `<p class="font-caption text-xs text-slate-500 uppercase tracking-wide">${esc(p.authors.join(', '))}</p>` : ''}
+    ${p.summary ? `<p class="font-body-sm text-slate-600 leading-relaxed">${esc(p.summary)}</p>` : ''}
+    ${actions || p.doi ? `
+    <div class="pt-2 flex flex-wrap items-center justify-between gap-3">
+      <div class="flex flex-wrap items-center gap-2">${actions}</div>
+      ${p.doi ? `<a class="font-label-code text-xs text-teal-700 hover:text-teal-900 font-semibold" href="https://doi.org/${esc(p.doi)}" target="_blank" rel="noopener">DOI: ${esc(p.doi)}</a>` : ''}
+    </div>` : ''}
+    ${cite.panel}
+  </article>`;
+}
+
+function renderPublications(pubs, filters) {
+  pubs = pubs || [];
+  // Featured paper(s) first, then the rest in the order they appear in the JSON
+  const ordered = [...pubs.filter(p => p.featured), ...pubs.filter(p => !p.featured)];
+  document.getElementById('publications').innerHTML =
+    ordered.map((p, i) => p.featured ? featuredCard(p, i) : standardCard(p, i)).join('') ||
+    '<p class="text-slate-500 text-sm">No publications yet.</p>';
+
+  const first = ordered[0];
+  if (first) document.getElementById('latest-paper-btn').setAttribute('href', '#' + (first.id || 'pub-0'));
+
+  const filterHtml = [{ id: 'all', label: `All (${pubs.length})` }, ...(filters || [])].map((f, i) => `
+    <button class="pub-filter px-3 py-1 rounded-lg font-label-tag text-xs transition-colors ${i === 0 ? 'bg-slate-900 text-white font-semibold shadow-sm' : 'bg-slate-100 text-slate-700 hover:bg-slate-200 font-medium'}" data-filter="${esc(f.id)}" type="button">${esc(f.label)}</button>`).join('');
+  document.getElementById('pub-filters').innerHTML =
+    (has(filters) ? '<span class="font-label-tag text-xs text-slate-500 uppercase tracking-wider">Filter:</span>' + filterHtml : '');
+}
+
+// ---------- CV ----------
+function renderEducation(items) {
+  document.getElementById('education').innerHTML = (items || []).map(e => `
+    <div class="p-6 rounded-2xl bg-white border border-slate-200/80 shadow-sm space-y-2">
+      <div class="flex flex-wrap items-center justify-between gap-2">
+        <span class="font-subheading text-base font-bold text-slate-900">${esc(e.degree)}</span>
+        ${e.dates ? `<span class="font-label-code text-xs px-2.5 py-0.5 rounded-full font-semibold ${e.current ? 'bg-teal-50 border border-teal-200 text-teal-800' : 'bg-slate-100 text-slate-700'}">${esc(e.dates)}</span>` : ''}
+      </div>
+      ${e.institution ? `<div class="font-body-sm text-xs font-semibold tracking-wide uppercase ${e.current ? 'text-teal-700' : 'text-slate-700'}">${esc(e.institution)}</div>` : ''}
+      ${e.details ? `<p class="font-body-sm text-slate-600 pt-1 leading-relaxed">${esc(e.details)}</p>` : ''}
+      ${e.note ? `<div class="font-caption text-xs text-slate-500 pt-2 border-t border-slate-100">${esc(e.note)}</div>` : ''}
+    </div>`).join('');
+}
+
+function renderFunding(items) {
+  if (!has(items)) { document.getElementById('funding-block').remove(); return; }
+  document.getElementById('funding').innerHTML = items.map(f => `
+    <div class="p-5 rounded-2xl bg-white border border-slate-200/80 shadow-sm space-y-1.5">
+      <div class="flex items-center justify-between gap-2">
+        <span class="font-label-tag text-xs uppercase font-bold text-teal-700">${esc(f.label)}</span>
+        ${f.dates ? `<span class="font-label-code text-xs text-slate-500 font-medium">${esc(f.dates)}</span>` : ''}
+      </div>
+      <div class="font-body-sm text-slate-900 font-semibold">${esc(f.title)}</div>
+      ${f.details ? `<p class="font-caption text-xs text-slate-500">${esc(f.details)}</p>` : ''}
+    </div>`).join('');
+}
+
+function renderTalks(items) {
+  if (!has(items)) { document.getElementById('talks-block').remove(); return; }
+  document.getElementById('talks').innerHTML = items.map((t, i) => `
+    <div class="space-y-1 ${i > 0 ? 'pt-3 border-t border-slate-100' : ''}">
+      <div class="font-caption text-xs ${i === 0 ? 'text-teal-700' : 'text-slate-500'} font-bold font-label-tag uppercase tracking-wider">${esc([t.date, t.kind].filter(Boolean).join(' • '))}</div>
+      <div class="font-body-sm text-slate-900 font-semibold">${esc(t.event)}</div>
+      ${t.description ? `<p class="font-caption text-xs text-slate-500">${esc(t.description)}</p>` : ''}
+      ${t.link ? `<a class="font-caption text-xs text-teal-700 hover:text-teal-900 inline-flex items-center gap-1" ${linkAttrs(t.link.url)}>${icon('open_in_new')}${esc(t.link.label)}</a>` : ''}
+    </div>`).join('');
+}
+
+function renderProjects(items) {
+  if (!has(items)) { document.getElementById('projects-block').remove(); return; }
+  document.getElementById('projects').innerHTML = items.map(p => `
+    <a class="p-5 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:shadow-md hover:border-slate-300 transition-all space-y-1 block" ${linkAttrs(p.url)}>
+      <div class="font-label-tag text-xs uppercase font-bold text-teal-700">${esc(p.category)}</div>
+      <div class="font-body-sm text-slate-900 font-semibold">${esc(p.title)}</div>
+      ${p.description ? `<p class="font-caption text-xs text-slate-500">${esc(p.description)}</p>` : ''}
+    </a>`).join('');
+}
+
+// ---------- interactions ----------
+function wireInteractions(site) {
+  // Publication filters
+  const filterBtns = document.querySelectorAll('.pub-filter');
+  const onCls = ['bg-slate-900', 'text-white', 'font-semibold', 'shadow-sm'];
+  const offCls = ['bg-slate-100', 'text-slate-700', 'hover:bg-slate-200', 'font-medium'];
+  filterBtns.forEach(btn => btn.addEventListener('click', () => {
+    const f = btn.dataset.filter;
+    filterBtns.forEach(b => {
+      const on = b === btn;
+      onCls.forEach(c => b.classList.toggle(c, on));
+      offCls.forEach(c => b.classList.toggle(c, !on));
+    });
+    document.querySelectorAll('.pub').forEach(p => {
+      const topics = (p.dataset.topic || '').split(' ');
+      p.classList.toggle('pub-hidden', f !== 'all' && !topics.includes(f));
+    });
+  }));
+
+  // BibTeX toggle and copy
+  document.querySelectorAll('[data-bibtex-toggle]').forEach(btn => btn.addEventListener('click', () => {
+    document.getElementById(btn.dataset.bibtexToggle).classList.toggle('hidden');
+  }));
+  document.querySelectorAll('[data-bibtex-copy]').forEach(btn => btn.addEventListener('click', () => {
+    const text = document.getElementById(btn.dataset.bibtexCopy).innerText;
+    const label = btn.querySelector('.copy-text');
+    navigator.clipboard.writeText(text).then(() => {
+      label.textContent = 'Copied!';
+      setTimeout(() => { label.textContent = 'Copy to Clipboard'; }, 2000);
+    }).catch(() => { label.textContent = 'Copy failed: select the text manually'; });
+  }));
+
+  // Contact form opens the visitor's email app with a pre-filled message
+  document.getElementById('collab-form').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const name = document.getElementById('sender-name').value.trim();
+    const topic = document.getElementById('inquiry-type').value;
+    const msg = document.getElementById('inquiry-message').value.trim();
+    const subject = encodeURIComponent(`${topic}: ${name}`);
+    const body = encodeURIComponent(`${msg}\n\n${name}`);
+    window.location.href = `mailto:${site.email}?subject=${subject}&body=${body}`;
+  });
+}
+
+// Static UI (works even if the JSON fails to load)
+(function staticUi() {
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileNav = document.getElementById('mobile-nav');
+  const setMenu = (open) => {
+    mobileNav.classList.toggle('hidden', !open);
+    menuBtn.setAttribute('aria-expanded', String(open));
+    menuBtn.querySelector('span').textContent = open ? 'close' : 'menu';
+  };
+  menuBtn.addEventListener('click', () => setMenu(mobileNav.classList.contains('hidden')));
+  mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+
+  // Highlight the nav link for the section in view
+  const navLinks = [...document.querySelectorAll('#desktop-nav .nav-link')];
+  const activeCls = ['text-on-surface', 'font-semibold', 'bg-surface-container-high'];
+  const sections = navLinks.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+  window.addEventListener('scroll', () => {
+    let current = 'top';
+    for (const s of sections) if (s.id !== 'top' && s.getBoundingClientRect().top <= 120) current = s.id;
+    navLinks.forEach(a => {
+      const on = a.getAttribute('href') === '#' + current;
+      activeCls.forEach(c => a.classList.toggle(c, on));
+      a.classList.toggle('text-on-surface-variant', !on);
+    });
+  }, { passive: true });
+
+  // Dark mode toggle (remembers the visitor's choice; otherwise follows the system setting)
+  const root = document.documentElement;
+  const themeBtn = document.getElementById('theme-btn');
+  const themeIcon = document.getElementById('theme-icon');
+  const syncThemeButton = () => {
+    const dark = root.classList.contains('dark');
+    themeIcon.textContent = dark ? 'light_mode' : 'dark_mode';
+    themeBtn.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
+  };
+  themeBtn.addEventListener('click', () => {
+    const dark = root.classList.toggle('dark');
+    try { localStorage.setItem('theme', dark ? 'dark' : 'light'); } catch (e) {}
+    syncThemeButton();
+  });
+  const mq = window.matchMedia('(prefers-color-scheme: dark)');
+  mq.addEventListener('change', (e) => {
+    let saved = null;
+    try { saved = localStorage.getItem('theme'); } catch (err) {}
+    if (!saved) { root.classList.toggle('dark', e.matches); syncThemeButton(); }
+  });
+  syncThemeButton();
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+})();
+
+// ---------- boot ----------
+fetch(DATA_URL, { cache: 'no-cache' })
+  .then(r => { if (!r.ok) throw new Error(`HTTP ${r.status}`); return r.json(); })
+  .then(data => {
+    bindSimple(data);
+    renderSite(data.site || {});
+    renderBanner(data.banner);
+    renderHeroTags((data.hero || {}).tags);
+    renderPillars(data.pillars);
+    renderPublications(data.publications, data.publicationFilters);
+    renderEducation(data.education);
+    renderFunding(data.funding);
+    renderTalks(data.talks);
+    renderProjects(data.projects);
+    wireInteractions(data.site || {});
+    // Jump to a #section link once content exists (e.g. someone opened /#featured-paper)
+    if (location.hash) { const t = document.querySelector(location.hash); if (t) t.scrollIntoView(); }
+  })
+  .catch(err => {
+    console.error('Portfolio data failed to load:', err);
+    document.getElementById('load-error').classList.remove('hidden');
+    document.getElementById('load-error-detail').textContent = location.protocol === 'file:'
+      ? 'Browsers block reading local JSON files when a page is opened by double-clicking. Preview it with a local server instead (e.g. VS Code Live Server, or run "python -m http.server" in this folder).'
+      : 'Check that data/portfolio.json exists and is valid JSON (a missing comma or trailing comma is the usual cause). Details: ' + err.message;
+  });
+</script>
 </body>
-
 </html>

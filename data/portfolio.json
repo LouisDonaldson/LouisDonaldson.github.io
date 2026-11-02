@@ -1,0 +1,220 @@
+{
+  "site": {
+    "name": "Louis Donaldson",
+    "shortTitle": "Optimisation Explainability",
+    "affiliation": "School of Computer Science, University of Hull & Aura CDT",
+    "role": "Postgraduate Researcher • Aura CDT, School of Computer Science, University of Hull",
+    "photoBadge": "PhD Researcher • Aura CDT",
+    "headerBadge": "Aura CDT · UoH",
+    "location": "University of Hull, United Kingdom",
+    "basedAt": "Aura CDT, School of Computer Science, University of Hull",
+    "photo": "./linkedin.jpg",
+    "email": "l.donaldson-2020@hull.ac.uk",
+    "github": "LouisDonaldson",
+    "linkedin": "https://www.linkedin.com/in/louis-donaldson-162822207/",
+    "auraProfile": "https://auracdt.hull.ac.uk/louis-donaldson/",
+    "orcid": "0009-0000-3862-8061"
+  },
+
+  "banner": {
+    "show": true,
+    "label": "New Preprint",
+    "prefix": "On arXiv:",
+    "text": "“Bayesian Uncertainty Propagation for Agentic RAG Pipelines: A Proof-of-Concept Study on Multi-Hop Question Answering”",
+    "linkText": "Read summary",
+    "link": "#featured-paper"
+  },
+
+  "hero": {
+    "eyebrow": "Aura CDT & University of Hull Research",
+    "headline": "Explainable Optimisation & Uncertainty in",
+    "headlineHighlight": "Agentic AI Systems",
+    "thesisLabel": "Doctoral Research",
+    "thesisTitle": "OPtimisation EXplainability (OPEX) for Maintenance Scheduling in the Offshore Wind Industry",
+    "summary": "I combine multi-objective optimisation with explainable AI to produce offshore wind maintenance schedules that operators can understand and trust, and I study how uncertainty propagates through multi-agent Retrieval-Augmented Generation (RAG) pipelines that support those decisions.",
+    "tags": [
+      "Multi-Objective Optimisation (NSGA-III)",
+      "Offshore Wind O&M",
+      "Agentic RAG",
+      "Bayesian Uncertainty Quantification"
+    ]
+  },
+
+  "pillars": [
+    {
+      "label": "Pillar 01 • Explainable Optimisation",
+      "icon": "wind_power",
+      "colour": "teal",
+      "title": "OPEX: Optimisation Explainability in Offshore Wind Maintenance",
+      "body": "Maintenance scheduling for offshore wind farms trades off cost against turbine availability. Evolutionary optimisers such as NSGA-II/III and MOPSO can find strong trade-offs, but operators need to understand why a schedule was chosen before they will act on it.",
+      "boxIcon": "psychology_alt",
+      "boxTitle": "Simulation-driven, explainable scheduling",
+      "boxBody": "The WOMBAT O&M simulator acts as the evaluation engine for NSGA-III, with SHAP-based explanations and agentic assistants that walk users through Pareto fronts and KPIs.",
+      "chips": ["NSGA-III", "SHAP", "WOMBAT"],
+      "link": { "label": "Try the NSGA-III optimisation dashboard", "url": "https://nsga-iii-osw-optimisation.streamlit.app" }
+    },
+    {
+      "label": "Pillar 02 • Agentic AI & UQ",
+      "icon": "hub",
+      "colour": "sky",
+      "title": "Uncertainty Propagation in Multi-Agent RAG Pipelines",
+      "body": "A Planner, Retriever, Evaluator and Generator agent each add their own uncertainty. If that uncertainty isn't tracked from stage to stage, a confident-sounding final answer can hide an unreliable chain of reasoning.",
+      "boxIcon": "analytics",
+      "boxTitle": "Bayesian uncertainty monitor",
+      "boxBody": "Token-level and semantic entropy feed a latent uncertainty variable for each agent in a Bayesian network, which propagates it through the pipeline and decides whether to accept, flag or abstain.",
+      "chips": ["Bayesian Nets", "Semantic Entropy", "Multi-Agent RAG"],
+      "link": { "label": "See the papers", "url": "#publications-and-preprints" }
+    }
+  ],
+
+  "publicationFilters": [
+    { "id": "rag", "label": "Agentic RAG" },
+    { "id": "opt", "label": "Optimisation / OPEX" }
+  ],
+
+  "publications": [
+    {
+      "id": "featured-paper",
+      "featured": true,
+      "type": "Preprint",
+      "year": 2026,
+      "title": "Bayesian Uncertainty Propagation for Agentic RAG Pipelines: A Proof-of-Concept Study on Multi-Hop Question Answering",
+      "authors": ["Louis Donaldson", "Connor Walker", "Koorosh Aslansefat", "Yiannis Papadopoulos"],
+      "affiliation": "University of Hull",
+      "venue": "arXiv preprint",
+      "note": "Submitted to ICMIAM 2026",
+      "tag": "",
+      "topics": ["rag"],
+      "arxiv": "2607.00972",
+      "doi": "10.48550/arXiv.2607.00972",
+      "summaryLabel": "Summary",
+      "summary": "A Bayesian network that tracks uncertainty as it moves through a four-agent RAG pipeline. Token-level and semantic entropy from each agent feed a per-agent latent uncertainty node, so the system can tell when a multi-hop answer should be accepted, flagged for review, or withheld.",
+      "highlights": [
+        { "value": "4 agents", "label": "Pipeline stages", "detail": "Planner, Retriever, Evaluator and Generator, each with its own uncertainty node." },
+        { "value": "2 signals", "label": "Entropy inputs", "detail": "Token-level entropy and semantic entropy enter the network as separate evidence." },
+        { "value": "3 outcomes", "label": "Decision policy", "detail": "Accept, flag or abstain, depending on the propagated uncertainty." }
+      ],
+      "links": [
+        { "label": "View on arXiv", "url": "https://arxiv.org/abs/2607.00972", "icon": "picture_as_pdf" }
+      ],
+      "citation": true
+    },
+    {
+      "id": "stage-wise-uq",
+      "featured": false,
+      "type": "Conference Paper",
+      "year": 2026,
+      "title": "Stage-Wise Uncertainty Scores in Agentic RAG: An Exploratory Study of Deterministic Failure-OR Fusion",
+      "authors": ["Louis Donaldson", "Connor Walker", "Koorosh Aslansefat", "Yiannis Papadopoulos"],
+      "venue": "ICMIAM 2026 • University of Huddersfield",
+      "bibtexVenue": "7th International Conference on Maintenance and Intelligent Asset Management (ICMIAM 2026)",
+      "note": "",
+      "tag": "Oral Presentation",
+      "topics": ["rag"],
+      "summary": "Explores scoring uncertainty separately at each stage of an agentic RAG pipeline and fusing the scores deterministically with failure-OR logic. Presented at the 7th International Conference on Maintenance and Intelligent Asset Management, 2 September 2026.",
+      "links": [],
+      "citation": false
+    },
+    {
+      "id": "IEEE-magazine",
+      "featured": false,
+      "type": "In Preparation",
+      "year": 2026,
+      "title": "When Can Operators Trust an AI Explanation? Runtime Monitoring of Agentic Pipelines in Offshore Wind",
+      "authors": [],
+      "venue": "Target venue: IEEE",
+      "note": "Working title",
+      "tag": "",
+      "topics": ["opt", "rag"],
+      "summary": "A three-layer architecture: an NSGA-III maintenance optimiser, a four-agent RAG pipeline that explains and challenges its schedules, and a Bayesian uncertainty monitor that decides when the system's recommendations can be trusted.",
+      "links": [],
+      "citation": false
+    }
+  ],
+
+  "education": [
+    {
+      "degree": "PhD in Computer Science",
+      "dates": "2023 – Present",
+      "current": true,
+      "institution": "University of Hull • Aura Centre for Doctoral Training",
+      "details": "Research on OPtimisation EXplainability (OPEX) for offshore wind maintenance scheduling, and on uncertainty propagation in multi-agent RAG systems.",
+      "note": "Supervisors: Yiannis Papadopoulos, Koorosh Aslansefat"
+    },
+    {
+      "degree": "BSc in Computer Science",
+      "dates": "2020-2023",
+      "current": false,
+      "institution": "University of Hull • Aura Centre for Doctoral Training",
+      "details": "A lightweight, distributed cloud storage solution aimed at smalle companies to keep sensitive business documentation and data secure with aims to integrate blockchain-based technology for auditing transparency.",
+      "note": ""
+    }
+  ],
+
+  "funding": [
+    {
+      "label": "Doctoral Studentship",
+      "dates": "4 years (2023-2027)",
+      "title": "Aura Centre for Doctoral Training in Offshore Wind",
+      "details": ""
+    }
+  ],
+
+  "talks": [
+    {
+      "date": "Sep 2026",
+      "kind": "Oral",
+      "event": "ICMIAM 2026, University of Huddersfield",
+      "description": "“Stage-Wise Uncertainty Scores in Agentic RAG: An Exploratory Study of Deterministic Failure-OR Fusion”",
+      "link": null
+    },
+    {
+      "date": "2026",
+      "kind": "Poster",
+      "event": "Durham Conference",
+      "description": "OPEX: NSGA-II/III and MOPSO with SHAP-based explainability for offshore wind maintenance scheduling.",
+      "link": null
+    },
+    {
+      "date": "2025",
+      "kind": "Poster",
+      "event": "Loughborough Conference 2025",
+      "description": "",
+      "link": { "label": "View poster", "url": "./images/Poster Loughborough Conference 2025.png" }
+    },
+    {
+      "date": "2024",
+      "kind": "Poster",
+      "event": "Conference poster & companion website",
+      "description": "",
+      "link": { "label": "Further information on my PhD", "url": "./Poster-Link/PosterReferences.html" }
+    }
+  ],
+
+  "projects": [
+    {
+      "category": "Streamlit Dashboard",
+      "title": "NSGA-III Offshore Wind Optimisation",
+      "description": "Interactive multi-objective maintenance scheduling.",
+      "url": "https://nsga-iii-osw-optimisation.streamlit.app"
+    },
+    {
+      "category": "Interactive Demo",
+      "title": "Reinforcement Learning Showcase",
+      "description": "RL travelling-salesman sandbox for offshore wind turbines.",
+      "url": "./Poster-Link/reinforcement-learning/index.html"
+    },
+    {
+      "category": "Interactive Demo",
+      "title": "Pathfinding Showcase",
+      "description": "Simple pathfinding sandbox.",
+      "url": "./pathfinding/pathfinding.html"
+    },
+    {
+      "category": "Browser Extension",
+      "title": "Hull University Buddy",
+      "description": "Student helper extension on the Chrome Web Store.",
+      "url": "https://chromewebstore.google.com/detail/hull-university-buddy/jnppmhcoifoohipnnhdabhnolnilncbk"
+    }
+  ]
+}
